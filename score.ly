@@ -1,6 +1,6 @@
 \version "2.18.2"
 \include "articulate.ly"
-#(set-global-staff-size 16)
+#(set-global-staff-size 18)
 
 cr = \change Staff = "rh"
 cl = \change Staff = "lh"
@@ -70,7 +70,7 @@ rhMark = \markup {
           >>
           \articulate <<
             \keepWithTag #'midi
-            \movt-two-lh
+            << { \movt-two-lh } { \movt-two-dynamics-pedal } >>
           >>
           \articulate <<
             \keepWithTag #'midi
@@ -143,7 +143,12 @@ rhMark = \markup {
       \new PianoStaff <<
         \new Staff = "rh" { \removeWithTag #'midi \movt-two-rh }
         \new Dynamics = "dynamics" \movt-two-dynamics
-        \new Staff = "lh" { \removeWithTag #'midi \movt-two-lh }
+        \new Staff = "lh" {
+          <<
+            { \removeWithTag #'midi \movt-two-lh }
+            { \movt-two-dynamics-pedal }
+          >>
+        }
       >>
     >>
     \layout {

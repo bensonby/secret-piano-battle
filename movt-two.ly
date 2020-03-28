@@ -1,4 +1,7 @@
 sfpAccelCresc = \markup \concat { \dynamic "sfp" \italic \larger "  accel. e cresc." }
+pAccelCresc = \markup \concat { \italic "subito " \dynamic "p" \italic \larger "  accel. e cresc." }
+conPedal = \markup \italic \larger "con pedal"
+
 section-A-rh = \relative c'' {
   gis4\(
   gis'8 a gis fis dis gis,\)
@@ -184,6 +187,27 @@ movt-two-dynamics = {
   s2.\f
   s2^\sfpAccelCresc s2*3
   s2\mf s2*5
-  s8 s4.\p\< s2
+  s8 s4.-\pAccelCresc s2
   s2\f
+}
+
+movt-two-dynamics-pedal = {
+  % section A
+  s2.
+  \tag #'print { s2-\conPedal }
+  \tag #'midi {
+    \repeat unfold 12 {
+      s8\son s4. s8. s16\soff
+    }
+    s2.\son s2 s8. s16\soff
+    s2\son s8. s16\soff
+  }
+  % section-B
+  \repeat unfold 10 {
+    s8\son s4.\soff
+  }
+  s8 s4.\son s4.. s16\soff
+  \repeat unfold 6 {
+    s8\son s4.\soff
+  }
 }
