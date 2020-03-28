@@ -58,7 +58,10 @@ rhMark = \markup {
           \keepWithTag #'midi
           \movt-one-dynamics
           \movt-two-dynamics
-          \movt-three-primo-dynamics
+          <<
+            { \movt-three-primo-dynamics }
+            { \movt-three-primo-single-staff-dynamics }
+          >>
         >>
         \new Staff = "lh" {
           \set Staff.midiInstrument = #"acoustic grand"
@@ -164,6 +167,7 @@ rhMark = \markup {
         \new Staff = "primo-rh" { \removeWithTag #'midi \movt-three-primo-rh }
         \new Dynamics = "primo-dynamics" \movt-three-primo-dynamics
         \new Staff = "primo-lh" { \removeWithTag #'midi \movt-three-primo-lh }
+        \new Dynamics = "primo-single-staff-dynamics" \movt-three-primo-single-staff-dynamics
       >>
       \new PianoStaff <<
         \new Staff = "secondo-rh" { \removeWithTag #'midi \movt-three-secondo-rh }
@@ -172,6 +176,18 @@ rhMark = \markup {
       >>
     >>
     \layout {
+      \context {
+        \Staff \RemoveEmptyStaves
+      }
+      \context {
+        \PianoStaff
+        \accepts Dynamics
+        \remove "Keep_alive_together_engraver"
+      }
+      \context {
+        \Score
+        \override VerticalAxisGroup #'remove-first = ##t
+      }
     }
   }
 }
