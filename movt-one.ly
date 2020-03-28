@@ -188,10 +188,10 @@ movt-one-dynamics = {
 
   % theme A
   s2\f s2\p s4 s4-\cresc s2
-  s2\f s2\mp s2
+  s2\f s2\mp
 
   % theme C
-  s2-\espressTxt s2-\cresc
+  s2-\espressTxt s2 s2-\cresc
   s2-\fBrillante
 }
 
