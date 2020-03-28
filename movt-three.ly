@@ -12,18 +12,28 @@ theme-running-notes-lh = \relative c {
 
 theme-arpeggios-rh = \relative c' {
   \clef treble
-  r16 <d f>\( <f a> <a d>
+  \tag #'midi { \tempo 4 = 100 }
+  r16
+  \tag #'midi { \tempo 4 = 150 }
+  <d f>\( <f a> <a d>
   <d f> <f a> <a d> <d f>
   <f a> <d f> <a d> <f a>
   <d f>4\) r
 
-  r16 <c, e>\( <e a> <a c>
+  \tag #'midi { \tempo 4 = 100 }
+  r16
+  \tag #'midi { \tempo 4 = 150 }
+  <c, e>\( <e a> <a c>
   <c e> <e a> <a c> <c e>
   <e a> <c e> <a c> <e a>
   <c e>4\) r
 
   \dynamicNeutral
-  \time 4/4 r16 << {
+  \time 4/4
+  \tag #'midi { \tempo 4 = 100 }
+  r16
+  \tag #'midi { \tempo 4 = 150 }
+  << {
     fis,,( a b fis' ais, b fis'
     b, dis fis a fis' ais, b fis')
   } \\ {
@@ -41,8 +51,18 @@ theme-arpeggios-rh = \relative c' {
 }
 
 theme-arpeggios-lh = \relative c, {
-  \time 5/4 <d d'>2.~->-- q8 <gis gis'>-> <a a'>-> <d, d'>->
-  <c c'>2.~---> q8 <gis' gis'>-> <a a'>-> <ais, ais'>->
+  \time 5/4 <d d'>2.~->-- q8
+  \tag #'midi { \tempo 4 = 140 }
+  <gis gis'>->
+  <a a'>->
+  \tag #'midi { \tempo 4 = 130 }
+  <d, d'>->
+  <c c'>2.~---> q8
+  \tag #'midi { \tempo 4 = 140 }
+  <gis' gis'>->
+  <a a'>->
+  \tag #'midi { \tempo 4 = 130 }
+  <ais, ais'>->
   \time 4/4 <b b'>1->--\sustainOn
   \time 5/4 <e e'>2.~\sustainOff\sustainOn <e e'>2
   <e e'>4\sustainOff-> e,-. r2
