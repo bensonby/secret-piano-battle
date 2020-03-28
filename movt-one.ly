@@ -3,7 +3,7 @@ fBrillante = \markup \concat { \dynamic "f" \italic \larger "  brillante" }
 fLegatoELeggiero = \markup \concat { \dynamic "f" \italic \larger "  legato e leggiero" }
 sempreLegato = \markup \italic \larger "sempre legato"
 rall = \markup \bold \larger "Rall."
-aTempo = \markup \italic \larger "a tempo"
+aTempo = \markup \larger "a tempo"
 espressTxt = \markup \italic \larger "espress."
 cresc = \markup \italic \larger "cresc."
 
@@ -13,24 +13,58 @@ beamSettings = {
   \set beatStructure = #'(1 1 1 1)
 }
 
-intro = \relative c'''' {
-  << {
-    \stemNeutral
-    \ottava #1 ees8\glissando^"Black key glissando"
-    \ottava #0 \cl \parenthesize ges,,,,\noBeam
-    \cr \ottava #1 des''''4\glissando
-    \cl
-    \ottava #0
-    ges,,,,,,4\glissando
-    \cr
-    \stemNeutral
-    \ottava #1 ges''''''8 \ottava #0
-  } \\ {
-    s8 \cr des,8\glissando^"l.h."
-    \cl
-    \parenthesize
-    ges,,,,8 s8
-  } >>
+intro = \relative c''''' {
+  \tag #'print {
+    << {
+      \stemNeutral
+      \ottava #1 ges8\glissando^"Black key glissando"
+      \ottava #0 \cl \parenthesize ges,,,,\noBeam
+      \cr \ottava #1 des''''4\glissando
+      \cl
+      \ottava #0
+      ges,,,,,,4\glissando
+      \cr
+      \stemNeutral
+      \ottava #1 ges''''''8 \ottava #0
+    } \\ {
+      s8 \cr bes,,8\glissando^"l.h."
+      \cl
+      \parenthesize
+      ges,,,8 s8
+    } >>
+  }
+  \tag #'midi {
+    \tuplet 20/16 {
+      ges'''''128 ees des bes aes ges ees des
+      bes aes ges ees des bes aes ges
+      ees des bes aes
+    }
+    << { ges16 } \\ {
+      \tuplet 22/16 {
+        bes''128 aes ges ees des bes aes ges
+        ees des bes aes ges ees des bes
+        aes ges ees des bes aes
+      }
+    } >>
+    << { ges16} \\ {
+      \tuplet 28/16 {
+        des'''''64 bes aes ges ees des bes aes
+        ges ees des bes aes ges ees des
+        bes aes ges ees des bes aes ges
+        ees des bes aes
+      }
+      \tuplet 30/16 {
+        ges64 aes bes des ees ges aes bes
+        des ees ges aes bes des ees ges
+        \tempo 8 = 160
+        aes bes des ees ges aes bes des
+        \tempo 8 = 140
+        ees ges aes bes des ees
+      }
+      \tempo 8 = 176
+      ges8
+    } >>
+  }
   r8
 }
 
@@ -49,10 +83,11 @@ theme-A-rh = \relative c'''' {
 }
 
 theme-A-lh = \relative c' {
+  \tag #'midi { \tempo 8 = 176 }
   <g b d g>8-. <g c e g>-. <g b d g>-. r
   <g g,>-. <c e g>-.[ <b d g>-.] r
   <d, d,>-. <a' d fis>-.[ <a c e>-.] a,
-  << { r8 <a' c e>->[ <a c d>] } \\ { d,4. } >> r8
+  << { r8 <a' c e>->-.[ <a c d>-.] } \\ { d,4. } >> r8
   <g b d g>8-. <g c e g>-. <g b d g>-. r
   <g g,>-. <c e g>-.[ <b d g>-.] r
 }
@@ -64,6 +99,12 @@ theme-B-rh = \relative c' {
     <<
       { \repeat unfold 6 { b, b' } }
       { s16^\rall s16*10 s16\fermata }
+      { \tag #'midi {
+        s16\tempo 8 = 126
+        s16*8 s16\tempo 8 = 100
+        s16\tempo 8 = 80
+        s16\tempo 8 = 60
+      }}
     >>
   }
 }
@@ -135,10 +176,47 @@ movt-one-lh = \relative c {
 }
 
 movt-one-dynamics = {
+  % intro
   s2-\ffBrillante s2
+
+  % theme A
   s2-\fLegatoELeggiero s2\p s4 s4-\cresc s2
-  s2\f s2\p s4 s4\< s4\! s4\> s2\!\mf
+  s2\f s2\p
+
+  % theme B
+  s4 s4\< s4\! s4\> s2\!\mf
+
+  % theme A
   s2\f s2\p s4 s4-\cresc s2
-  s2\f s2\mp s2 s2-\espressTxt s2-\cresc
+  s2\f s2\mp s2
+
+  % theme C
+  s2-\espressTxt s2-\cresc
   s2-\fBrillante
+}
+
+movt-one-dynamics-pedal = {
+  % intro
+  s2\son s4 s4\soff
+
+  % theme A
+  s2 s8\son s4.\soff
+  s8\son s8\soff s8..\son s32\soff
+  s8\son s8\soff s8..\son s32\soff
+  s2 s8\son s4.\soff
+
+  % theme B
+  s4...\son s32\soff
+  s4...\son s32\soff
+  s4...\son s32\soff
+
+  % theme A
+  s2 s8\son s4.\soff
+  s8\son s8\soff s8..\son s32\soff
+  s8\son s8\soff s8..\son s32\soff
+  s2 s8\son s4.\soff
+
+  % theme C
+  \repeat unfold 6 { s8..\son s32\soff }
+  \repeat unfold 2 { s8\son s4.\soff }
 }

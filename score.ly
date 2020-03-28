@@ -8,6 +8,8 @@ cpr = \change Staff = "primo-rh"
 cpl = \change Staff = "primo-lh"
 csr = \change Staff = "secondo-rh"
 csl = \change Staff = "secondo-lh"
+son = \sustainOn
+soff = \sustainOff
 rhMark = \markup { 
   \path #0.1 #'((moveto -1 0)(rlineto 0 -1.5)(rlineto 0.5 0))
 }
@@ -41,7 +43,7 @@ rhMark = \markup {
           \set Staff.midiMaximumVolume = #0.5
           \articulate <<
             \keepWithTag #'midi
-            \movt-one-rh
+            << { \movt-one-rh } { \movt-one-dynamics-pedal } >>
           >>
           \articulate <<
             \keepWithTag #'midi
@@ -52,14 +54,19 @@ rhMark = \markup {
             \movt-three-primo-rh
           >>
         }
-        \new Dynamics = "dynamics" << \movt-three-primo-dynamics >>
+        \new Dynamics = "dynamics" <<
+          \keepWithTag #'midi
+          \movt-one-dynamics
+          \movt-two-dynamics
+          \movt-three-primo-dynamics
+        >>
         \new Staff = "lh" {
           \set Staff.midiInstrument = #"acoustic grand"
           \set Staff.midiMinimumVolume = #0.2
           \set Staff.midiMaximumVolume = #0.5
           \articulate <<
             \keepWithTag #'midi
-            \movt-one-lh
+            << { \movt-one-lh } { \movt-one-dynamics-pedal } >>
           >>
           \articulate <<
             \keepWithTag #'midi
@@ -116,7 +123,12 @@ rhMark = \markup {
       \new PianoStaff <<
         \new Staff = "rh" { \removeWithTag #'midi \movt-one-rh }
         \new Dynamics = "dynamics" \movt-one-dynamics
-        \new Staff = "lh" { \removeWithTag #'midi \movt-one-lh }
+        \new Staff = "lh" {
+          <<
+            { \removeWithTag #'midi \movt-one-lh }
+            { \movt-one-dynamics-pedal }
+          >>
+        }
       >>
     >>
     \layout {
