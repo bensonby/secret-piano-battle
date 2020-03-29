@@ -59,7 +59,7 @@ rhMark = \markup {
           >>
           \articulate <<
             { \keepWithTag #'midi \movt-threeB-primo-rh }
-            { \keepWithTag #'midi \movt-threeB-dynamics-pedal }
+            { \keepWithTag #'primo \movt-threeB-dynamics-pedal }
           >>
         }
         \new Dynamics = "dynamics" <<
@@ -94,7 +94,7 @@ rhMark = \markup {
           >>
           \articulate <<
             { \keepWithTag #'midi \movt-threeB-primo-lh }
-            { \keepWithTag #'midi \movt-threeB-dynamics-pedal }
+            { \keepWithTag #'primo \movt-threeB-dynamics-pedal }
           >>
         }
       >>
@@ -113,7 +113,7 @@ rhMark = \markup {
           \rest-duration-three
           \articulate <<
             { \keepWithTag #'midi \movt-threeB-secondo-rh }
-            { \keepWithTag #'midi \movt-threeB-dynamics-pedal }
+            { \keepWithTag #'secondo \movt-threeB-dynamics-pedal }
           >>
         }
         \new Dynamics = "dynamics" <<
@@ -141,7 +141,7 @@ rhMark = \markup {
           \rest-duration-three
           \articulate <<
             { \keepWithTag #'midi \movt-threeB-secondo-lh }
-            { \keepWithTag #'midi \movt-threeB-dynamics-pedal }
+            { \keepWithTag #'secondo \movt-threeB-dynamics-pedal }
           >>
         }
       >>

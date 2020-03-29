@@ -1,3 +1,6 @@
+agitato = \markup \italic \larger "agitato"
+cresc = \markup \italic \larger "cresc."
+
 intro-primo-rh = \relative c' {
   r2
   % autochange with specified point not supported in 2.18.2
@@ -17,18 +20,20 @@ intro-primo-rh = \relative c' {
   \makeOctaves 1 {
     c8 d c b a c b a
   }
+  \clef bass
   \autochange a, \relative c, {
     \makeOctaves 1 { e16 e' f, f' e, e' f, f' e, e' d, d'}
   }
   \cpr
   \tag #'print {
     << {
-      c4\glissando \ottava #1 \stemDown e'''8 \ottava #0
+      c4\glissando \clef treble \ottava #1 \stemDown e'''8 \ottava #0
     } \\ {
       s4 \cpl \stemUp a,,16 gis \cpr \stemDown a b
     } >>
   }
   \tag #'midi {
+    \clef treble
     \tuplet 23/16 { c,,,64 d e f g a b c d e f g a b c d e f g a b c d }
     <e a,,>16 gis,, a b
   }
@@ -112,12 +117,72 @@ main-primo-lh = \relative c'' {
     a e c e c e, a e b' e, a e fis gis a b
   }
 
-  a16 gis \cpr a b \cpl c,16 b c b f a d f e c e c
+  a16 gis \cpr a b \cpl c,16 b c b f a d f dis c e c
   e-> c e a c-> a e a e'-> c a c a'-> e c e
 
   \repeat unfold 4 {a-> e c e b'-> gis e gis}
   s1 s1
   <c, e a>4-. r <e, a e'>-. r <a c e a>4-. r r2
+}
+
+main-secondo-rh = \relative c'' {
+  <a a'>4-.
+  \repeat unfold 3 {
+    \makeOctaves 1 {
+      c4-. b-. bes-.
+      a-. c-. b-. bes-.
+      a-. e'-. d-. f-.
+      e-. c8-. a-. gis-. a-.
+      \tag #'print { b4--\glissando }
+    }
+    \tag #'midi { \tuplet 17/16 {
+      b64 c d e f g a b c d e f g a b c d
+    }}
+    \ottava #1 e8-. \ottava #0 r8
+  }
+
+  <e,,, c' e>4-- <f f'>8-. <e e'>-. <dis dis'>4--
+  <e e'>4-. <c c'>8-. <a a'>-. <gis gis'>-. <a a'>-. <b b'>4--
+
+  <a e' a>4-- r8 <f c' f>-. <e b' e>4-- r8 <gis e' gis>-.
+  <a e' a>4-- r8 <f c' f>-. <e b' e>4-- r8 <gis e' gis>-.
+
+  <c e a>4-- \clef bass <a, b d gis>--
+  <c e a>4-- \clef treble <a' b d gis>--
+  <c e a>4-- <a' b d gis>--
+  <c e a>4-- <a b d gis>--
+  <a c e a>4-. r <gis, b e gis>-. r <a c e a>-. r r2
+}
+
+main-secondo-lh = \relative c, {
+  a8-. <c' e>-. a,-. q-. a-. q-. a-. q-.
+  a-. q-. a-. q-. a-. q-. a-. q-.
+  a-. q-. a-. q-. bes-. <d' f>-. bes,-. q-.
+  c-. <c' e>-. a,-. q-. <e e'>-> <fis fis'>-> <gis gis'>4->--
+
+  a8-. <c' e>-. a,-. q-. a-. q-. a-. q-.
+  a-. q-. a-. q-. a-. q-. a-. q-.
+  a-. q-. a-. q-. bes-. <d' f>-. bes,-. q-.
+  c-. <c' e>-. c,-. q-. <d d'>-> <e e'>-> <d d'>4->--
+  
+  a8-. <c' e>-. a,-. q-. a-. q-. a-. q-.
+  a-. q-. a-. q-. a-. q-. a-. q-.
+  a-. q-. a-. q-. bes-. <d' f>-. bes,-. q-.
+  c-. <c' e>-. a,-. q-. <e e'>-> <fis fis'>-> <gis gis'>4--->
+
+  <a a'>8-. <c' e>-. <c, c'>-. <c' e>-. <f, b f'>8-> <e b' e>-> <dis b' dis>4--->
+  <a a'>8-. <c' e>-. <a, a'>-. <c' e>-. <e,, e'>8-.-> <fis fis'>-.-> <gis gis'>4--->
+
+  <a e' a>4---. r8 <f c' f>-. <e b' e>4---. r8 <gis e' gis>-.
+  <a e' a>4---. r8 <f c' f>-. <e b' e>4---. r8 <gis e' gis>-.
+
+  <a e' a>4-- <e b' e>--
+  <a e' a>4-- <e' b' e>--
+  <a e' a>4-- <e' b' e>--
+  <a e' a>8-- e-. e'-. \csr d'-.
+  \csl <a,, e' a>4-. r <e a e'>-. r <a, e' a>-. r r2
+
+  \bar "|."
 }
 
 movt-threeB-primo-rh = \relative c {
@@ -133,14 +198,30 @@ movt-threeB-primo-lh = \relative c' {
 movt-threeB-secondo-rh = \relative c {
   \clef treble
   \intro-secondo-rh
+  \main-secondo-rh
 }
 movt-threeB-secondo-lh = \relative c {
   \clef bass
   \intro-secondo-lh
+  \main-secondo-lh
 }
 movt-threeB-primo-dynamics = {
+  s2 s2\f s1 s1 s1
+  s1-\agitato s1 s1 s1
+  s1\mf s1 s1 s1
+  s1\f s1 s1 s1
+
+  s4 s2.\p s1-\cresc s1\f s1
+  s1-\cresc s1 s1\ff s1
 }
 movt-threeB-secondo-dynamics = {
+  s1\f s1 s1 s1
+  s1-\agitato s1 s1 s1
+  s1 s1 s1 s1
+  s1 s1 s1 s1
+
+  s1\mf s1 s1 s1
+  s1-\cresc s1 s1\ff s1
 }
 
 movt-threeB-dynamics-pedal = {
@@ -148,4 +229,24 @@ movt-threeB-dynamics-pedal = {
   \repeat unfold 8 {
     s4...\son s32\soff
   }
+  \repeat unfold 56 {
+    s8..\son s32\soff
+  }
+
+  \tag #'primo {
+    \repeat unfold 8 {
+      s8..\son s32\soff
+    }
+  }
+  \tag #'secondo {
+    % hack to prevent pedal hanging
+    s16\son s8.\soff s2. s1
+  }
+
+  \repeat unfold 8 {
+    s8..\son s32\soff
+  }
+
+  % hack to prevent pedal still hanging at the end
+  s16\son s8.\soff s2. s1
 }
