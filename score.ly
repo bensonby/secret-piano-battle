@@ -18,6 +18,7 @@ rhMark = \markup {
 \include "movt-one.ly"
 \include "movt-two.ly"
 \include "movt-three.ly"
+\include "movt-threeB.ly"
 
 \paper {
     top-margin = 6\mm                              %-minimum top-margin: 8mm
@@ -124,11 +125,11 @@ rhMark = \markup {
     }
     \new StaffGroup <<
       \new PianoStaff <<
-        \new Staff = "rh" { \removeWithTag #'midi \movt-one-rh }
+        \new Staff = "rh" { \keepWithTag #'print \movt-one-rh }
         \new Dynamics = "dynamics" \movt-one-dynamics
         \new Staff = "lh" {
           <<
-            { \removeWithTag #'midi \movt-one-lh }
+            { \keepWithTag #'print \movt-one-lh }
             { \movt-one-dynamics-pedal }
           >>
         }
@@ -144,11 +145,11 @@ rhMark = \markup {
     }
     \new StaffGroup <<
       \new PianoStaff <<
-        \new Staff = "rh" { \removeWithTag #'midi \movt-two-rh }
+        \new Staff = "rh" { \keepWithTag #'print \movt-two-rh }
         \new Dynamics = "dynamics" \movt-two-dynamics
         \new Staff = "lh" {
           <<
-            { \removeWithTag #'midi \movt-two-lh }
+            { \keepWithTag #'print \movt-two-lh }
             { \movt-two-dynamics-pedal }
           >>
         }
@@ -163,16 +164,13 @@ rhMark = \markup {
       piece = "III"
     }
     \new StaffGroup <<
-      \new PianoStaff <<
-        \new Staff = "primo-rh" { \removeWithTag #'midi \movt-three-primo-rh }
-        \new Dynamics = "primo-dynamics" \movt-three-primo-dynamics
-        \new Staff = "primo-lh" { \removeWithTag #'midi \movt-three-primo-lh }
-        \new Dynamics = "primo-single-staff-dynamics" \movt-three-primo-single-staff-dynamics
-      >>
-      \new PianoStaff <<
-        \new Staff = "secondo-rh" { \removeWithTag #'midi \movt-three-secondo-rh }
+      \new PianoStaff \with {
+        instrumentName = #"Piano II"
+      } <<
+        \new Staff = "secondo-rh" { \keepWithTag #'print \movt-three-secondo-rh }
         \new Dynamics = "secondo-dynamics" \movt-three-secondo-dynamics
-        \new Staff = "secondo-lh" { \removeWithTag #'midi \movt-three-secondo-lh }
+        \new Staff = "secondo-lh" { \keepWithTag #'print \movt-three-secondo-lh }
+        \new Dynamics = "secondo-single-staff-dynamics" \movt-three-secondo-single-staff-dynamics
       >>
     >>
     \layout {
@@ -189,5 +187,50 @@ rhMark = \markup {
         \override VerticalAxisGroup #'remove-first = ##t
       }
     }
+  }
+  \score {
+    \new StaffGroup <<
+      \new PianoStaff \with {
+        instrumentName = #"Piano I"
+      } <<
+        \new Staff = "primo-rh" { \keepWithTag #'print \movt-three-primo-rh }
+        \new Dynamics = "primo-dynamics" \movt-three-primo-dynamics
+        \new Staff = "primo-lh" { \keepWithTag #'print \movt-three-primo-lh }
+        \new Dynamics = "primo-single-staff-dynamics" \movt-three-primo-single-staff-dynamics
+      >>
+    >>
+    \layout {
+      \context {
+        \Staff \RemoveEmptyStaves
+      }
+      \context {
+        \PianoStaff
+        \accepts Dynamics
+        \remove "Keep_alive_together_engraver"
+      }
+      \context {
+        \Score
+        \override VerticalAxisGroup #'remove-first = ##t
+      }
+    }
+  }
+  \score {
+    \new StaffGroup <<
+      \new PianoStaff \with {
+        instrumentName = #"Piano I"
+      } <<
+        \new Staff = "primo-rh" { \keepWithTag #'print \movt-threeB-primo-rh }
+        \new Dynamics = "primo-dynamics" \movt-threeB-primo-dynamics
+        \new Staff = "primo-lh" { \keepWithTag #'print \movt-threeB-primo-lh }
+      >>
+      \new PianoStaff \with {
+        instrumentName = #"Piano II"
+      } <<
+        \new Staff = "secondo-rh" { \keepWithTag #'print \movt-threeB-secondo-rh }
+        \new Dynamics = "secondo-dynamics" \movt-threeB-secondo-dynamics
+        \new Staff = "secondo-lh" { \keepWithTag #'print \movt-threeB-secondo-lh }
+      >>
+    >>
+    \layout { }
   }
 }

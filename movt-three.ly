@@ -1,4 +1,7 @@
+% from single staff to two staves - clef change?
 legato = \markup \italic \larger "legato"
+leftHandOnly = \markup \italic \larger "left hands only"
+stillLeftHandOnly = \markup \italic \larger "still left hands only"
 
 theme-running-notes-rh = \relative c {
   \repeat unfold 31 {e16 f} e dis
@@ -40,14 +43,29 @@ theme-arpeggios-rh = \relative c' {
     s16 s8 <a,, c>8. <a c>16~ q4 <a' c>8. q16
   } >>
 
-  \time 5/4 r4 <e' gis e'>16\(
-  <e, gis b d> <f' f'> <e, gis b d> <e' e'>
-  <e, gis b d> <f' f'> <e, gis b d> <e' e'>
-  <e, gis b d> <f' f'> <e, gis b d> <e' e'>
-  <e, gis b d> <f' f'> <e, gis b d>
+  \time 5/4 r4
+  \tag #'(print midi both-hands) {
+    <e' gis e'>16\(
+    <e, gis b d> <f' f'> <e, gis b d> <e' e'>
+    <e, gis b d> <f' f'> <e, gis b d> <e' e'>
+    <e, gis b d> <f' f'> <e, gis b d> <e' e'>
+    <e, gis b d> <f' f'> <e, gis b d>
 
-  \time 4/4
-  <e' gis b e>4\) \ottava #1 e'' \ottava #0 r2
+    \time 4/4
+    <e' gis b e>4\) \ottava #1 e'' \ottava #0 r2
+  }
+  \tag #'(print midi left-hand) {
+    <e,,, e'>16\( <gis b>
+    <f f'> <gis b>
+    <e e'>16 <gis b>
+    <f f'> <gis b>
+    <e e'>16 <gis b>
+    <f f'> <gis b>
+    <e e'>16 <gis b>
+    <f f'> <gis b>
+    <e gis b e>4->\)
+    e''4\sf-. r2
+  }
 }
 
 theme-arpeggios-lh = \relative c, {
@@ -64,8 +82,17 @@ theme-arpeggios-lh = \relative c, {
   \tag #'midi { \tempo 4 = 130 }
   <ais, ais'>->
   \time 4/4 <b b'>1->--\sustainOn
-  \time 5/4 <e e'>2.~\sustainOff\sustainOn <e e'>2
-  <e e'>4\sustainOff-> e,-. r2
+  \time 5/4
+  \tag #'(print midi both-hands) {
+    <e e'>2.~ q2
+    \time 4/4
+    q4-> e,-. r2
+  }
+  \tag #'(print midi left-hand) {
+    <e' e'>2.~ q2~
+    \time 4/4
+    q2 r2
+  }
 }
 
 movt-three-primo-rh = \relative c {
@@ -74,7 +101,7 @@ movt-three-primo-rh = \relative c {
   \key a \minor
   s1*8
   \time 5/4
-  \theme-arpeggios-rh
+  \keepWithTag #'left-hand \theme-arpeggios-rh
   % \bar "|."
 }
 
@@ -85,16 +112,26 @@ movt-three-primo-lh = \relative c' {
   \key a \minor
   << 
     { \theme-running-notes-rh }
-    { s1^\legato } \\ {
+    { s1^\legato^\leftHandOnly } \\ {
       \theme-running-notes-lh
     }
   >>
 
-  \theme-arpeggios-lh
+  <<
+    { \keepWithTag #'left-hand \theme-arpeggios-lh }
+    { s1^\stillLeftHandOnly }
+  >>
   % \bar "|."
 }
 
 movt-three-primo-single-staff-dynamics = {
+  << 
+    { \repeat unfold 8 { s4 s8.\< s16\! s8.\> s16\! s4 } }
+    { s1\p s1*3 s1\mp s1 s1\mf s1 }
+  >>
+}
+
+movt-three-secondo-single-staff-dynamics = {
   << 
     { \repeat unfold 8 { s4 s8.\< s16\! s8.\> s16\! s4 } }
     { s1\p s1*3 s1\mp s1 s1\mf s1 }
@@ -107,23 +144,45 @@ movt-three-primo-dynamics = {
   s16 s8.\< s8. s16\! s4\> s2\!
   s4\fp s4\< s4.. s16\!
   s1\f s4
+  s4 s4 s2
+}
+
+movt-three-secondo-dynamics = {
+  s1*8
+  s16\f s8.\< s8. s16\! s4\> s2\!
+  s16 s8.\< s8. s16\! s4\> s2\!
+  s4\fp s4\< s4.. s16\!
+  s1\f s4
   s4 s4\sfz s2
 }
 
-movt-three-secondo-rh = \relative c' {
+movt-three-secondo-rh = \relative c {
   \clef treble
   \time 4/4
-  \key c \major
+  \key a \minor
+  s1*8
+  \time 5/4
+  <<
+    { \keepWithTag #'both-hands \theme-arpeggios-rh }
+    { s2. s2 s2. s2 s1 s2. s2 s1 \break }
+  >>
   % \bar "|."
 }
 
 movt-three-secondo-lh = \relative c {
   \clef bass
   \time 4/4
-  \key c \major
-  % \bar "|."
-}
+  \key a \minor
+  << 
+    { \theme-running-notes-rh }
+    { s1^\legato } \\ {
+      \theme-running-notes-lh
+    }
+  >>
 
-movt-three-secondo-dynamics = {
-  % s1\mp
+  <<
+    { \keepWithTag #'both-hands \theme-arpeggios-lh }
+    { s1 }
+  >>
+  % \bar "|."
 }
