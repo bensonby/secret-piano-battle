@@ -86,7 +86,7 @@ theme-arpeggios-lh = \relative c, {
   <a a'>->
   \tag #'midi { \tempo 4 = 130 }
   <ais, ais'>->
-  \time 4/4 <b b'>1->--\sustainOn
+  \time 4/4 <b b'>1->--
   \time 5/4
   \tag #'(print midi both-hands) {
     <e e'>2.~ q2
@@ -191,4 +191,10 @@ movt-three-secondo-lh = \relative c {
     { s1 }
   >>
   % \bar "|."
+}
+
+movt-three-dynamics-pedal = {
+  s1*8
+  \repeat unfold 2 { s2.\son s8. s16\soff s8..\son s32\soff }
+  s2....\son s32\soff s1\son s4 s2 s2\soff
 }

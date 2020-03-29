@@ -6,8 +6,8 @@ cr = \change Staff = "up"
 cl = \change Staff = "down"
 cpr = \change Staff = "up"
 cpl = \change Staff = "down"
-csr = \change Staff = "secondo-rh"
-csl = \change Staff = "secondo-lh"
+csr = \change Staff = "up"
+csl = \change Staff = "down"
 son = \sustainOn
 soff = \sustainOff
 rhMark = \markup { 
@@ -49,17 +49,17 @@ rhMark = \markup {
             >>
           >>
           \articulate <<
-            \keepWithTag #'midi
-            \movt-two-rh
+            { \keepWithTag #'midi \movt-two-rh }
+            { \keepWithTag #'midi \movt-two-dynamics-pedal }
           >>
           \rest-duration-three
           \articulate <<
-            \keepWithTag #'midi
-            \movt-three-primo-rh
+            { \keepWithTag #'midi \movt-three-primo-rh }
+            { \keepWithTag #'midi \movt-three-dynamics-pedal }
           >>
           \articulate <<
-            \keepWithTag #'midi
-            \movt-threeB-primo-rh
+            { \keepWithTag #'midi \movt-threeB-primo-rh }
+            { \keepWithTag #'midi \movt-threeB-dynamics-pedal }
           >>
         }
         \new Dynamics = "dynamics" <<
@@ -89,17 +89,17 @@ rhMark = \markup {
           >>
           \rest-duration-three
           \articulate <<
-            \keepWithTag #'midi
-            \movt-three-primo-lh
+            { \keepWithTag #'midi \movt-three-primo-lh }
+            { \keepWithTag #'midi \movt-three-dynamics-pedal }
           >>
           \articulate <<
-            \keepWithTag #'midi
-            \movt-threeB-primo-lh
+            { \keepWithTag #'midi \movt-threeB-primo-lh }
+            { \keepWithTag #'midi \movt-threeB-dynamics-pedal }
           >>
         }
       >>
       \new PianoStaff <<
-        \new Staff = "secondo-rh" {
+        \new Staff = "up" {
           \set Staff.midiInstrument = #"acoustic grand"
           \set Staff.midiMinimumVolume = #0.2
           \set Staff.midiMaximumVolume = #0.5
@@ -107,13 +107,13 @@ rhMark = \markup {
           \rest-duration-one
           \rest-duration-two
           \articulate <<
-            \keepWithTag #'midi
-            \movt-three-secondo-rh
+            { \keepWithTag #'midi \movt-three-secondo-rh }
+            { \keepWithTag #'midi \movt-three-dynamics-pedal }
           >>
           \rest-duration-three
           \articulate <<
-            \keepWithTag #'midi
-            \movt-threeB-secondo-rh
+            { \keepWithTag #'midi \movt-threeB-secondo-rh }
+            { \keepWithTag #'midi \movt-threeB-dynamics-pedal }
           >>
         }
         \new Dynamics = "dynamics" <<
@@ -127,7 +127,7 @@ rhMark = \markup {
           \rest-duration-three
           \movt-threeB-secondo-dynamics
         >>
-        \new Staff = "secondo-lh" {
+        \new Staff = "down" {
           \set Staff.midiInstrument = #"acoustic grand"
           \set Staff.midiMinimumVolume = #0.2
           \set Staff.midiMaximumVolume = #0.5
@@ -135,13 +135,13 @@ rhMark = \markup {
           \rest-duration-one
           \rest-duration-two
           \articulate <<
-            \keepWithTag #'midi
-            \movt-three-secondo-lh
+            { \keepWithTag #'midi \movt-three-secondo-lh }
+            { \keepWithTag #'midi \movt-three-dynamics-pedal }
           >>
           \rest-duration-three
           \articulate <<
-            \keepWithTag #'midi
-            \movt-threeB-secondo-lh
+            { \keepWithTag #'midi \movt-threeB-secondo-lh }
+            { \keepWithTag #'midi \movt-threeB-dynamics-pedal }
           >>
         }
       >>
@@ -198,9 +198,9 @@ rhMark = \markup {
       \new PianoStaff \with {
         instrumentName = #"Piano II"
       } <<
-        \new Staff = "secondo-rh" { \keepWithTag #'print \movt-three-secondo-rh }
+        \new Staff = "up" { \keepWithTag #'print \movt-three-secondo-rh }
         \new Dynamics = "secondo-dynamics" \movt-three-secondo-dynamics
-        \new Staff = "secondo-lh" { \keepWithTag #'print \movt-three-secondo-lh }
+        \new Staff = "down" { \keepWithTag #'print \movt-three-secondo-lh }
         \new Dynamics = "secondo-single-staff-dynamics" \movt-three-secondo-single-staff-dynamics
       >>
     >>
@@ -257,9 +257,9 @@ rhMark = \markup {
       \new PianoStaff \with {
         instrumentName = #"Piano II"
       } <<
-        \new Staff = "secondo-rh" { \keepWithTag #'print \movt-threeB-secondo-rh }
+        \new Staff = "up" { \keepWithTag #'print \movt-threeB-secondo-rh }
         \new Dynamics = "secondo-dynamics" \movt-threeB-secondo-dynamics
-        \new Staff = "secondo-lh" { \keepWithTag #'print \movt-threeB-secondo-lh }
+        \new Staff = "down" { \keepWithTag #'print \movt-threeB-secondo-lh }
       >>
     >>
     \layout { }
