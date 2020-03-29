@@ -87,9 +87,9 @@ section-B-rh = \relative c {
 section-B-lh-theme = \relative c, {
   <<
     {
-      <cis cis'>8->-. s gis'-. s <cis, cis'>->-. s gis'-. s
-      <fis fis'>->-. s cis'-. s <fis, fis'>->-. s cis'-. s
-      <gis gis'>->-. s dis'-. s <gis, gis'>->-. s dis'-. s
+      <cis cis'>8-. s gis'-. s <cis, cis'>-. s gis'-. s
+      <fis fis'>-. s cis'-. s <fis, fis'>-. s cis'-. s
+      <gis gis'>-. s dis'-. s <gis, gis'>-. s dis'-. s
     }
     {
       s <gis cis e>-. s q-. s q-. s q-.
@@ -106,7 +106,7 @@ section-B-intro-lh = \relative c, {
     {
       \repeat unfold 4 {
         <<
-          { <cis cis'>8-.-> s gis'-. s }
+          { <cis cis'>8-. s gis'-. s }
           { s <gis' cis e>-. s q-. }
         >>
       }

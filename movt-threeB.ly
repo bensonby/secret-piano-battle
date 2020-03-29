@@ -5,12 +5,12 @@ intro-primo-rh = \relative c' {
   r2
   % autochange with specified point not supported in 2.18.2
   \autochange b \relative c' {
-    <dis gis dis'>16-> dis,
+    <dis gis dis'>16-- dis,
     <f' f'> f,
     <e' e'> e,
     <dis' dis'> dis,
     r2
-    <d' gis d'>16-> d,
+    <d' gis d'>16-- d,
     <e' e'> e,
     <d' d'> d,
     <cis' cis'> cis,
@@ -48,7 +48,7 @@ intro-primo-lh = \relative c, {
 intro-secondo-rh = \relative c {
   \autochange g' \relative c'' {
     <<
-      { <e gis e'>16-> s \makeOctaves 1 { f s e s dis s } }
+      { <e gis e'>16-- s \makeOctaves 1 { f s e s dis s } }
       { \makeOctaves -1 { s e, s f s e s dis } }
     >>
   }
@@ -56,7 +56,7 @@ intro-secondo-rh = \relative c {
   r2
   \autochange f' \relative c'' {
     <<
-      { <d gis d'>16-> s \makeOctaves 1 { e s d s cis s } }
+      { <d gis d'>16-- s \makeOctaves 1 { e s d s cis s } }
       { \makeOctaves -1 { s d, s e s d s cis } }
     >>
   }
@@ -64,12 +64,12 @@ intro-secondo-rh = \relative c {
   r2
   \autochange e' \relative c'' {
     <<
-      { <c e a c>16-> s \makeOctaves 1 { d s c s b s a s c s b s a s } }
+      { <c e a c>16-- s \makeOctaves 1 { d s c s b s a s c s b s a s } }
       { \makeOctaves -1 { s c, s d s c s b s a s c s b s a } }
     >>
   }
   \csr
-  <gis'' b e gis>8-> \makeOctaves 1 { f e dis e d c b }
+  <gis'' b e gis>8-- \makeOctaves 1 { f e dis e d c b }
 }
 
 intro-secondo-lh = \relative c {

@@ -105,9 +105,9 @@ theme-B-rh = \relative c' {
       { s16^\rall s16*10 s16\fermata }
       { \tag #'midi {
         s16\tempo 8 = 126
-        s16*8 s16\tempo 8 = 100
-        s16\tempo 8 = 80
-        s16\tempo 8 = 60
+        s16*8 s16\tempo 8 = 90
+        s16\tempo 8 = 70
+        s16\tempo 8 = 20
       }}
     >>
   }

@@ -3,6 +3,10 @@ legato = \markup \italic \larger "legato"
 leftHandOnly = \markup \italic \larger "left hands only"
 stillLeftHandOnly = \markup \italic \larger "still left hands only"
 
+extra-rest-before-three = {
+  s2
+}
+
 rest-duration-three = {
   s1*8
   s2. s2 s2. s2 s1 s2. s2 s1
@@ -47,6 +51,7 @@ theme-arpeggios-rh = \relative c' {
   } \\ {
     s16 s8 <a,, c>8. <a c>16~ q4 <a' c>8. q16
   } >>
+  \tag #'midi { \tempo 4 = 150 }
 
   \time 5/4 r4
   \tag #'(print midi both-hands) {
@@ -75,26 +80,35 @@ theme-arpeggios-rh = \relative c' {
 
 theme-arpeggios-lh = \relative c, {
   \time 5/4 <d d'>2.~->-- q8
-  \tag #'midi { \tempo 4 = 140 }
+  \tag #'(midi both-hands left-hand) { \tempo 4 = 140 }
   <gis gis'>->
+  \tag #'(midi both-hands left-hand) { \tempo 4 = 130 }
   <a a'>->
-  \tag #'midi { \tempo 4 = 130 }
+  \tag #'(midi both-hands left-hand) { \tempo 4 = 125 }
   <d, d'>->
+  \tag #'(midi both-hands left-hand) { \tempo 4 = 150 }
   <c c'>2.~---> q8
-  \tag #'midi { \tempo 4 = 140 }
+  \tag #'(midi both-hands left-hand) { \tempo 4 = 140 }
   <gis' gis'>->
+  \tag #'(midi both-hands left-hand) { \tempo 4 = 130 }
   <a a'>->
-  \tag #'midi { \tempo 4 = 130 }
+  \tag #'(midi both-hands left-hand) { \tempo 4 = 110 }
   <ais, ais'>->
-  \time 4/4 <b b'>1->--
+  \tag #'(midi both-hands left-hand) { \tempo 4 = 150 }
+  \time 4/4
+  \tag #'(print both-hands left-hand) { <b b'>1->-- }
+  \tag #'(midi both-hands left-hand) {
+    <b b'>2.->--~ q8.~ \tempo 4 = 50 q16
+    \tempo 4 = 150
+  }
   \time 5/4
   \tag #'(print midi both-hands) {
-    <e e'>2.~ q2
+    <e e'>2.~-> q2
     \time 4/4
     q4-> e,-. r2
   }
   \tag #'(print midi left-hand) {
-    <e' e'>2.~ q2~
+    <e' e'>2.~-> q2~
     \time 4/4
     q2 r2
   }

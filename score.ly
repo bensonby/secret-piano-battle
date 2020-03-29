@@ -52,6 +52,7 @@ rhMark = \markup {
             { \keepWithTag #'midi \movt-two-rh }
             { \keepWithTag #'midi \movt-two-dynamics-pedal }
           >>
+          \extra-rest-before-three
           \rest-duration-three
           \articulate <<
             { \keepWithTag #'midi \movt-three-primo-rh }
@@ -66,6 +67,7 @@ rhMark = \markup {
           \keepWithTag #'midi
           \movt-one-dynamics
           \movt-two-dynamics
+          \extra-rest-before-three
           <<
             { \movt-three-primo-dynamics }
             { \movt-three-primo-single-staff-dynamics }
@@ -87,6 +89,7 @@ rhMark = \markup {
               { \keepWithTag #'midi \movt-two-dynamics-pedal }
             >>
           >>
+          \extra-rest-before-three
           \rest-duration-three
           \articulate <<
             { \keepWithTag #'midi \movt-three-primo-lh }
@@ -106,6 +109,7 @@ rhMark = \markup {
           \keepWithTag #'midi
           \rest-duration-one
           \rest-duration-two
+          \extra-rest-before-three
           \articulate <<
             { \keepWithTag #'midi \movt-three-secondo-rh }
             { \keepWithTag #'midi \movt-three-dynamics-pedal }
@@ -120,6 +124,7 @@ rhMark = \markup {
           \keepWithTag #'midi
           \rest-duration-one
           \rest-duration-two
+          \extra-rest-before-three
           << 
             { \movt-three-secondo-dynamics }
             { \movt-three-secondo-single-staff-dynamics }
@@ -134,6 +139,7 @@ rhMark = \markup {
           \keepWithTag #'midi
           \rest-duration-one
           \rest-duration-two
+          \extra-rest-before-three
           \articulate <<
             { \keepWithTag #'midi \movt-three-secondo-lh }
             { \keepWithTag #'midi \movt-three-dynamics-pedal }
