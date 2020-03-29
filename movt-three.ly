@@ -3,6 +3,11 @@ legato = \markup \italic \larger "legato"
 leftHandOnly = \markup \italic \larger "left hands only"
 stillLeftHandOnly = \markup \italic \larger "still left hands only"
 
+rest-duration-three = {
+  s1*8
+  s2. s2 s2. s2 s1 s2. s2 s1
+}
+
 theme-running-notes-rh = \relative c {
   \repeat unfold 31 {e16 f} e dis
   \repeat unfold 2 {e f fis g gis a b a gis f d gis g e cis g'}
@@ -160,6 +165,7 @@ movt-three-secondo-rh = \relative c {
   \clef treble
   \time 4/4
   \key a \minor
+  \tempo 4 = 150
   s1*8
   \time 5/4
   <<

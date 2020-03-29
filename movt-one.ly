@@ -13,6 +13,10 @@ beamSettings = {
   \set beatStructure = #'(1 1 1 1)
 }
 
+rest-duration-one = {
+  s2*23
+}
+
 intro = \relative c''''' {
   \tag #'print {
     << {
@@ -128,7 +132,6 @@ theme-C-rh = \relative c' {
 }
 
 theme-C-lh = \relative c {
-  \autoBeamOff
   <<
     { cis8 s c s b s e s a, s d s }
     { s8 <a' e'> s q s <g d'> s <b e> s <b c e> s <a d fis> }
