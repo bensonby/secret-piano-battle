@@ -1,7 +1,7 @@
 % from single staff to two staves - clef change?
 legato = \markup \italic \larger "legato"
-leftHandOnly = \markup \italic \larger "left hands only"
-stillLeftHandOnly = \markup \italic \larger "still left hands only"
+leftHandOnly = \markup \italic \larger "left hand only"
+stillLeftHandOnly = \markup \italic \larger "still left hand only"
 
 extra-rest-before-three = {
   s2
