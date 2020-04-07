@@ -117,7 +117,7 @@ main-primo-lh = \relative c'' {
     a e c e c e, a e b' e, a e fis gis a b
   }
 
-  a16 gis \cpr a b \cpl c,16 b c b f a d f dis c e c
+  a16 gis \cpr a b \cpl c,16 b c a f a d f dis c e c
   e-> c e a c-> a e a e'-> c a c a'-> e c e
 
   \repeat unfold 4 {a-> e c e b'-> gis e gis}
