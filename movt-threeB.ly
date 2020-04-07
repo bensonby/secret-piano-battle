@@ -126,22 +126,34 @@ main-primo-lh = \relative c'' {
 }
 
 main-secondo-rh = \relative c'' {
-  <a a'>4-.
-  \repeat unfold 3 {
-    \makeOctaves 1 {
-      c4-. b-. bes-.
-      a-. c-. b-. bes-.
-      a-. e'-. d-. f-.
-      e-. c8-. a-. gis-. a-.
-      \tag #'print { b4--\glissando }
+  << {
+    <a a'>4-.
+    \repeat unfold 3 {
+      \makeOctaves 1 {
+        c4-. b-. bes-.
+        a-. c-. b-. bes-.
+        a-. e'-. d-. f-.
+        e-. \stemNeutral c8-. a-. gis-. a-.
+        \tag #'print { b4--\glissando }
+      }
+      \tag #'midi { \tuplet 17/16 {
+        b64 c d e f g a b c d e f g a b c d
+      }}
+      \stemUp
+      \ottava #1 e4-. \ottava #0
     }
-    \tag #'midi { \tuplet 17/16 {
-      b64 c d e f g a b c d e f g a b c d
-    }}
-    \ottava #1 e8-. \ottava #0 r8
-  }
+  } \\ {
+    r8 <c,,, e>
+    \repeat unfold 3 {
+      r q r q r q
+      r8 q r q r q r q
+      r8 q r <a' c> r <bes d> r <d f>
+      r8 <a c> s4 s2
+      r8 \ottava #0 <a c>
+    }
+  } >>
 
-  <e,,, c' e>4-- <f f'>8-. <e e'>-. <dis dis'>4--
+  <e c' e>4-- <f f'>8-. <e e'>-. <dis dis'>4--
   <e e'>4-. <c c'>8-. <a a'>-. <gis gis'>-. <a a'>-. <b b'>4--
 
   <a e' a>4-- r8 <f c' f>-. <e b' e>4-- r8 <gis e' gis>-.
@@ -155,20 +167,24 @@ main-secondo-rh = \relative c'' {
 }
 
 main-secondo-lh = \relative c, {
-  a8-. <c' e>-. a,-. q-. a-. q-. a-. q-.
-  a-. q-. a-. q-. a-. q-. a-. q-.
-  a-. q-. a-. q-. bes-. <d' f>-. bes,-. q-.
-  c-. <c' e>-. a,-. q-. <e e'>-> <fis fis'>-> <gis gis'>4->--
-
-  a8-. <c' e>-. a,-. q-. a-. q-. a-. q-.
-  a-. q-. a-. q-. a-. q-. a-. q-.
-  a-. q-. a-. q-. bes-. <d' f>-. bes,-. q-.
-  c-. <c' e>-. c,-. q-. <d d'>-> <e e'>-> <d d'>4->--
-  
-  a8-. <c' e>-. a,-. q-. a-. q-. a-. q-.
-  a-. q-. a-. q-. a-. q-. a-. q-.
-  a-. q-. a-. q-. bes-. <d' f>-. bes,-. q-.
-  c-. <c' e>-. a,-. q-. <e e'>-> <fis fis'>-> <gis gis'>4--->
+  \repeat unfold 3 {
+    \repeat unfold 10 {a8-. a'-.}
+    \repeat unfold 2 {bes,8-. bes'-.}
+  }
+  \alternative {
+    {
+      c,8-. c'-. a,-. a'-.
+      <e, e'>-> <fis fis'>-> <gis gis'>4->--
+    }
+    {
+      c8-. c'-. c,-. c'-.
+      <d, d'>-> <e e'>-> <d d'>4->--
+    }
+    {
+      c8-. c'-. a,-. a'-.
+      <e, e'>-> <fis fis'>-> <gis gis'>4->--
+    }
+  }
 
   <a a'>8-. <c' e>-. <c, c'>-. <c' e>-. <f, b f'>8-> <e b' e>-> <dis b' dis>4--->
   <a a'>8-. <c' e>-. <a, a'>-. <c' e>-. <e,, e'>8-.-> <fis fis'>-.-> <gis gis'>4--->
