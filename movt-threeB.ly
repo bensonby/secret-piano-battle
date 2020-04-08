@@ -195,7 +195,7 @@ main-secondo-lh = \relative c, {
   <a e' a>4-- <e b' e>--
   <a e' a>4-- <e' b' e>--
   <a e' a>4-- <e' b' e>--
-  <a e' a>8-- e-. e'-. \csr d'-.
+  <a e' a>8--[ e-.] e'-. \csr d'-.
   \csl <a,, e' a>4-. r <e a e'>-. r <a, e' a>-. r r2
 
   \bar "|."
