@@ -10,7 +10,7 @@ intro-primo-rh = \relative c' {
     <e' e'> e,
     <dis' dis'> dis,
     r2
-    <d' gis d'>16-- d,
+    <d'? gis d'?>16-- d,?
     <e' e'> e,
     <d' d'> d,
     <cis' cis'> cis,
@@ -18,7 +18,7 @@ intro-primo-rh = \relative c' {
 
   \cpr
   \makeOctaves 1 {
-    c8 d c b a c b a
+    c?8 d c b a c b a
   }
   \clef bass
   \autochange a, \relative c, {
@@ -41,7 +41,7 @@ intro-primo-rh = \relative c' {
 
 intro-primo-lh = \relative c, {
   r2 s2 r2 s2
-  \makeOctaves 1 { c8 d c b a c b a }
+  <c c'?>8 \makeOctaves 1 { d c b a c b a }
   s2 s4 <c c'>8 r
 }
 
@@ -56,16 +56,16 @@ intro-secondo-rh = \relative c {
   r2
   \autochange f' \relative c'' {
     <<
-      { <d gis d'>16-- s \makeOctaves 1 { e s d s cis s } }
-      { \makeOctaves -1 { s d, s e s d s cis } }
+      { <d? gis d'?>16-- s \makeOctaves 1 { e s d s cis s } }
+      { \makeOctaves -1 { s d,? s e s d s cis } }
     >>
   }
   \csr
   r2
   \autochange e' \relative c'' {
     <<
-      { <c e a c>16-- s \makeOctaves 1 { d s c s b s a s c s b s a s } }
-      { \makeOctaves -1 { s c, s d s c s b s a s c s b s a } }
+      { <c? e a c?>16-- s \makeOctaves 1 { d s c s b s a s c s b s a s } }
+      { \makeOctaves -1 { s c,? s d s c s b s a s c s b s a } }
     >>
   }
   \csr
