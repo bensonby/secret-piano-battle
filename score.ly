@@ -207,7 +207,12 @@ rhMark = \markup {
         \new Staff = "up" { \keepWithTag #'print \movt-three-secondo-rh }
         \new Dynamics = "secondo-dynamics" \movt-three-secondo-dynamics
         \new Staff = "down" { \keepWithTag #'print \movt-three-secondo-lh }
-        \new Dynamics = "secondo-single-staff-dynamics" \movt-three-secondo-single-staff-dynamics
+        \new Dynamics = "secondo-single-staff-dynamics" \with {
+          \override VerticalAxisGroup.staff-affinity = #UP
+          \override VerticalAxisGroup.nonstaff-relatedstaff-spacing = #'(
+            (padding . 1)
+          )
+        } { \movt-three-secondo-single-staff-dynamics }
       >>
     >>
     \layout {
@@ -232,8 +237,14 @@ rhMark = \markup {
       } <<
         \new Staff = "primo-rh" { \keepWithTag #'print \movt-three-primo-rh }
         \new Dynamics = "primo-dynamics" \movt-three-primo-dynamics
-        \new Staff = "primo-lh" { \keepWithTag #'print \movt-three-primo-lh }
-        \new Dynamics = "primo-single-staff-dynamics" \movt-three-primo-single-staff-dynamics
+        \new Staff = "primo-lh" \with {
+        } { \keepWithTag #'print \movt-three-primo-lh }
+        \new Dynamics = "primo-single-staff-dynamics" \with {
+          \override VerticalAxisGroup.staff-affinity = #UP
+          \override VerticalAxisGroup.nonstaff-relatedstaff-spacing = #'(
+            (padding . 1)
+          )
+        } { \movt-three-primo-single-staff-dynamics }
       >>
     >>
     \layout {
@@ -255,6 +266,12 @@ rhMark = \markup {
     \new StaffGroup <<
       \new PianoStaff \with {
         instrumentName = #"Piano I"
+        \override StaffGrouper.staff-staff-spacing = #'(
+          (basic-distance . 7)
+          (padding . 2))
+        \override StaffGrouper.staffgroup-staff-spacing = #'(
+          (basic-distance . 10)
+          (padding . 3))
       } <<
         \new Staff = "up" { \keepWithTag #'print \movt-threeB-primo-rh }
         \new Dynamics = "primo-dynamics" \movt-threeB-primo-dynamics
@@ -262,6 +279,9 @@ rhMark = \markup {
       >>
       \new PianoStaff \with {
         instrumentName = #"Piano II"
+        \override StaffGrouper.staff-staff-spacing = #'(
+          (basic-distance . 7)
+          (padding . 2))
       } <<
         \new Staff = "up" { \keepWithTag #'print \movt-threeB-secondo-rh }
         \new Dynamics = "secondo-dynamics" \movt-threeB-secondo-dynamics
