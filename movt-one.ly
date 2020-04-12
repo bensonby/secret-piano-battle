@@ -1,9 +1,10 @@
 ffBrillante = \markup \concat { \dynamic "ff" \italic \larger "  brillante" }
 fBrillante = \markup \concat { \dynamic "f" \italic \larger "  brillante" }
+pCustom = \markup \concat { \dynamic "p" }
 fLegatoELeggiero = \markup \concat { \dynamic "f" \italic \larger "  legato e leggiero" }
 sempreLegato = \markup \italic \larger "sempre legato"
-rall = \markup \bold \larger "Rall."
-aTempo = \markup \larger "a tempo"
+rall = \markup \italic \larger "rall."
+aTempo = \markup \italic \larger "a tempo"
 espressTxt = \markup \italic \larger "espress."
 cresc = \markup \italic \larger "cresc."
 
@@ -22,19 +23,16 @@ intro = \relative c''''' {
     << {
       \stemNeutral
       \ottava #1 ges8\glissando^"Black key glissando"
-      \ottava #0 \cl \parenthesize ges,,,,\noBeam
-      \cr \ottava #1 des''''4\glissando
+      \ottava #0 \hideNotes bes,,,,\noBeam \unHideNotes
+      \ottava #1 des'''4\glissando \ottava #0
       \cl
-      \ottava #0
       ges,,,,,,4\glissando
       \cr
       \stemNeutral
       \ottava #1 ges''''''8 \ottava #0
     } \\ {
-      s8 \cr bes,,8\glissando^"l.h."
-      \cl
-      \parenthesize
-      ges,,,8 s8
+      s8 bes,,8\glissando^"l.h."
+      \hideNotes ges,8\noBeam \unHideNotes s8 % an octave higher because of the 8va sign in the other voice
     } >>
   }
   \tag #'midi {
@@ -169,7 +167,7 @@ movt-one-lh = \relative c {
   \clef bass
   \time 2/4
   \key ges \major
-  r8 s8 s4 s2
+  s8 s8 s4 s2
   \transpose g ges { \theme-A-lh }
   \theme-B-lh
   \key g \major
@@ -183,7 +181,7 @@ movt-one-dynamics = {
   s2-\ffBrillante s2
 
   % theme A
-  s2-\fLegatoELeggiero s2\p s4 s4-\cresc s2
+  s2-\fLegatoELeggiero s2-\pCustom s4 s4-\cresc s2
   s2\f s2\p
 
   % theme B
