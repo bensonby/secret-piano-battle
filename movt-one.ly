@@ -137,7 +137,7 @@ theme-B-rh = \relative c' {
     \repeat unfold 6 { bes, bes' }
     <<
       { \repeat unfold 6 { b, b' } }
-      { s16^\rall s16*10 s16\fermata }
+      { \textScriptShiftB s16^\rall s16*10 s16\fermata }
       { \tag #'midi {
         s16\tempo 8 = 126
         s16*8 s16\tempo 8 = 90
@@ -180,7 +180,7 @@ theme-C-lh = \relative c {
 
 movt-one-rh = \relative c' {
   \clef treble
-  \override Score.MetronomeMark.padding = #9
+  \metronomePaddingA
   \tempo 8 = 176
   \time 2/4
   \key ges \major
@@ -194,7 +194,7 @@ movt-one-rh = \relative c' {
   \key g \major
   <<
     { \theme-A-rh }
-    { s2^\aTempo }
+    { \textScriptShiftB s2^\aTempo }
   >>
   \theme-C-rh
   \bar "|."
@@ -227,7 +227,7 @@ movt-one-dynamics = {
 
   % theme A
   s2\f s2\p s4 s4-\cresc s2
-  s2\f s2\mp
+  s2\f \dynamicShiftC s2\mp
 
   % theme C
   s2-\espressTxt s2 s2-\cresc

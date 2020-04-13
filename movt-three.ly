@@ -117,7 +117,7 @@ theme-arpeggios-lh = \relative c, {
 
 movt-three-primo-rh = \relative c {
   \clef treble
-  \override Score.MetronomeMark.padding = #9
+  \metronomePaddingA
   \tempo 4 = 150
   \key a \minor
   s1*8
@@ -181,7 +181,7 @@ movt-three-secondo-rh = \relative c {
   \clef treble
   \time 4/4
   \key a \minor
-  \override Score.MetronomeMark.padding = #7
+  \metronomePaddingC
   \tempo 4 = 150
   s1*8
   \time 5/4

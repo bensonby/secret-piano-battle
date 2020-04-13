@@ -179,7 +179,15 @@
     \new StaffGroup <<
       \new PianoStaff <<
         \new Staff = "rh" { \keepWithTag #'print \movt-two-rh }
-        \new Dynamics = "dynamics" \movt-two-dynamics
+        \new Dynamics = "dynamics" \with {
+          \override VerticalAxisGroup.staff-affinity = #UP
+          \override VerticalAxisGroup.nonstaff-relatedstaff-spacing = #'(
+            (padding . 1.5)
+          )
+          \override VerticalAxisGroup.nonstaff-unrelatedstaff-spacing = #'(
+            (padding . 1.5)
+          )
+        } { \movt-two-dynamics }
         \new Staff = "lh" {
           <<
             { \keepWithTag #'print \movt-two-lh }

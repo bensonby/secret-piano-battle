@@ -227,12 +227,12 @@ movt-threeB-secondo-lh = \relative c {
 movt-threeB-primo-dynamics = {
   s2 \dynamicShiftA s2\f s1 s1 s1
   s1-\agitato s1 s1 s1
-  s1\mf s1 s1 s1
+  \dynamicShiftC s1\mf s1 s1 s1
   s1\f s1 s1 s1
 
   s4 s2.\p s1-\cresc s1\f s1
   \textScriptShiftA
-  s1-\cresc s1 s1\ff s1
+  s1-\cresc s1 \dynamicShiftC s1\ff s1
 }
 movt-threeB-secondo-dynamics = {
   \dynamicShiftB s1\f s1 s1 s1
@@ -240,8 +240,8 @@ movt-threeB-secondo-dynamics = {
   s1 s1 s1 s1
   s1 s1 s1 s1
 
-  s1\mf s1 s1 s1
-  s1-\cresc s1 s1\ff s1
+  \dynamicShiftC s1\mf s1 s1 s1
+  s1-\cresc s1 \dynamicShiftC s1\ff s1
 }
 
 movt-threeB-dynamics-pedal = {

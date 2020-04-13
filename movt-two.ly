@@ -157,6 +157,7 @@ section-B-lh = \relative c {
 
 movt-two-rh = \relative c' {
   \clef treble
+  \metronomePaddingB
   \tempo 4 = 185
   \time 3/4
   \key cis \minor

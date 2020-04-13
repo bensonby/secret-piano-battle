@@ -14,5 +14,10 @@ lhMark = \markup {
 }
 ottava-one-short = \set Staff.ottavation = #"8"
 dynamicShiftA = \once \override DynamicText.X-offset = #-4
-dynamicShiftB = \once \override DynamicText.X-offset = #-1
+dynamicShiftB = \once \override DynamicText.X-offset = #-2
+dynamicShiftC = \once \override Dynamics.DynamicText.self-alignment-X = #-0.2 % for overlap on the left with barline
 textScriptShiftA = \once \override TextScript.X-offset = #-4
+textScriptShiftB = \once \override TextScript.extra-offset = #'(0 . 0.5)
+metronomePaddingA = \once \override Score.MetronomeMark.padding = #9
+metronomePaddingB = \once \override Score.MetronomeMark.padding = #4
+metronomePaddingC = \once \override Score.MetronomeMark.padding = #7
