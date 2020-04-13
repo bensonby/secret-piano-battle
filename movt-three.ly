@@ -62,7 +62,8 @@ theme-arpeggios-rh = \relative c' {
     <e, gis b d> <f' f'> <e, gis b d>
 
     \time 4/4
-    <e' gis b e>4\) \ottava #1 e'' \ottava #0 r2
+    <e' gis b e>4\) \ottava #1 \ottava-one-short
+    e'' \ottava #0 r2
   }
   \tag #'(print midi left-hand) {
     <e,,, e'>16\( <gis b>
@@ -116,6 +117,7 @@ theme-arpeggios-lh = \relative c, {
 
 movt-three-primo-rh = \relative c {
   \clef treble
+  \override Score.MetronomeMark.padding = #9
   \tempo 4 = 150
   \key a \minor
   s1*8
@@ -179,6 +181,7 @@ movt-three-secondo-rh = \relative c {
   \clef treble
   \time 4/4
   \key a \minor
+  \override Score.MetronomeMark.padding = #7
   \tempo 4 = 150
   s1*8
   \time 5/4

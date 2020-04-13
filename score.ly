@@ -1,19 +1,8 @@
 \version "2.20.0"
 \include "articulate.ly"
-#(set-global-staff-size 18)
+#(set-global-staff-size 17.5)
 
-cr = \change Staff = "up"
-cl = \change Staff = "down"
-cpr = \change Staff = "up"
-cpl = \change Staff = "down"
-csr = \change Staff = "up"
-csl = \change Staff = "down"
-son = \sustainOn
-soff = \sustainOff
-rhMark = \markup { 
-  \path #0.1 #'((moveto -1 0)(rlineto 0 -1.5)(rlineto 0.5 0))
-}
-
+\include "definitions.ly"
 \include "makeOctaves.ly"
 \include "movt-one.ly"
 \include "movt-two.ly"
@@ -162,7 +151,14 @@ rhMark = \markup {
     }
     \new StaffGroup <<
       \new PianoStaff <<
-        \new Staff = "up" { \keepWithTag #'print \movt-one-rh }
+        \new Staff = "up" \with {
+          \override VerticalAxisGroup.staff-staff-spacing = #'(
+            (basic-distance . 7)
+            (padding . 2)
+          )
+        } {
+          \keepWithTag #'print \movt-one-rh
+        }
         \new Dynamics = "dynamics" \movt-one-dynamics
         \new Staff = "down" {
           <<

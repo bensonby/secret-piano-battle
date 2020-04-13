@@ -27,8 +27,11 @@ intro-primo-rh = \relative c' {
   \cpr
   \tag #'print {
     << {
-      c4\glissando \clef treble \ottava #1 \stemDown e'''8 \ottava #0
+      c4\glissando \clef treble \ottava #1 \ottava-one-short \stemDown e'''8 \ottava #0
     } \\ {
+      % TODO: fix collision
+      % \set fingeringOrientations = #'(left)
+      % s4 <a,,\finger \lhMark>16 gis <a\finger \rhMark> b
       s4 \cpl \stemUp a,,16 gis \cpr \stemDown a b
     } >>
   }
@@ -140,7 +143,7 @@ main-secondo-rh = \relative c'' {
         b64 c d e f g a b c d e f g a b c d
       }}
       \stemUp
-      \ottava #1 e4-. \ottava #0
+      \ottava #1 \ottava-one-short e4-. \ottava #0
     }
   } \\ {
     r8 <c,,, e>
@@ -222,16 +225,17 @@ movt-threeB-secondo-lh = \relative c {
   \main-secondo-lh
 }
 movt-threeB-primo-dynamics = {
-  s2 s2\f s1 s1 s1
+  s2 \dynamicShiftA s2\f s1 s1 s1
   s1-\agitato s1 s1 s1
   s1\mf s1 s1 s1
   s1\f s1 s1 s1
 
   s4 s2.\p s1-\cresc s1\f s1
+  \textScriptShiftA
   s1-\cresc s1 s1\ff s1
 }
 movt-threeB-secondo-dynamics = {
-  s1\f s1 s1 s1
+  \dynamicShiftB s1\f s1 s1 s1
   s1-\agitato s1 s1 s1
   s1 s1 s1 s1
   s1 s1 s1 s1

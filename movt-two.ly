@@ -33,6 +33,7 @@ section-A-rh = \relative c'' {
   \acciaccatura cis8 d4-.
   \acciaccatura eis8 fis4-.\)
   \ottava #1
+  \ottava-one-short
   dis8\( e eis fis fisis gis
   \time 2/4
   cis8-.\)

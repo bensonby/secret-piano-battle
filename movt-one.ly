@@ -1,12 +1,25 @@
 ffBrillante = \markup \concat { \dynamic "ff" \italic \larger "  brillante" }
 fBrillante = \markup \concat { \dynamic "f" \italic \larger "  brillante" }
-pCustom = \markup \concat { \dynamic "p" }
+pCustom = \markup \concat { \dynamic "p" \italic \larger " " }
 fLegatoELeggiero = \markup \concat { \dynamic "f" \italic \larger "  legato e leggiero" }
 sempreLegato = \markup \italic \larger "sempre legato"
-rall = \markup \italic \larger "rall."
-aTempo = \markup \italic \larger "a tempo"
+rall = \markup \bold \larger "rall."
+aTempo = \markup \bold \larger "a tempo"
 espressTxt = \markup \italic \larger "espress."
 cresc = \markup \italic \larger "cresc."
+posScriptA = \once \override TextScript.extra-offset = #'( 0.9 . 0 )
+lh = \markup \italic \larger \center-align "l.h."
+glissandoA = \once \override Glissando.bound-details = #'(
+  (right
+    (attach-dir . -1)
+    (end-on-accidental . #t)
+    (padding . 0.8)
+  )
+  (left
+    (attach-dir . 1)
+    (padding . 0.8)
+  )
+)
 
 beamSettings = {
   \set subdivideBeams = ##t
@@ -21,20 +34,44 @@ rest-duration-one = {
 intro = \relative c''''' {
   \tag #'print {
     << {
+      \newSpacingSection
+      \override Score.SpacingSpanner.spacing-increment = #3.5
       \stemNeutral
-      \ottava #1 ges8\glissando^"Black key glissando"
+      \ottava #1
+      \ottava-one-short
+      \glissandoA
+      \override Score.FootnoteItem.annotation-line = ##f
+      \footnote "**" #'(0.5 . 1.5) \markup { "** Black-key glissando in bar 1 and 2" }
+      ges8\glissando
       \ottava #0 \hideNotes bes,,,,\noBeam \unHideNotes
-      \ottava #1 des'''4\glissando \ottava #0
+      \newSpacingSection
+      \override Score.SpacingSpanner.spacing-increment = #4.5
+      \glissandoA
+      \ottava #1
+      \ottava-one-short
+      des'''4\glissando \ottava #0
       \cl
+      \newSpacingSection
+      \override Score.SpacingSpanner.spacing-increment = #6.5
+      \glissandoA
       ges,,,,,,4\glissando
       \cr
       \stemNeutral
-      \ottava #1 ges''''''8 \ottava #0
+      \ottava #1
+      \ottava-one-short
+      ges''''''8 \ottava #0
     } \\ {
-      s8 bes,,8\glissando^"l.h."
+      s8
+      \newSpacingSection
+      \override Score.SpacingSpanner.spacing-increment = #3.5
+      \posScriptA
+      \glissandoA
+      bes,,8\glissando^\lh
       \hideNotes ges,8\noBeam \unHideNotes s8 % an octave higher because of the 8va sign in the other voice
     } >>
   }
+  \newSpacingSection
+  \revert Score.SpacingSpanner.spacing-increment
   \tag #'midi {
     \tuplet 20/16 {
       ges'''''128 ees des bes aes ges ees des
@@ -71,14 +108,14 @@ intro = \relative c''''' {
 }
 
 theme-A-rh = \relative c'''' {
-  \ottava #1
   \tuplet 3/2 8 {
     \ottava #1
+    \ottava-one-short
     g16 b d, g e g d g b, \ottava #0 d g, b
     \omit TupletNumber
     g b d, g e g d g b, d g, b
     d, d' a d a a' a, a' e a e e'
-    e, e' a, \ottava #1 e' a, a' a, a' d, a' d, d'
+    e, e' a, \ottava #1 \ottava-one-short e' a, a' a, a' d, a' d, d'
     g,16 b d, g e g d g b, \ottava #0 d g, b
     g b d, g e g d g b, d g, b
   }
@@ -96,7 +133,7 @@ theme-A-lh = \relative c' {
 
 theme-B-rh = \relative c' {
   \tuplet 3/2 8 {
-    ees16 ees' aes, ees' aes, aes' ees aes ees \ottava #1 ees' aes, aes'
+    ees16 ees' aes, ees' aes, aes' ees aes ees \ottava #1 \ottava-one-short ees' aes, aes'
     \repeat unfold 6 { bes, bes' }
     <<
       { \repeat unfold 6 { b, b' } }
@@ -123,7 +160,7 @@ theme-C-rh = \relative c' {
     d,, d' g, d' g, g' g, g' d g d d'
     c c, e b' b, e g a b d, e g~
     g b d, g e g d g b, d g, b
-    g b d, g e g d g b, d g, \showStaffSwitch b
+    g b d, g e g d g b, d g, \override VoiceFollower.style = #'dashed-line \showStaffSwitch b
   }
   % switch hands in notations for cross staff line
   \cl <g,, g'>8-. r q-> r
@@ -143,6 +180,7 @@ theme-C-lh = \relative c {
 
 movt-one-rh = \relative c' {
   \clef treble
+  \override Score.MetronomeMark.padding = #9
   \tempo 8 = 176
   \time 2/4
   \key ges \major
