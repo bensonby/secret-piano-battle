@@ -21,3 +21,7 @@ textScriptShiftB = \once \override TextScript.extra-offset = #'(0 . 0.5)
 metronomePaddingA = \once \override Score.MetronomeMark.padding = #9
 metronomePaddingB = \once \override Score.MetronomeMark.padding = #4
 metronomePaddingC = \once \override Score.MetronomeMark.padding = #7
+shpSlurA = \shape #'((0.2 . 0.5) (0 . 0.5) (0 . 0.5) (0 . 0.5)) PhrasingSlur
+shpSlurB = \shape #'((0 . 0) (0 . 0.5) (0 . 0.5) (0 . 0.5)) PhrasingSlur
+shpSlurC = \shape #'((0 . 0.2) (0 . 0.6) (0 . 0.3) (0 . 0.5)) PhrasingSlur
+shpSlurD = \shape #'((0 . 0.2) (0 . 1.9) (0 . 1.5) (0 . 0.0)) PhrasingSlur

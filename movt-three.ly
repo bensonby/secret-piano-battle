@@ -27,6 +27,7 @@ theme-arpeggios-rh = \relative c' {
   \tag #'midi { \tempo 4 = 100 }
   r16
   \tag #'midi { \tempo 4 = 150 }
+  \shpSlurC
   <d f>\( <f a> <a d>
   <d f> <f a> <a d> <d f>
   <f a> <d f> <a d> <f a>
@@ -35,6 +36,7 @@ theme-arpeggios-rh = \relative c' {
   \tag #'midi { \tempo 4 = 100 }
   r16
   \tag #'midi { \tempo 4 = 150 }
+  \shpSlurC
   <c, e>\( <e a> <a c>
   <c e> <e a> <a c> <c e>
   <e a> <c e> <a c> <e a>
@@ -55,15 +57,18 @@ theme-arpeggios-rh = \relative c' {
 
   \time 5/4 r4
   \tag #'(print midi both-hands) {
-    <e' gis e'>16\(
-    <e, gis b d> <f' f'> <e, gis b d> <e' e'>
-    <e, gis b d> <f' f'> <e, gis b d> <e' e'>
-    <e, gis b d> <f' f'> <e, gis b d> <e' e'>
-    <e, gis b d> <f' f'> <e, gis b d>
+    << {
+      <e' gis e'>16\([ s
+      \makeOctaves 1 { f] s e[ s f] s e[ s f] s e[ s f] s }
+      \time 4/4
+      \stemDown
+      <e gis b e>4\)
+    } \\ {
+      \repeat unfold 4 { s16 <e, gis b d>[ s q] }
+    } >>
 
-    \time 4/4
-    <e' gis b e>4\) \ottava #1 \ottava-one-short
-    e'' \ottava #0 r2
+    \ottava #1 \ottava-one-short
+    e''' \ottava #0 r2
   }
   \tag #'(print midi left-hand) {
     <e,,, e'>16\( <gis b>
@@ -74,6 +79,7 @@ theme-arpeggios-rh = \relative c' {
     <f f'> <gis b>
     <e e'>16 <gis b>
     <f f'> <gis b>
+    \time 4/4
     <e gis b e>4->\)
     e''4\sf-. r2
   }

@@ -9,9 +9,12 @@ rest-duration-two = {
 }
 
 section-A-rh = \relative c'' {
+  \shpSlurA
   gis4\(
   gis'8 a gis fis dis gis,\)
+  \shpSlurB
   fis'\( gis fis e cis gis\)
+  \shpSlurB
   e'\( fis e dis bis fis\)
   dis'\( e dis cis a e\)
   cis'\( dis cis a cis dis,\)
