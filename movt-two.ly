@@ -1,5 +1,7 @@
+movtTwoTempo = \tempo "Allegro" 4 = 185
+movtTwoTempoB = \tempo "Vivace" 4 = 140
 sfpAccelCresc = \markup \concat { \dynamic "sfp" \italic \larger "  accel. e cresc." }
-pAccelCresc = \markup \concat { \italic "subito " \dynamic "p" \italic \larger "  accel. e cresc." }
+pAccelCresc = \markup \concat { \italic "sub. " \dynamic "p" \italic \larger "  accel. e cresc." }
 conPedal = \markup \italic \larger "con pedal"
 
 rest-duration-two = {
@@ -161,7 +163,7 @@ section-B-lh = \relative c {
 movt-two-rh = \relative c' {
   \clef treble
   \metronomePaddingB
-  \tempo 4 = 185
+  \movtTwoTempo
   \time 3/4
   \key cis \minor
   \tag #'print { \partial 4 }
@@ -173,14 +175,15 @@ movt-two-rh = \relative c' {
 
 movt-two-lh = \relative c {
   \clef bass
-  \tempo 4 = 185
+  \movtTwoTempo
   \time 3/4
   \key cis \minor
   \tag #'print { \partial 4 }
   \tag #'midi { r2 }
   \section-A-lh
   \section-B-intro-lh
-  \tempo 4 = 140
+  \metronomePaddingB
+  \movtTwoTempoB
   \section-B-lh
   \bar "|."
 }
@@ -196,10 +199,11 @@ movt-two-dynamics = {
   s2.\p s2.
   s2.\< s2 s8 s8\!
   s2.\f
-  s2^\sfpAccelCresc s2*3
-  s2\mf s2*5
-  s8 s4.-\pAccelCresc s2
-  s2\f
+  \sfpAccelAndCrescSpanner
+  s2\startTextSpan s2 s2 s2
+  s2\stopTextSpan\mf s2*5
+  s8 \subPAccelAndCrescSpanner s4.-\startTextSpan s2
+  s2\stopTextSpan\f
 }
 
 movt-two-dynamics-pedal = {
