@@ -236,27 +236,67 @@ movt-one-dynamics = {
 }
 
 movt-one-dynamics-pedal = {
+  \set Staff.pedalSustainStyle = #'bracket
   % intro
   s2\son s4 s4\soff
 
   % theme A
   s2 s8\son s4.\soff
-  s8\son s8\soff s8..\son s32\soff
-  s8\son s8\soff s8..\son s32\soff
-  s2 s8\son s4.\soff
+  \tag #'midi {
+    s8\son s8\soff s8..\son s32\soff
+    s8\son s8\soff s8..\son s32\soff
+    s2 s8\son s4.\soff
+  }
+  \tag #'print {
+    s8\son s8\soff s4\son
+    s8\soff\son s8\soff s4\son
+    s2\soff s8\son s4.\soff
+  }
 
   % theme B
-  s4...\son s32\soff
-  s4...\son s32\soff
-  s4...\son s32\soff
+  \tag #'midi {
+    s4...\son s32\soff
+    s4...\son s32\soff
+    s4...\son s32\soff
+  }
+  \tag #'print {
+    s2\son s2\soff\son s2\soff\son
+  }
 
   % theme A
-  s2 s8\son s4.\soff
-  s8\son s8\soff s8..\son s32\soff
-  s8\son s8\soff s8..\son s32\soff
-  s2 s8\son s4.\soff
+  \tag #'midi {
+    s2
+  }
+  \tag #'print {
+    s2\soff
+  }
+  s8\son s4.\soff
+  \tag #'midi {
+    s8\son s8\soff s8..\son s32\soff
+    s8\son s8\soff s8..\son s32\soff
+    s2 s8\son s4.\soff
+  }
+  \tag #'print {
+    s8\son s8\soff s4\son
+    s8\soff\son s8\soff s4\son
+    s2\soff s8\son s4.\soff
+  }
 
   % theme C
-  \repeat unfold 6 { s8..\son s32\soff }
-  \repeat unfold 2 { s8\son s4.\soff }
+  \tag #'midi {
+    \repeat unfold 6 { s8..\son s32\soff }
+    \repeat unfold 2 { s8\son s4.\soff }
+  }
+  \tag #'print {
+    s4\son
+    s4\soff\son
+    s4\soff\son
+    s4\soff\son
+    s4\soff\son
+    s4\soff\son
+    s8\soff\son
+    s4.\soff
+    s8\son
+    s4.\soff
+  }
 }

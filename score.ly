@@ -167,7 +167,7 @@
         \new Staff = "down" {
           <<
             { \keepWithTag #'print \movt-one-lh }
-            { \movt-one-dynamics-pedal }
+            { \keepWithTag #'print \movt-one-dynamics-pedal }
           >>
         }
       >>
