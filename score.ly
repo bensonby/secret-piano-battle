@@ -15,6 +15,8 @@
     markup-system-spacing.basic-distance = #5      %-dist. from header/title to first system
     top-system-spacing.basic-distance = #12         %-dist. from top margin to system in pages with no titles
     last-bottom-spacing.basic-distance = #12        %-pads music from copyright block
+
+    footnote-separator-markup = ##f
 }
 
 \book {
