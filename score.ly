@@ -152,14 +152,18 @@
     \new StaffGroup <<
       \new PianoStaff <<
         \new Staff = "up" \with {
-          \override VerticalAxisGroup.staff-staff-spacing = #'(
-            (basic-distance . 7)
-            (padding . 2)
-          )
         } {
           \keepWithTag #'print \movt-one-rh
         }
-        \new Dynamics = "dynamics" \movt-one-dynamics
+        \new Dynamics = "dynamics" \with {
+          \override VerticalAxisGroup.staff-affinity = #UP
+          \override VerticalAxisGroup.nonstaff-relatedstaff-spacing = #'(
+            (padding . 0.8)
+          )
+          \override VerticalAxisGroup.nonstaff-unrelatedstaff-spacing = #'(
+            (padding . 0.8)
+          )
+        } { \movt-one-dynamics }
         \new Staff = "down" {
           <<
             { \keepWithTag #'print \movt-one-lh }
