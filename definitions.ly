@@ -13,6 +13,7 @@ lhMark = \markup {
   \path #0.1 #'((moveto 0 1)(rlineto -0.5 0)(rlineto 0 -1.5))
 }
 ottava-one-short = \set Staff.ottavation = #"8"
+ottavaShorterEndA = \once \override Score.OttavaBracket.shorten-pair = #'(0 . 0)
 dynamicShiftA = \once \override DynamicText.X-offset = #-4
 dynamicShiftB = \once \override DynamicText.X-offset = #-2
 dynamicShiftC = \once \override Dynamics.DynamicText.self-alignment-X = #-0.2 % for overlap on the left with barline

@@ -109,13 +109,14 @@ intro = \relative c''''' {
 
 theme-A-rh = \relative c'''' {
   \tuplet 3/2 8 {
+    \ottavaShorterEndA
     \ottava #1
     \ottava-one-short
     g16 b d, g e g d g b, \ottava #0 d g, b
     \omit TupletNumber
     g b d, g e g d g b, d g, b
     d, d' a d a a' a, a' e a e e'
-    e, e' a, \ottava #1 \ottava-one-short e' a, a' a, a' d, a' d, d'
+    e, e' a, \ottavaShorterEndA \ottava #1 \ottava-one-short e' a, a' a, a' d, a' d, d'
     g,16 b d, g e g d g b, \ottava #0 d g, b
     g b d, g e g d g b, d g, b
   }
@@ -133,7 +134,7 @@ theme-A-lh = \relative c' {
 
 theme-B-rh = \relative c' {
   \tuplet 3/2 8 {
-    ees16 ees' aes, ees' aes, aes' ees aes ees \ottava #1 \ottava-one-short ees' aes, aes'
+    ees16 ees' aes, ees' aes, aes' ees aes ees \ottavaShorterEndA \ottava #1 \ottava-one-short ees' aes, aes'
     \repeat unfold 6 { bes, bes' }
     <<
       { \repeat unfold 6 { b, b' } }
