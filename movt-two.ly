@@ -1,7 +1,5 @@
 movtTwoTempo = \tempo "Allegro" 4 = 185
 movtTwoTempoB = \tempo "Vivace" 4 = 140
-sfpAccelCresc = \markup \concat { \dynamic "sfp" \italic \larger "  accel. e cresc." }
-pAccelCresc = \markup \concat { \italic "sub. " \dynamic "p" \italic \larger "  accel. e cresc." }
 conPedal = \markup \italic \larger "con pedal"
 
 rest-duration-two = {

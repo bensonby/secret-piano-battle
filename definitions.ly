@@ -23,7 +23,7 @@ metronomePaddingA = \once \override Score.MetronomeMark.padding = #9
 metronomePaddingB = \once \override Score.MetronomeMark.padding = #4
 metronomePaddingC = \once \override Score.MetronomeMark.padding = #7
 sfpAccelAndCrescSpanner = {
-  \override TextSpanner #'(bound-details left text) = \markup \concat { \dynamic "sfp" \italic \larger "  accel. e cresc." }
+  \override TextSpanner #'(bound-details left text) = \markup \whiteout { \concat { \dynamic "sfp" \italic \larger "  accel. e cresc." } }
   \override TextSpanner #'(bound-details left-broken text) = ##f
   \override TextSpanner #'(bound-details left stencil-align-dir-y) = #CENTER
   % \override TextSpanner.dash-fraction = #0.04
@@ -36,7 +36,7 @@ sfpAccelAndCrescSpanner = {
   \override TextSpanner #'(bound-details right-broken padding) = #0.5
 }
 subPAccelAndCrescSpanner = {
-  \override TextSpanner #'(bound-details left text) = \markup \concat { \italic "sub. " \dynamic "p" \italic \larger "  accel. e cresc." }
+  \override TextSpanner #'(bound-details left text) = \markup \whiteout { \concat { \italic "sub. " \dynamic "p" \italic \larger "  accel. e cresc." } }
   \override TextSpanner #'(bound-details left-broken text) = ##f
   \override TextSpanner #'(bound-details left stencil-align-dir-y) = #CENTER
   % \override TextSpanner.dash-fraction = #0.04
