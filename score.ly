@@ -183,7 +183,12 @@
       piece = "II"
     }
     \new StaffGroup <<
-      \new PianoStaff <<
+      \new PianoStaff \with {
+        \override StaffGrouper.staff-staff-spacing = #'(
+          (basic-distance . 10)
+          (padding . 5)
+        )
+      } <<
         \new Staff = "rh" { \keepWithTag #'print \movt-two-rh }
         \new Dynamics = "dynamics" \with {
           \override VerticalAxisGroup.staff-affinity = #UP

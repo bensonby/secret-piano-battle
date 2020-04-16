@@ -17,6 +17,8 @@ ottavaShorterEndA = \once \override Score.OttavaBracket.shorten-pair = #'(0 . 0)
 dynamicShiftA = \once \override DynamicText.X-offset = #-4
 dynamicShiftB = \once \override DynamicText.X-offset = #-2
 dynamicShiftC = \once \override Dynamics.DynamicText.self-alignment-X = #-0.2 % for overlap on the left with barline
+dynamicShiftD = \once \override DynamicText.Y-offset = #-0.8
+dynamicShiftE = \once \override DynamicText.Y-offset = #-7
 textScriptShiftA = \once \override TextScript.X-offset = #-4
 textScriptShiftB = \once \override TextScript.extra-offset = #'(0 . 0.5)
 metronomePaddingA = \once \override Score.MetronomeMark.padding = #9
@@ -31,7 +33,8 @@ sfpAccelAndCrescSpanner = {
   \override TextSpanner.thickness = 1.1
   \override TextSpanner.avoid-slur = #'inside
   \override TextSpanner.outside-staff-priority = ##f
-  \override TextSpanner.staff-padding = 3.0
+  \override TextSpanner.staff-padding = #3.0
+  \override TextSpanner.Y-offset = #-0.3
   \override TextSpanner #'(bound-details right padding) = #4.0
   \override TextSpanner #'(bound-details right-broken padding) = #0.5
 }
