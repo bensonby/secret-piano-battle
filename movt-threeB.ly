@@ -94,17 +94,24 @@ main-primo-rh = \relative c''' {
 
   \repeat unfold 4 { a-> e c e b'-> gis e gis }
 
-  \autochange c'' \relative c''' {
-    \repeat unfold 8 {
-      <<
-        { <c e a>16 s <b e gis> s }
-        { s <b, d e gis> s q }
-      >>
+  <<
+    {
+      \repeat unfold 8 {
+        <c, e a>16[ s <b e gis>] s
+      }
+      \stemDown
+      <c e a>4-.
+    } \\ {
+      \repeat unfold 8 {
+        s16 <b, d e gis>[ s q]
+      }
+      \voiceFollowerB
+      \showStaffSwitch
+      \cpl \hideNotes a'4 \unHideNotes \cpr
     }
-  }
+  >>
 
-  \cpr
-  <c, e a>4-. r <e, gis b e>-. r <a c e a>-. r r2
+  r4 <e gis b e>-. r <a c e a>-. r r2
 
    \bar "|."
 }
@@ -228,7 +235,6 @@ movt-threeB-primo-dynamics = {
   s1\f s1 s1 s1
 
   s4 s2.\p s1-\cresc s1\f s1
-  \textScriptShiftA
   s1-\cresc s1 \dynamicShiftC s1\ff s1
 }
 movt-threeB-secondo-dynamics = {

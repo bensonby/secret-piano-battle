@@ -24,7 +24,6 @@ dynamicShiftB = \once \override DynamicText.X-offset = #-2
 dynamicShiftC = \once \override Dynamics.DynamicText.self-alignment-X = #-0.2 % for overlap on the left with barline
 dynamicShiftD = \once \override DynamicText.Y-offset = #-0.8
 dynamicShiftE = \once \override DynamicText.Y-offset = #-7
-textScriptShiftA = \once \override TextScript.X-offset = #-4
 textScriptShiftB = \once \override TextScript.extra-offset = #'(0 . 0.5)
 textScriptShiftC = \once \override TextScript.extra-offset = #'(0 . -0.5)
 metronomePaddingA = \once \override Score.MetronomeMark.padding = #9
@@ -72,6 +71,23 @@ voiceFollowerA = {
       (attach-dir . 1)
       (padding . 3.8)
       (Y . -9.5)
+    )
+  )
+}
+voiceFollowerB = {
+  \override VoiceFollower.style = #'dashed-line
+  \override VoiceFollower.Y-extent = #'(-3 . 3)
+  \override VoiceFollower.bound-details = #'(
+    (right
+      (attach-dir . -1)
+      (end-on-accidental . #t)
+      (padding . 2.8)
+      (Y . 2.5)
+    )
+    (left
+      (attach-dir . 1)
+      (padding . 0.5)
+      (Y . 9.5)
     )
   )
 }
