@@ -1,6 +1,3 @@
-agitato = \markup \italic \larger "agitato"
-cresc = \markup \italic \larger "cresc."
-
 intro-primo-rh = \relative c' {
   r2
   % autochange with specified point not supported in 2.18.2
@@ -29,10 +26,10 @@ intro-primo-rh = \relative c' {
     << {
       c4\glissando \clef treble \ottava #1 \ottava-one-short \stemDown e'''8 \ottava #0
     } \\ {
-      % TODO: fix collision
-      % \set fingeringOrientations = #'(left)
-      % s4 <a,,\finger \lhMark>16 gis <a\finger \rhMark> b
-      s4 \cpl \stemUp a,,16 gis \cpr \stemDown a b
+      s4 \cpl \stemUp a,,16[ gis]
+      \voiceFollowerA
+      \showStaffSwitch
+      \cpr \stemDown a[ b]
     } >>
   }
   \tag #'midi {
@@ -226,7 +223,7 @@ movt-threeB-secondo-lh = \relative c {
 }
 movt-threeB-primo-dynamics = {
   s2 \dynamicShiftA s2\f s1 s1 s1
-  s1-\agitato s1 s1 s1
+  s1-\agitatoWhiteOut s1 s1 s1
   \dynamicShiftC s1\mf s1 s1 s1
   s1\f s1 s1 s1
 

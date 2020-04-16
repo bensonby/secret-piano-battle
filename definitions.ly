@@ -14,6 +14,9 @@ lhMark = \markup {
 }
 conPedal = \markup \italic \larger "con pedal"
 sim = \markup \italic \larger "sim."
+agitato = \markup \italic \larger "agitato"
+agitatoWhiteOut = \markup \whiteout { \italic \larger "agitato" }
+cresc = \markup \italic \larger "cresc."
 ottava-one-short = \set Staff.ottavation = #"8"
 ottavaShorterEndA = \once \override Score.OttavaBracket.shorten-pair = #'(0 . 0)
 dynamicShiftA = \once \override DynamicText.X-offset = #-4
@@ -54,6 +57,23 @@ subPAccelAndCrescSpanner = {
   \override TextSpanner.staff-padding = 3.0
   \override TextSpanner #'(bound-details right padding) = #4.0
   \override TextSpanner #'(bound-details right-broken padding) = #0.5
+}
+voiceFollowerA = {
+  \override VoiceFollower.style = #'dashed-line
+  \override VoiceFollower.Y-extent = #'(-3 . 3)
+  \override VoiceFollower.bound-details = #'(
+    (right
+      (attach-dir . -1)
+      (end-on-accidental . #t)
+      (padding . 3.8)
+      (Y . 4)
+    )
+    (left
+      (attach-dir . 1)
+      (padding . 3.8)
+      (Y . -9.5)
+    )
+  )
 }
 shpSlurA = \shape #'((0.2 . 0.5) (0 . 0.5) (0 . 0.5) (0 . 0.5)) PhrasingSlur
 shpSlurB = \shape #'((0 . 0) (0 . 0.5) (0 . 0.5) (0 . 0.5)) PhrasingSlur
