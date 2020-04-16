@@ -13,7 +13,7 @@ rest-duration-three = {
 }
 
 theme-running-notes-rh = \relative c {
-  \repeat unfold 31 {e16 f} e dis
+  << { \repeat unfold 31 {e16 f} } { s16\( s16*14 s16\) s16^\sim } >> e dis
   \repeat unfold 2 {e f fis g gis a b a gis f d gis g e cis g'}
   \repeat unfold 2 {a ais b c cis d e d cis bes g cis c a fis c'}
 }
@@ -139,7 +139,7 @@ movt-three-primo-lh = \relative c' {
   \key a \minor
   << 
     { \theme-running-notes-rh }
-    { s1^\legato^\leftHandOnly } \\ {
+    { s1^\leftHandOnly } \\ {
       \theme-running-notes-lh
     }
   >>
@@ -154,14 +154,14 @@ movt-three-primo-lh = \relative c' {
 movt-three-primo-single-staff-dynamics = {
   << 
     { \repeat unfold 8 { s4 s8.\< s16\! s8.\> s16\! s4 } }
-    { s1\p s1*3 s1\mp s1 s1\mf s1 }
+    { s1\p s1*3 \dynamicShiftC s1\mp s1 s1\mf s1 }
   >>
 }
 
 movt-three-secondo-single-staff-dynamics = {
   << 
     { \repeat unfold 8 { s4 s8.\< s16\! s8.\> s16\! s4 } }
-    { s1\p s1*3 s1\mp s1 s1\mf s1 }
+    { s1\p s1*3 \dynamicShiftC s1\mp s1 s1\mf s1 }
   >>
 }
 
@@ -187,7 +187,7 @@ movt-three-secondo-rh = \relative c {
   \clef treble
   \time 4/4
   \key a \minor
-  \metronomePaddingC
+  \metronomePaddingD
   \tempo 4 = 150
   s1*8
   \time 5/4
@@ -204,9 +204,8 @@ movt-three-secondo-lh = \relative c {
   \key a \minor
   << 
     { \theme-running-notes-rh }
-    { s1^\legato } \\ {
-      \theme-running-notes-lh
-    }
+    \\
+    { \theme-running-notes-lh }
   >>
 
   <<

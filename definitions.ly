@@ -13,6 +13,7 @@ lhMark = \markup {
   \path #0.1 #'((moveto 0 1)(rlineto -0.5 0)(rlineto 0 -1.5))
 }
 conPedal = \markup \italic \larger "con pedal"
+sim = \markup \italic \larger "sim."
 ottava-one-short = \set Staff.ottavation = #"8"
 ottavaShorterEndA = \once \override Score.OttavaBracket.shorten-pair = #'(0 . 0)
 dynamicShiftA = \once \override DynamicText.X-offset = #-4
@@ -26,6 +27,7 @@ textScriptShiftC = \once \override TextScript.extra-offset = #'(0 . -0.5)
 metronomePaddingA = \once \override Score.MetronomeMark.padding = #9
 metronomePaddingB = \once \override Score.MetronomeMark.padding = #4
 metronomePaddingC = \once \override Score.MetronomeMark.padding = #7
+metronomePaddingD = \once \override Score.MetronomeMark.padding = #2
 sfpAccelAndCrescSpanner = {
   \override TextSpanner #'(bound-details left text) = \markup \whiteout { \concat { \dynamic "sfp" \italic \larger "  accel. e cresc." } }
   \override TextSpanner #'(bound-details left-broken text) = ##f

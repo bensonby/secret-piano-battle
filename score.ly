@@ -220,28 +220,25 @@
         instrumentName = #"Piano II"
       } <<
         \new Staff = "up" { \keepWithTag #'print \movt-three-secondo-rh }
-        \new Dynamics = "secondo-dynamics" \movt-three-secondo-dynamics
-        \new Staff = "down" { \keepWithTag #'print \movt-three-secondo-lh }
-        \new Dynamics = "secondo-single-staff-dynamics" \with {
+        \new Dynamics = "secondo-dynamics" \with {
           \override VerticalAxisGroup.staff-affinity = #UP
           \override VerticalAxisGroup.nonstaff-relatedstaff-spacing = #'(
-            (padding . 1)
+            (padding . 1.0)
           )
-        } { \movt-three-secondo-single-staff-dynamics }
+          \override VerticalAxisGroup.nonstaff-unrelatedstaff-spacing = #'(
+            (padding . 1.0)
+          )
+        } { <<
+          { \movt-three-secondo-single-staff-dynamics }
+          { \movt-three-secondo-dynamics }
+        >> }
+        \new Staff = "down" { \keepWithTag #'print \movt-three-secondo-lh }
       >>
     >>
     \layout {
       \context {
-        \Staff \RemoveEmptyStaves
-      }
-      \context {
         \PianoStaff
         \accepts Dynamics
-        \remove "Keep_alive_together_engraver"
-      }
-      \context {
-        \Score
-        \override VerticalAxisGroup #'remove-first = ##t
       }
     }
   }
