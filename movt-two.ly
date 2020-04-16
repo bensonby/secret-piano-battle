@@ -1,6 +1,5 @@
 movtTwoTempo = \tempo "Allegro" 4 = 185
 movtTwoTempoB = \tempo "Vivace" 4 = 140
-conPedal = \markup \italic \larger "con pedal"
 
 rest-duration-two = {
   % midi duration, partial treated as full bar
@@ -210,6 +209,7 @@ movt-two-dynamics-pedal = {
   % section A
   \tag #'print {
     s4 % partial 4
+    \textScriptShiftC
     s2-\conPedal
   }
   \tag #'midi {
