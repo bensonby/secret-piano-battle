@@ -13,11 +13,11 @@ glissandoA = \once \override Glissando.bound-details = #'(
   (right
     (attach-dir . -1)
     (end-on-accidental . #t)
-    (padding . 0.8)
+    (padding . 1.2)
   )
   (left
     (attach-dir . 1)
-    (padding . 0.8)
+    (padding . 1.2)
   )
 )
 
