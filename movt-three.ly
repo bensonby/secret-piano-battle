@@ -169,7 +169,7 @@ movt-three-primo-dynamics = {
   s1*8
   s16\f s8.\< s8. s16\! s4\> s2\!
   s16 s8.\< s8. s16\! s4\> s2\!
-  s4\fp s4\< s4.. s16\!
+  s4-\fpCresc s2.
   s1\f s4
   s4 s4 s2
 }
@@ -178,7 +178,7 @@ movt-three-secondo-dynamics = {
   s1*8
   s16\f s8.\< s8. s16\! s4\> s2\!
   s16 s8.\< s8. s16\! s4\> s2\!
-  s4\fp s4\< s4.. s16\!
+  s4-\fpCresc s2.
   s1\f s4
   s4 s4\sfz s2
 }

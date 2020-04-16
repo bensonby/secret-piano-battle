@@ -17,6 +17,7 @@ sim = \markup \italic \larger "sim."
 agitato = \markup \italic \larger "agitato"
 agitatoWhiteOut = \markup \whiteout { \italic \larger "agitato" }
 cresc = \markup \italic \larger "cresc."
+fpCresc = \markup \concat { \dynamic "fp" \italic \larger "  cresc." }
 ottava-one-short = \set Staff.ottavation = #"8"
 ottavaShorterEndA = \once \override Score.OttavaBracket.shorten-pair = #'(0 . 0)
 dynamicShiftA = \once \override DynamicText.X-offset = #-4
