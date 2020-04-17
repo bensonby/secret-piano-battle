@@ -128,7 +128,7 @@ main-primo-lh = \relative c'' {
 
   \repeat unfold 4 {a-> e c e b'-> gis e gis}
   s1 s1
-  <c, e a>4-. r <e, a e'>-. r <a c e a>4-. r r2
+  <c, e a>4-. r <e, a>-. r <a c e>4-. r r2
 }
 
 main-secondo-rh = \relative c'' {
