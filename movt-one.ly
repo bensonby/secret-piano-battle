@@ -182,7 +182,7 @@ theme-C-lh = \relative c {
 movt-one-rh = \relative c' {
   \clef treble
   \metronomePaddingA
-  \tempo "Vivace, brillante"
+  \tempo "Vivace"
   \tag #'midi { \tempo 8 = 176 }
   \time 2/4
   \key ges \major
