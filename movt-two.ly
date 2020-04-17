@@ -179,9 +179,11 @@ movt-two-lh = \relative c {
   \tag #'print { \partial 4 }
   \tag #'midi { r2 }
   \section-A-lh
+  \tag #'print {
+    \metronomePaddingC
+    \movtTwoTempoB
+  }
   \section-B-intro-lh
-  \metronomePaddingB
-  \movtTwoTempoB
   \section-B-lh
   \bar "|."
 }
@@ -197,10 +199,10 @@ movt-two-dynamics = {
   s2.\p s2.
   s2.\< s2 s8 s8\!
   s2.\f
-  \sfpAccelAndCrescSpanner
-  s2\startTextSpan s2 s2 s2
+  \textScriptShiftA
+  s2-\beginSlowlyThenAccel s2 s2 s2
   \dynamicShiftD
-  s2\stopTextSpan\mf s2*5
+  s2\mf s2*5
   s8 \subPAccelAndCrescSpanner s4.-\startTextSpan s2
   \dynamicShiftE
   s2\stopTextSpan\f
