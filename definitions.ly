@@ -20,6 +20,13 @@ cresc = \markup \italic \larger "cresc."
 fpCresc = \markup \concat { \dynamic "fp" \italic \larger "  cresc." }
 ottava-one-short = \set Staff.ottavation = #"8"
 ottavaShorterEndA = \once \override Score.OttavaBracket.shorten-pair = #'(0 . 0)
+attaca = {
+  \once \override Score.RehearsalMark.break-visibility = #end-of-line-visible
+  \once \override Score.RehearsalMark.self-alignment-X = #RIGHT
+  \once \override Score.RehearsalMark.side-axis = #1 % below
+  \once \override Score.RehearsalMark.direction = #-1 % below
+  \mark \markup \italic \smaller "attacca"
+}
 dynamicShiftA = \once \override DynamicText.X-offset = #-4
 dynamicShiftB = \once \override DynamicText.X-offset = #-2
 dynamicShiftC = \once \override Dynamics.DynamicText.self-alignment-X = #-0.2 % for overlap on the left with barline

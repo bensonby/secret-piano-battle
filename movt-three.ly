@@ -123,18 +123,16 @@ theme-arpeggios-lh = \relative c, {
 
 movt-three-primo-rh = \relative c {
   \clef treble
-  \metronomePaddingA
-  \tempo 4 = 150
+  \tag #'midi { \tempo 4 = 150 }
   \key a \minor
   s1*8
   \time 5/4
   \keepWithTag #'left-hand \theme-arpeggios-rh
-  % \bar "|."
+  \bar "||"
 }
 
 movt-three-primo-lh = \relative c' {
   \clef bass
-  \tempo 4 = 150
   \time 4/4
   \key a \minor
   << 
@@ -148,7 +146,8 @@ movt-three-primo-lh = \relative c' {
     { \keepWithTag #'left-hand \theme-arpeggios-lh }
     { s1^\stillLeftHandOnly }
   >>
-  % \bar "|."
+  \attaca
+  \bar "||"
 }
 
 movt-three-primo-single-staff-dynamics = {
@@ -195,7 +194,7 @@ movt-three-secondo-rh = \relative c {
     { \keepWithTag #'both-hands \theme-arpeggios-rh }
     { s2. s2 s2. s2 s1 s2. s2 s1 \break }
   >>
-  % \bar "|."
+  \bar "||"
 }
 
 movt-three-secondo-lh = \relative c {
@@ -212,7 +211,8 @@ movt-three-secondo-lh = \relative c {
     { \keepWithTag #'both-hands \theme-arpeggios-lh }
     { s1 }
   >>
-  % \bar "|."
+  \attaca
+  \bar "||"
 }
 
 movt-three-dynamics-pedal = {
