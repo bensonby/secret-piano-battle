@@ -160,7 +160,7 @@ movt-three-primo-single-staff-dynamics = {
 movt-three-secondo-single-staff-dynamics = {
   << 
     { \repeat unfold 8 { s4 s8.\< s16\! s8.\> s16\! s4 } }
-    { s1\p s1*3 \dynamicShiftC s1\mp s1 s1\mf s1 }
+    { s1\p s1*3 \dynamicShiftF s1\mp s1 s1\mf s1 }
   >>
 }
 
