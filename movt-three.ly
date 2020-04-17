@@ -187,7 +187,7 @@ movt-three-secondo-rh = \relative c {
   \time 4/4
   \key a \minor
   \metronomePaddingD
-  \tempo "Allegro misterioso" 4 = 150
+  \tempo "Animato" 4 = 150
   s1*8
   \time 5/4
   <<
