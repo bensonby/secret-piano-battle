@@ -16,12 +16,15 @@
     top-system-spacing.basic-distance = #12         %-dist. from top margin to system in pages with no titles
     last-bottom-spacing.basic-distance = #12        %-pads music from copyright block
 
+    print-all-headers = ##t
     footnote-separator-markup = ##f
 }
 
 \book {
   \header {
-    title = "Piano Battle from 'Secret'"
+    title = "Piano Battle Scene"
+    subtitle = "From the movie 'Secret'"
+    instrument = "For two pianos"
     arranger = "Transcribed by Benson"
     copyright = "https://music.bensonby.me"
     tagline = "https://music.bensonby.me"
@@ -149,7 +152,10 @@
 
   \score {
     \header {
-      piece = "I"
+      title = "I"
+      subtitle = ##f
+      instrument = ##f
+      arranger = ##f
     }
     \new StaffGroup <<
       \new PianoStaff <<
@@ -180,7 +186,10 @@
   \pageBreak
   \score {
     \header {
-      piece = "II"
+      title = "II"
+      subtitle = ##f
+      instrument = ##f
+      arranger = ##f
     }
     \new StaffGroup <<
       \new PianoStaff \with {
@@ -213,7 +222,10 @@
   \pageBreak
   \score {
     \header {
-      piece = "III"
+      title = "III"
+      subtitle = ##f
+      instrument = ##f
+      arranger = ##f
     }
     \new StaffGroup <<
       \new PianoStaff \with {
@@ -243,6 +255,12 @@
     }
   }
   \score {
+    \header {
+      title = ##f
+      subtitle = ##f
+      instrument = ##f
+      arranger = ##f
+    }
     \new StaffGroup <<
       \new PianoStaff \with {
         instrumentName = #"Piano I"
@@ -275,6 +293,12 @@
     }
   }
   \score {
+    \header {
+      title = ##f
+      subtitle = ##f
+      instrument = ##f
+      arranger = ##f
+    }
     \new StaffGroup <<
       \new PianoStaff \with {
         instrumentName = #"Piano I"
