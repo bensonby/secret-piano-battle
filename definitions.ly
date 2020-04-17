@@ -26,10 +26,20 @@ attaca = {
   \mark \markup \italic \smaller "attacca"
 }
 instructionI = {
-  % \once \override Score.RehearsalMark.break-visibility = #end-of-line-visible
   \once \override Score.RehearsalMark.self-alignment-X = #LEFT
-  \once \override Score.RehearsalMark.font-size = #0.8
-  \mark \markup \box \wordwrap { \smaller "First played by Piano II starting at bar 3; then by Piano I including the Black-key glissando in the first two bars." }
+  \once \override Score.RehearsalMark.font-size = #0.4
+  \once \override Score.RehearsalMark.X-offset = #0
+  \mark \markup \box \pad-around #1 {
+    \smaller "First played by Piano II starting at bar 3; then by Piano I from the beginning including the black-key glissandos."
+  }
+}
+instructionII = {
+  \once \override Score.RehearsalMark.self-alignment-X = #LEFT
+  \once \override Score.RehearsalMark.font-size = #0.4
+  \once \override Score.RehearsalMark.X-offset = #0
+  \mark \markup \box \pad-around #1 {
+    \smaller "First played by Piano II; then by Piano I from bar 16 (no high C#) till the end, then from bar 1 to bar 16's first note."
+  }
 }
 dynamicShiftA = \once \override DynamicText.X-offset = #-4
 dynamicShiftB = \once \override DynamicText.X-offset = #-2

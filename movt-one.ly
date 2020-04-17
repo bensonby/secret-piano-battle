@@ -41,8 +41,6 @@ intro = \relative c''''' {
       \ottava-one-short
       \instructionI
       \glissandoA
-      \override Score.FootnoteItem.annotation-line = ##f
-      \footnote "**" #'(0.5 . 1.5) \markup { "** Black-key glissando in bar 1 and 2. Piano II needs not play these two bars." }
       ges8\glissando
       \ottava #0 \hideNotes bes,,,,\noBeam \unHideNotes
       \newSpacingSection

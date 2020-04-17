@@ -163,6 +163,7 @@ movt-two-rh = \relative c' {
   \movtTwoTempo
   \time 3/4
   \key cis \minor
+  \instructionII
   \tag #'print { \partial 4 }
   \tag #'midi { r2 }
   \section-A-rh
