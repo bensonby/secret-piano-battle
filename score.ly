@@ -24,7 +24,7 @@
   \header {
     title = "Piano Battle Scene"
     subtitle = "From \"Secret\""
-    arranger = "Transcribed by Benson"
+    arranger = "Transcribed by Benson Yeung"
     copyright = "https://music.bensonby.me"
     tagline = "https://music.bensonby.me"
   }
