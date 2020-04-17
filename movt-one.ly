@@ -39,9 +39,10 @@ intro = \relative c''''' {
       \stemNeutral
       \ottava #1
       \ottava-one-short
+      \instructionI
       \glissandoA
       \override Score.FootnoteItem.annotation-line = ##f
-      \footnote "**" #'(0.5 . 1.5) \markup { "** Black-key glissando in bar 1 and 2" }
+      \footnote "**" #'(0.5 . 1.5) \markup { "** Black-key glissando in bar 1 and 2. Piano II needs not play these two bars." }
       ges8\glissando
       \ottava #0 \hideNotes bes,,,,\noBeam \unHideNotes
       \newSpacingSection
@@ -182,7 +183,7 @@ theme-C-lh = \relative c {
 movt-one-rh = \relative c' {
   \clef treble
   \metronomePaddingA
-  \tempo "Vivace"
+  \tempo "Vivace" 8 = 176
   \tag #'midi { \tempo 8 = 176 }
   \time 2/4
   \key ges \major

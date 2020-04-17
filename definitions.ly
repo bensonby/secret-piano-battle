@@ -14,8 +14,6 @@ lhMark = \markup {
 }
 conPedal = \markup \italic \larger "con pedal"
 sim = \markup \italic \larger "sim."
-agitato = \markup \italic \larger "agitato"
-agitatoWhiteOut = \markup \whiteout { \italic \larger "agitato" }
 cresc = \markup \italic \larger "cresc."
 fpCresc = \markup \concat { \dynamic "fp" \italic \larger "  cresc." }
 ottava-one-short = \set Staff.ottavation = #"8"
@@ -27,6 +25,12 @@ attaca = {
   \once \override Score.RehearsalMark.direction = #-1 % below
   \mark \markup \italic \smaller "attacca"
 }
+instructionI = {
+  % \once \override Score.RehearsalMark.break-visibility = #end-of-line-visible
+  \once \override Score.RehearsalMark.self-alignment-X = #LEFT
+  \once \override Score.RehearsalMark.font-size = #0.8
+  \mark \markup \box \wordwrap { \smaller "First played by Piano II starting at bar 3; then by Piano I including the Black-key glissando in the first two bars." }
+}
 dynamicShiftA = \once \override DynamicText.X-offset = #-4
 dynamicShiftB = \once \override DynamicText.X-offset = #-2
 dynamicShiftC = \once \override Dynamics.DynamicText.self-alignment-X = #-0.2 % for overlap on the left with barline
@@ -34,7 +38,7 @@ dynamicShiftD = \once \override DynamicText.Y-offset = #-0.8
 dynamicShiftE = \once \override DynamicText.Y-offset = #-7
 textScriptShiftB = \once \override TextScript.extra-offset = #'(0 . 0.5)
 textScriptShiftC = \once \override TextScript.extra-offset = #'(0 . -0.5)
-metronomePaddingA = \once \override Score.MetronomeMark.padding = #9
+metronomePaddingA = \once \override Score.MetronomeMark.padding = #8
 metronomePaddingB = \once \override Score.MetronomeMark.padding = #4
 metronomePaddingC = \once \override Score.MetronomeMark.padding = #7
 metronomePaddingD = \once \override Score.MetronomeMark.padding = #2

@@ -23,8 +23,7 @@
 \book {
   \header {
     title = "Piano Battle Scene"
-    subtitle = "From the movie 'Secret'"
-    instrument = "For two pianos"
+    subtitle = "From \"Secret\""
     arranger = "Transcribed by Benson"
     copyright = "https://music.bensonby.me"
     tagline = "https://music.bensonby.me"

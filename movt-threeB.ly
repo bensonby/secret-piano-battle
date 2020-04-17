@@ -1,4 +1,5 @@
 intro-primo-rh = \relative c' {
+  \tempo "Agitato"
   r2
   % autochange with specified point not supported in 2.18.2
   \autochange b \relative c' {
@@ -26,10 +27,8 @@ intro-primo-rh = \relative c' {
     << {
       c4\glissando \clef treble \ottava #1 \ottava-one-short \stemDown e'''8 \ottava #0
     } \\ {
-      s4 \cpl \stemUp a,,16[ gis]
-      \voiceFollowerA
-      \showStaffSwitch
-      \cpr \stemDown a[ b]
+      s4 \cpl \stemUp a,,16 gis
+      \cpr \stemDown a b
     } >>
   }
   \tag #'midi {
@@ -230,7 +229,7 @@ movt-threeB-secondo-lh = \relative c {
 }
 movt-threeB-primo-dynamics = {
   s2 \dynamicShiftA s2\f s1 s1 s1
-  s1-\agitatoWhiteOut s1 s1 s1
+  s1 s1 s1 s1
   \dynamicShiftC s1\mf s1 s1 s1
   s1\f s1 s1 s1
 
@@ -239,7 +238,7 @@ movt-threeB-primo-dynamics = {
 }
 movt-threeB-secondo-dynamics = {
   \dynamicShiftB s1\f s1 s1 s1
-  s1-\agitato s1 s1 s1
+  s1 s1 s1 s1
   s1 s1 s1 s1
   s1 s1 s1 s1
 
