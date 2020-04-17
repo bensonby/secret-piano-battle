@@ -1,4 +1,5 @@
 intro-primo-rh = \relative c' {
+  \metronomePaddingD
   \tempo "Agitato"
   r2
   % autochange with specified point not supported in 2.18.2
