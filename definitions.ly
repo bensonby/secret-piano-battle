@@ -15,6 +15,7 @@ lhMark = \markup {
 conPedal = \markup \italic \larger "con pedal"
 sim = \markup \italic \larger "sim."
 cresc = \markup \italic \larger "cresc."
+blackKeyGlissando = \markup \italic \larger "black-key gliss."
 fpCresc = \markup \concat { \dynamic "fp" \italic \larger "  cresc." }
 beginSlowlyThenAccel = \markup \whiteout { \concat { \dynamic "sfp" \italic \larger "  begin slowly and ease into tempo" } }
 ottava-one-short = \set Staff.ottavation = #"8"
@@ -51,7 +52,7 @@ dynamicShiftF = \once \override Dynamics.DynamicText.self-alignment-X = #-0.4 % 
 textScriptShiftA = \once \override TextScript.extra-offset = #'(0 . 1.4)
 textScriptShiftB = \once \override TextScript.extra-offset = #'(0 . 0.5)
 textScriptShiftC = \once \override TextScript.extra-offset = #'(0 . -0.5)
-metronomePaddingA = \once \override Score.MetronomeMark.padding = #8
+metronomePaddingA = \once \override Score.MetronomeMark.padding = #12
 metronomePaddingB = \once \override Score.MetronomeMark.padding = #4
 metronomePaddingC = \once \override Score.MetronomeMark.padding = #7
 metronomePaddingD = \once \override Score.MetronomeMark.padding = #2
@@ -102,6 +103,17 @@ voiceFollowerB = {
     )
   )
 }
+glissandoA = \once \override Glissando.bound-details = #'(
+  (right
+    (attach-dir . -1)
+    (end-on-accidental . #t)
+    (padding . 1.2)
+  )
+  (left
+    (attach-dir . 1)
+    (padding . 1.2)
+  )
+)
 shpSlurA = \shape #'((0.2 . 0.5) (0 . 0.5) (0 . 0.5) (0 . 0.5)) PhrasingSlur
 shpSlurB = \shape #'((0 . 0) (0 . 0.5) (0 . 0.5) (0 . 0.5)) PhrasingSlur
 shpSlurC = \shape #'((0 . 0.2) (0 . 0.6) (0 . 0.3) (0 . 0.5)) PhrasingSlur

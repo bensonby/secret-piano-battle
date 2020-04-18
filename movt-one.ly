@@ -9,17 +9,6 @@ espressTxt = \markup \italic \larger "espress."
 cresc = \markup \italic \larger "cresc."
 posScriptA = \once \override TextScript.extra-offset = #'( 0.9 . 0 )
 lh = \markup \italic \larger \center-align "l.h."
-glissandoA = \once \override Glissando.bound-details = #'(
-  (right
-    (attach-dir . -1)
-    (end-on-accidental . #t)
-    (padding . 1.2)
-  )
-  (left
-    (attach-dir . 1)
-    (padding . 1.2)
-  )
-)
 
 beamSettings = {
   \set subdivideBeams = ##t
@@ -41,7 +30,8 @@ intro = \relative c''''' {
       \ottava-one-short
       \instructionI
       \glissandoA
-      ges8\glissando
+      \textScriptShiftB
+      ges8\glissando^\blackKeyGlissando
       \ottava #0 \hideNotes bes,,,,\noBeam \unHideNotes
       \newSpacingSection
       \override Score.SpacingSpanner.spacing-increment = #4.5
@@ -56,17 +46,25 @@ intro = \relative c''''' {
       ges,,,,,,4\glissando
       \cr
       \stemNeutral
-      \ottava #1
-      \ottava-one-short
-      ges''''''8 \ottava #0
+      \hideNotes
+      ges'''''8 \ottava #0
+      r8
+      \unHideNotes
     } \\ {
       s8
       \newSpacingSection
       \override Score.SpacingSpanner.spacing-increment = #3.5
       \posScriptA
       \glissandoA
-      bes,,8\glissando^\lh
-      \hideNotes ges,8\noBeam \unHideNotes s8 % an octave higher because of the 8va sign in the other voice
+      bes,8\glissando^\lh
+      \hideNotes
+      \stemUp
+      ges,8\noBeam % an octave higher because of the 8va sign in the other voice
+      \unHideNotes
+      s8
+      s4
+      \stemNeutral
+      b4\rest
     } >>
   }
   \newSpacingSection
@@ -101,9 +99,9 @@ intro = \relative c''''' {
       }
       \tempo 8 = 176
       ges8
+      r8
     } >>
   }
-  r8
 }
 
 theme-A-rh = \relative c'''' {
