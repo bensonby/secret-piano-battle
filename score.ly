@@ -18,6 +18,12 @@
 
     print-all-headers = ##t
     footnote-separator-markup = ##f
+    oddFooterMarkup = \markup {
+      \fill-line {
+        "https://music.bensonby.me"
+      }
+    }
+    evenFooterMarkup = \oddFooterMarkup
 }
 
 \book {
@@ -25,8 +31,8 @@
     title = "Piano Battle Scene"
     subtitle = "From \"Secret\""
     arranger = "Transcribed by Benson Yeung"
-    copyright = "https://music.bensonby.me"
-    tagline = "https://music.bensonby.me"
+    % copyright = "https://music.bensonby.me"
+    % tagline = "https://music.bensonby.me"
   }
   \score {
     <<
