@@ -71,24 +71,26 @@ intro = \relative c''''' {
   \newSpacingSection
   \revert Score.SpacingSpanner.spacing-increment
   \tag #'midi {
-    \tuplet 20/16 {
-      ges'''''128 ees des bes aes ges ees des
-      bes aes ges ees des bes aes ges
-      ees des bes aes
+    \tuplet 15/16 {
+      ges'''128 ees des bes aes
+      ges ees des bes aes
+      ges ees des bes aes
     }
     << { ges16 } \\ {
-      \tuplet 22/16 {
-        bes''128 aes ges ees des bes aes ges
-        ees des bes aes ges ees des bes
-        aes ges ees des bes aes
+      \tuplet 12/16 {
+        bes'128 aes ges ees des
+        bes aes ges ees des
+        bes aes
       }
     } >>
     << { ges16} \\ {
       \tuplet 28/16 {
-        des'''''64 bes aes ges ees des bes aes
-        ges ees des bes aes ges ees des
-        bes aes ges ees des bes aes ges
-        ees des bes aes
+        des''''64 bes aes ges ees
+        des bes aes ges ees
+        des bes aes ges ees
+        des bes aes ges ees
+        des bes aes ges ees
+        des bes aes
       }
       \tuplet 30/16 {
         ges64 aes bes des ees ges aes bes
