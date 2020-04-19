@@ -100,7 +100,7 @@ section-B-lh-theme = \relative c, {
       s <gis bis fis'>-. s q-. s q-. s q-.
     }
   >>
-  <cis,, cis'>-.
+  <cis, cis'>-.
 }
 
 section-B-intro-lh = \relative c, {
