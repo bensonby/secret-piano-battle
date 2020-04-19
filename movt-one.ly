@@ -169,8 +169,8 @@ theme-C-rh = \relative c' {
 
 theme-C-lh = \relative c {
   <<
-    { cis8 s c s b s e s a, s d s }
-    { s8 <a' e'> s q s <g d'> s <b e> s <b c e> s <a d fis> }
+    { cis8( s c( s b( s e( s a,( s d( s }
+    { s8 <a' e'>) s q) s <g d'>) s <b e>) s <b c e>) s <a d fis>)-. }
   >>
   g,-. <c' e g>-.[ <b d g>-.] r
   <g, g,>-. <c e g>-.[ <b d g>-.] r
@@ -285,7 +285,8 @@ movt-one-dynamics-pedal = {
 
   % theme C
   \tag #'midi {
-    \repeat unfold 6 { s8..\son s32\soff }
+    \repeat unfold 5 { s8..\son s32\soff }
+    s8\son s8\soff
     \repeat unfold 2 { s8\son s4.\soff }
   }
   \tag #'print {
@@ -294,8 +295,9 @@ movt-one-dynamics-pedal = {
     s4\soff\son
     s4\soff\son
     s4\soff\son
-    s4\soff\son
     s8\soff\son
+    s8\soff
+    s8\son
     s4.\soff
     s8\son
     s4.\soff
