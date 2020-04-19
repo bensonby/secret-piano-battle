@@ -52,7 +52,7 @@ dynamicShiftF = \once \override Dynamics.DynamicText.self-alignment-X = #-0.4 % 
 textScriptShiftA = \once \override TextScript.extra-offset = #'(0 . 1.4)
 textScriptShiftB = \once \override TextScript.extra-offset = #'(0 . 0.5)
 textScriptShiftC = \once \override TextScript.extra-offset = #'(0 . -0.5)
-metronomePaddingA = \once \override Score.MetronomeMark.padding = #9
+metronomePaddingA = \once \override Score.MetronomeMark.padding = #12
 metronomePaddingB = \once \override Score.MetronomeMark.padding = #4
 metronomePaddingC = \once \override Score.MetronomeMark.padding = #7
 metronomePaddingD = \once \override Score.MetronomeMark.padding = #2
