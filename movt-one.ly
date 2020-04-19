@@ -127,7 +127,7 @@ theme-A-lh = \relative c' {
   <g b d g>8-. <g c e g>-. <g b d g>-. r
   <g g,>-. <c e g>-.[ <b d g>-.] r
   <d, d,>-. <a' d fis>-.[ <a c e>-.] a,
-  << { r8 <a' c e>->-.[ <a c d>-.] } \\ { d,4. } >> r8
+  << { r8 <a' c e>\accentA-.[ <a c d>-.] } \\ { d,4. } >> r8
   <g b d g>8-. <g c e g>-. <g b d g>-. r
   <g g,>-. <c e g>-.[ <b d g>-.] r
 }
@@ -150,7 +150,7 @@ theme-B-rh = \relative c' {
 }
 
 theme-B-lh = \relative c {
-  ces8 <aes' ees'>4-> ces,8
+  ces8 <aes' ees'>4\accentB ces,8
   <bes f' d'>2\arpeggio
   <b g' d'>2\arpeggio
 }
@@ -164,7 +164,7 @@ theme-C-rh = \relative c' {
     g b d, g e g d g b, d g, \override VoiceFollower.style = #'dashed-line \showStaffSwitch b
   }
   % switch hands in notations for cross staff line
-  \cl <g,, g'>8-. r q-> r
+  \cl <g,, g'>8-. r q\accentA r
 }
 
 theme-C-lh = \relative c {
@@ -176,7 +176,7 @@ theme-C-lh = \relative c {
   <g, g,>-. <c e g>-.[ <b d g>-.] r
 
   % switch hands in notations for cross staff line
-  \cr r4 <g''' b d g>8-> r
+  \cr r4 <g''' b d g>8\accentA r
 }
 
 movt-one-rh = \relative c' {

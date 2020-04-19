@@ -118,3 +118,8 @@ shpSlurA = \shape #'((0.2 . 0.5) (0 . 0.5) (0 . 0.5) (0 . 0.5)) PhrasingSlur
 shpSlurB = \shape #'((0 . 0) (0 . 0.5) (0 . 0.5) (0 . 0.5)) PhrasingSlur
 shpSlurC = \shape #'((0 . 0.2) (0 . 0.6) (0 . 0.3) (0 . 0.5)) PhrasingSlur
 shpSlurD = \shape #'((0 . 0.2) (0 . 1.9) (0 . 1.5) (0 . 0.0)) PhrasingSlur
+
+% default accent in midi adds 20 to velocity which is too much
+% ly/script-init.ly
+accentA = #(make-articulation "accent" 'midi-extra-velocity 10)
+accentB = #(make-articulation "accent" 'midi-extra-velocity 5)

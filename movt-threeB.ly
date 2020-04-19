@@ -90,9 +90,9 @@ main-primo-rh = \relative c''' {
     {}
   }
   a8 s c,16 b c a c b d f dis c e c
-  e-> c e a c-> a e a e'-> c a c a'-> e c e
+  e\accentA c e a c\accentA a e a e'\accentA c a c a'\accentA e c e
 
-  \repeat unfold 4 { a-> e c e b'-> gis e gis }
+  \repeat unfold 4 { a\accentA e c e b'\accentA gis e gis }
 
   <<
     {
@@ -125,9 +125,9 @@ main-primo-lh = \relative c'' {
   }
 
   a16 gis \cpr a b \cpl c,16 b c a f a d f dis c e c
-  e-> c e a c-> a e a e'-> c a c a'-> e c e
+  e\accentA c e a c\accentA a e a e'\accentA c a c a'\accentA e c e
 
-  \repeat unfold 4 {a-> e c e b'-> gis e gis}
+  \repeat unfold 4 {a\accentA e c e b'\accentA gis e gis}
   s1 s1
   <c, e a>4-. r <e, a>-. r <a c e>4-. r r2
 }
@@ -181,20 +181,20 @@ main-secondo-lh = \relative c, {
   \alternative {
     {
       c,8-. c'-. a,-. a'-.
-      <e, e'>-> <fis fis'>-> <gis gis'>4->--
+      <e, e'>\accentA <fis fis'>\accentA <gis gis'>4\accentA--
     }
     {
       c8-. c'-. c,-. c'-.
-      <d, d'>-> <e e'>-> <d d'>4->--
+      <d, d'>\accentA <e e'>\accentA <d d'>4\accentA--
     }
     {
       c8-. c'-. a,-. a'-.
-      <e, e'>-> <fis fis'>-> <gis gis'>4->--
+      <e, e'>\accentA <fis fis'>\accentA <gis gis'>4\accentA--
     }
   }
 
-  <a a'>8-. <c' e>-. <c, c'>-. <c' e>-. <f, b f'>8-> <e b' e>-> <dis b' dis>4--->
-  <a a'>8-. <c' e>-. <a, a'>-. <c' e>-. <e,, e'>8-.-> <fis fis'>-.-> <gis gis'>4--->
+  <a a'>8-. <c' e>-. <c, c'>-. <c' e>-. <f, b f'>8\accentA <e b' e>\accentA <dis b' dis>4--\accentA
+  <a a'>8-. <c' e>-. <a, a'>-. <c' e>-. <e,, e'>8-.\accentA <fis fis'>-.\accentA <gis gis'>4--\accentA
 
   <a e' a>4---. r8 <f c' f>-. <e b' e>4---. r8 <gis e' gis>-.
   <a e' a>4---. r8 <f c' f>-. <e b' e>4---. r8 <gis e' gis>-.

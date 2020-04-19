@@ -84,7 +84,7 @@ section-B-rh = \relative c {
   cis cisis dis e eis fis fisis gis\)
   \section-B-rh-theme
   r8 r4
-  <cis' e gis cis>4-> r
+  <cis' e gis cis>4\accentA r
 }
 
 section-B-lh-theme = \relative c, {
@@ -154,7 +154,7 @@ section-B-lh = \relative c {
   >>
   \section-B-lh-theme
   r8 r4
-  <cis cis,>4-> r
+  <cis cis,>4\accentA r
 }
 
 movt-two-rh = \relative c' {
