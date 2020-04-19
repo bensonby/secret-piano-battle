@@ -92,13 +92,14 @@ intro = \relative c''''' {
         des bes aes ges ees
         des bes aes
       }
-      \tuplet 30/16 {
-        ges64 aes bes des ees ges aes bes
-        des ees ges aes bes des ees ges
+      \tuplet 25/16 {
+        ges64 aes bes des ees
+        ges aes bes des ees
+        ges aes bes des ees
         \tempo 8 = 160
-        aes bes des ees ges aes bes des
+        ges aes bes des ees
         \tempo 8 = 140
-        ees ges aes bes des ees
+        ges aes bes des ees
       }
       \tempo 8 = 176
       ges8
@@ -238,7 +239,8 @@ movt-one-dynamics = {
 movt-one-dynamics-pedal = {
   \set Staff.pedalSustainStyle = #'bracket
   % intro
-  s2\son s4 s4\soff
+  \tag #'print { s2\son s4 s4\soff }
+  \tag #'midi { s2\son s4 s16 s8.\soff }
 
   % theme A
   s2 s8\son s4.\soff
