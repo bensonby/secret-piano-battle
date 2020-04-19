@@ -61,10 +61,10 @@ theme-arpeggios-rh = \relative c' {
       <e' gis e'>16\([ s
       \makeOctaves 1 { f] s e[ s f] s e[ s f] s e[ s f] s }
       \time 4/4
-      \stemDown
-      <e gis b e>4\)
+      <e e'>4\)\accentB
     } \\ {
       \repeat unfold 4 { s16 <e, gis b d>[ s q] }
+      q4\accentB
     } >>
 
     \ottava #1 \ottava-one-short
@@ -110,9 +110,9 @@ theme-arpeggios-lh = \relative c, {
   }
   \time 5/4
   \tag #'(print midi both-hands) {
-    <e e'>2.~\accentA q2
+    <e e'>2.~\accentA q2~
     \time 4/4
-    q4\accentA e,-. r2
+    q4 e,-. r2
   }
   \tag #'(print midi left-hand) {
     <e' e'>2.~\accentA q2~
