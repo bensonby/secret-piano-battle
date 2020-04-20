@@ -43,7 +43,7 @@ instructionII = {
     \smaller "First played by Piano II; then by Piano I from bar 16 (no high C#) till the end, followed by bar 1 till bar 16's first note."
   }
 }
-dynamicShiftA = \once \override DynamicText.X-offset = #-4
+dynamicShiftA = \once \override DynamicText.X-offset = #-3
 dynamicShiftB = \once \override DynamicText.X-offset = #-2
 dynamicShiftC = \once \override Dynamics.DynamicText.self-alignment-X = #-0.2 % for overlap on the left with barline
 dynamicShiftD = \once \override DynamicText.Y-offset = #-0.8

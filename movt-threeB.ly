@@ -4,7 +4,7 @@ intro-primo-rh = \relative c' {
   r2
   % autochange with specified point not supported in 2.18.2
   \autochange b \relative c' {
-    <dis gis dis'>16-- dis,
+    <e gis e'>16-- e,
     <f' f'> f,
     <e' e'> e,
     <dis' dis'> dis,
@@ -74,7 +74,7 @@ intro-secondo-rh = \relative c {
 
 intro-secondo-lh = \relative c {
   s2 r2 s2 r2 s1
-  \makeOctaves -1 { e8 f e f e d c b }
+  << \makeOctaves -1 { e8 f e f e d c b } { s8-- } >>
 }
 
 main-primo-rh = \relative c''' {
@@ -235,6 +235,7 @@ movt-threeB-primo-dynamics = {
   s1\f s1 s1 s1
 
   s4 s2.\p s1-\cresc s1\f s1
+  \textScriptShiftC
   s1-\cresc s1 \dynamicShiftC s1\ff s1
 }
 movt-threeB-secondo-dynamics = {
