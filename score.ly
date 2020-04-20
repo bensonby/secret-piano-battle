@@ -10,11 +10,11 @@
 \include "movt-threeB.ly"
 
 \paper {
-    top-margin = 6\mm                              %-minimum top-margin: 8mm
+    top-margin = 8\mm                              %-minimum top-margin: 8mm
     top-markup-spacing.basic-distance = #6         %-dist. from bottom of top margin to the first markup/title
     markup-system-spacing.basic-distance = #5      %-dist. from header/title to first system
     top-system-spacing.basic-distance = #12         %-dist. from top margin to system in pages with no titles
-    last-bottom-spacing.basic-distance = #12        %-pads music from copyright block
+    last-bottom-spacing.basic-distance = #6        %-pads music from copyright block
 
     print-all-headers = ##t
     footnote-separator-markup = ##f
@@ -24,6 +24,7 @@
       }
     }
     evenFooterMarkup = \oddFooterMarkup
+    #(set-paper-size "arch a")
 }
 
 \book {
@@ -269,15 +270,30 @@
     \new StaffGroup <<
       \new PianoStaff \with {
         instrumentName = #"Piano I"
+        \override StaffGrouper.staff-staff-spacing = #'(
+          (basic-distance . 12)
+          (padding . 2)
+        )
       } <<
         \new Staff = "primo-rh" { \keepWithTag #'print \movt-three-primo-rh }
-        \new Dynamics = "primo-dynamics" \movt-three-primo-dynamics
+        \new Dynamics = "primo-dynamics" \with {
+          \override VerticalAxisGroup.staff-affinity = #UP
+          \override VerticalAxisGroup.nonstaff-relatedstaff-spacing = #'(
+            (padding . 1)
+          )
+          \override VerticalAxisGroup.nonstaff-unrelatedstaff-spacing = #'(
+            (padding . 4.0)
+          )
+        } \movt-three-primo-dynamics
         \new Staff = "primo-lh" \with {
         } { \keepWithTag #'print \movt-three-primo-lh }
         \new Dynamics = "primo-single-staff-dynamics" \with {
           \override VerticalAxisGroup.staff-affinity = #UP
           \override VerticalAxisGroup.nonstaff-relatedstaff-spacing = #'(
             (padding . 1)
+          )
+          \override VerticalAxisGroup.nonstaff-unrelatedstaff-spacing = #'(
+            (padding . 4.0)
           )
         } { \movt-three-primo-single-staff-dynamics }
       >>
@@ -311,7 +327,7 @@
           (basic-distance . 7)
           (padding . 2))
         \override StaffGrouper.staffgroup-staff-spacing = #'(
-          (basic-distance . 10)
+          (basic-distance . 13)
           (padding . 3))
       } <<
         \new Staff = "up" { \keepWithTag #'print \movt-threeB-primo-rh }
