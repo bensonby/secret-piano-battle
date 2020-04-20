@@ -1,5 +1,35 @@
-movtTwoTempo = \tempo "Allegro" 4 = 185
-movtTwoTempoB = \tempo "Vivace" 4 = 140
+movtTwoTempo = {
+  \tag #'print {
+    \tempo \markup {
+      \concat
+      \general-align #Y #CENTER { \bold "Allegro" }
+      \general-align #Y #CENTER { \normal-text "(Piano II: " }
+      \general-align #Y #-0.55 { \smaller \note "2." #1 }
+      \general-align #Y #0.08 { \normal-text "= 62, Piano I: " }
+      \general-align #Y #-0.55 { \smaller \note "2." #1 }
+      \general-align #Y #0.0 { \normal-text "= 100)" }
+    }
+  }
+  \tag #'midi {
+    \tempo 4 = 185
+  }
+}
+movtTwoTempoB = {
+  \tag #'print {
+    \tempo \markup {
+      \concat
+      \general-align #Y #CENTER { \bold "Vivace" }
+      \general-align #Y #CENTER { \normal-text "(Piano II: " }
+      \general-align #Y #-0.55 { \smaller \note "4" #1 }
+      \general-align #Y #0.08 { \normal-text "= 126, Piano I: " }
+      \general-align #Y #-0.55 { \smaller \note "4" #1 }
+      \general-align #Y #0.0 { \normal-text "= 180)" }
+    }
+  }
+  \tag #'midi {
+    \tempo 4 = 140
+  }
+}
 
 rest-duration-two = {
   % midi duration, partial treated as full bar
