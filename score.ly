@@ -10,11 +10,11 @@
 \include "movt-threeB.ly"
 
 \paper {
-    top-margin = 8\mm                              %-minimum top-margin: 8mm
-    top-markup-spacing.basic-distance = #6         %-dist. from bottom of top margin to the first markup/title
-    markup-system-spacing.basic-distance = #5      %-dist. from header/title to first system
-    top-system-spacing.basic-distance = #12         %-dist. from top margin to system in pages with no titles
-    last-bottom-spacing.basic-distance = #6        %-pads music from copyright block
+    top-margin = 4\mm                              %-minimum top-margin: 8mm
+    top-markup-spacing.basic-distance = #3         %-dist. from bottom of top margin to the first markup/title
+    markup-system-spacing.basic-distance = #3      %-dist. from header/title to first system
+    top-system-spacing.basic-distance = #10         %-dist. from top margin to system in pages with no titles
+    last-bottom-spacing.basic-distance = #4        %-pads music from copyright block
 
     print-all-headers = ##t
     footnote-separator-markup = ##f
@@ -24,7 +24,7 @@
       }
     }
     evenFooterMarkup = \oddFooterMarkup
-    #(set-paper-size "arch a")
+    % #(set-paper-size "arch a")
 }
 
 \book {
@@ -32,8 +32,6 @@
     title = "Piano Battle Scene"
     subtitle = "From \"Secret\""
     arranger = "Transcribed by Benson Yeung"
-    % copyright = "https://music.bensonby.me"
-    % tagline = "https://music.bensonby.me"
   }
   \score {
     <<
@@ -291,9 +289,6 @@
           \override VerticalAxisGroup.staff-affinity = #UP
           \override VerticalAxisGroup.nonstaff-relatedstaff-spacing = #'(
             (padding . 1)
-          )
-          \override VerticalAxisGroup.nonstaff-unrelatedstaff-spacing = #'(
-            (padding . 4.0)
           )
         } { \movt-three-primo-single-staff-dynamics }
       >>
