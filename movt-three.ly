@@ -86,31 +86,31 @@ theme-arpeggios-rh = \relative c' {
 }
 
 theme-arpeggios-lh = \relative c, {
-  \time 5/4 <d d'>2.~\accentA-- q8
+  \time 5/4 \paddingB <d d'>2.~\accentA q8
   \tag #'(midi both-hands left-hand) { \tempo 4 = 140 }
-  <gis gis'>\accentA
+  \paddingB <gis gis'>\accentA
   \tag #'(midi both-hands left-hand) { \tempo 4 = 130 }
-  <a a'>\accentA
+  \paddingB <a a'>\accentA
   \tag #'(midi both-hands left-hand) { \tempo 4 = 125 }
-  <d, d'>\accentA
+  \paddingB <d, d'>\accentA
   \tag #'(midi both-hands left-hand) { \tempo 4 = 150 }
-  <c c'>2.~--\accentA q8
+  <c c'>2.~\accentA q8
   \tag #'(midi both-hands left-hand) { \tempo 4 = 140 }
-  <gis' gis'>\accentA
+  \paddingB <gis' gis'>\accentA
   \tag #'(midi both-hands left-hand) { \tempo 4 = 130 }
-  <a a'>\accentA
+  \paddingB <a a'>\accentA
   \tag #'(midi both-hands left-hand) { \tempo 4 = 110 }
-  <ais, ais'>\accentA
+  \paddingB <ais, ais'>\accentA
   \tag #'(midi both-hands left-hand) { \tempo 4 = 150 }
   \time 4/4
-  \tag #'(print both-hands left-hand) { <b b'>1\accentA-- }
+  \tag #'(print both-hands left-hand) { \paddingB <b b'>1\accentA }
   \tag #'(midi both-hands left-hand) {
-    <b b'>2.\accentA--~ q8.~ \tempo 4 = 50 q16
+    \paddingB <b b'>2.\accentA~ q8.~ \tempo 4 = 50 q16
     \tempo 4 = 150
   }
   \time 5/4
   \tag #'(print midi both-hands) {
-    <e e'>2.~\accentA q2~
+    \paddingB <e e'>2.~\accentA q2~
     \time 4/4
     q4 e,-. r2
   }

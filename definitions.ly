@@ -52,6 +52,7 @@ dynamicShiftF = \once \override Dynamics.DynamicText.self-alignment-X = #-0.4 % 
 dynamicShiftG = \once \override DynamicText.Y-offset = -2
 dynamicShiftH = \once \override DynamicText.extra-offset = #'(0.35 . 0.9)
 paddingA = \once \override Script.padding = #0.6
+paddingB = \once \override Script.padding = #0.4
 textScriptShiftA = \once \override TextScript.extra-offset = #'(0 . 1.4)
 textScriptShiftB = \once \override TextScript.extra-offset = #'(0 . 0.5)
 textScriptShiftC = \once \override TextScript.extra-offset = #'(0 . -0.5)

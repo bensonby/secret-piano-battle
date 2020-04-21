@@ -51,13 +51,13 @@ section-A-rh = \relative c'' {
   gis'\( fisis gis b a dis,
   e gis cis dis e fis\)
   gis\( fisis gis b a gis
-  \acciaccatura fisis8 gis4--
+  \acciaccatura fisis8 \paddingB gis4--
   \acciaccatura dis8 e4--
   \acciaccatura bis8 cis4--\)
   gis8^\( fisis gis b a gis
   \acciaccatura fisis8 gis4--
-  \acciaccatura dis8 e4--
-  \acciaccatura bis8 cis4--\)
+  \acciaccatura dis8 \paddingB e4--
+  \acciaccatura bis8 \paddingB cis4--\)
   \acciaccatura gis'8\( a4-.
   \acciaccatura cis8 d4-.
   \acciaccatura eis8 fis4-.
