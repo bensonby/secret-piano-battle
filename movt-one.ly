@@ -1,6 +1,6 @@
 ffBrillante = \markup \concat { \dynamic "ff" \italic \larger "  brillante" }
 fBrillante = \markup \concat { \dynamic "f" \italic \larger "  brillante" }
-pCustom = \markup \concat { \dynamic "p" \italic \larger " " }
+% pCustom = \markup \concat { \dynamic "p" \italic \larger " " }
 fLegatoELeggiero = \markup \concat { \dynamic "f" \italic \larger "  legato e leggiero" }
 sempreLegato = \markup \italic \larger "sempre legato"
 rall = \markup \bold \larger "rall."
@@ -195,7 +195,7 @@ movt-one-rh = \relative c' {
   \key g \major
   <<
     { \theme-A-rh }
-    { \textScriptShiftB s2^\aTempo }
+    { \textScriptShiftD s2^\aTempo }
   >>
   \theme-C-rh
   \bar "|."
@@ -220,7 +220,7 @@ movt-one-dynamics = {
   s2-\ffBrillante s2
 
   % theme A
-  s2-\fLegatoELeggiero s2-\pCustom s4 s4-\cresc s2
+  s2-\fLegatoELeggiero \dynamicShiftG s2\p s4 s4-\cresc s2
   s2\f s2\p
 
   % theme B

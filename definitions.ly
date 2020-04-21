@@ -29,7 +29,7 @@ attaca = {
 }
 instructionI = {
   \once \override Score.RehearsalMark.self-alignment-X = #LEFT
-  \once \override Score.RehearsalMark.font-size = #0.4
+  \once \override Score.RehearsalMark.font-size = #0.3
   \once \override Score.RehearsalMark.X-offset = #0
   \mark \markup \box \pad-around #1 {
     \smaller "First played by Piano II starting at bar 3; then by Piano I from the beginning including the black-key glissandos."
@@ -37,7 +37,7 @@ instructionI = {
 }
 instructionII = {
   \once \override Score.RehearsalMark.self-alignment-X = #LEFT
-  \once \override Score.RehearsalMark.font-size = #0.4
+  \once \override Score.RehearsalMark.font-size = #0.3
   \once \override Score.RehearsalMark.X-offset = #0
   \mark \markup \box \pad-around #1 {
     \smaller "First played by Piano II; then by Piano I from bar 16 (no high C#) till the end, followed by bar 1 till bar 16's first note."
@@ -49,10 +49,12 @@ dynamicShiftC = \once \override Dynamics.DynamicText.self-alignment-X = #-0.2 % 
 dynamicShiftD = \once \override DynamicText.Y-offset = #-0.8
 dynamicShiftE = \once \override DynamicText.Y-offset = #-7
 dynamicShiftF = \once \override Dynamics.DynamicText.self-alignment-X = #-0.4 % for overlap on the left with barline
+dynamicShiftG = \once \override DynamicText.Y-offset = -2
 textScriptShiftA = \once \override TextScript.extra-offset = #'(0 . 1.4)
 textScriptShiftB = \once \override TextScript.extra-offset = #'(0 . 0.5)
 textScriptShiftC = \once \override TextScript.extra-offset = #'(0 . -0.5)
-metronomePaddingA = \once \override Score.MetronomeMark.padding = #12
+textScriptShiftD = \once \override TextScript.extra-offset = #'(0 . 0.0)
+metronomePaddingA = \once \override Score.MetronomeMark.padding = #11.5
 metronomePaddingB = \once \override Score.MetronomeMark.padding = #4
 metronomePaddingC = \once \override Score.MetronomeMark.padding = #6
 metronomePaddingD = \once \override Score.MetronomeMark.padding = #2

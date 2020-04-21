@@ -10,11 +10,11 @@
 \include "movt-threeB.ly"
 
 \paper {
-    top-margin = 6\mm                              %-minimum top-margin: 8mm
-    top-markup-spacing.basic-distance = #6         %-dist. from bottom of top margin to the first markup/title
-    markup-system-spacing.basic-distance = #5      %-dist. from header/title to first system
-    top-system-spacing.basic-distance = #12         %-dist. from top margin to system in pages with no titles
-    last-bottom-spacing.basic-distance = #12        %-pads music from copyright block
+    top-margin = 8\mm %-minimum top-margin: 8mm
+    top-markup-spacing.basic-distance = #3 %-dist. from bottom of top margin to the first markup/title
+    markup-system-spacing.basic-distance = #5 %-dist. from header/title to first system
+    top-system-spacing.basic-distance = #12 %-dist. from top margin to system in pages with no titles
+    last-bottom-spacing.basic-distance = #8 %-pads music from copyright block
 
     print-all-headers = ##t
     footnote-separator-markup = ##f
@@ -28,8 +28,7 @@
 
 \book {
   \header {
-    title = "Piano Battle Scene"
-    subtitle = "From \"Secret\""
+    title = "Piano Battle Scene (from \"Secret\")"
     arranger = "Transcribed by Benson Yeung"
     % copyright = "https://music.bensonby.me"
     % tagline = "https://music.bensonby.me"
@@ -158,7 +157,6 @@
   \score {
     \header {
       title = "I"
-      subtitle = ##f
       instrument = ##f
       arranger = ##f
     }
@@ -192,7 +190,6 @@
   \score {
     \header {
       title = "II"
-      subtitle = ##f
       instrument = ##f
       arranger = ##f
     }
@@ -228,7 +225,6 @@
   \score {
     \header {
       title = "III"
-      subtitle = ##f
       instrument = ##f
       arranger = ##f
     }
@@ -262,7 +258,6 @@
   \score {
     \header {
       title = ##f
-      subtitle = ##f
       instrument = ##f
       arranger = ##f
     }
@@ -300,7 +295,6 @@
   \score {
     \header {
       title = ##f
-      subtitle = ##f
       instrument = ##f
       arranger = ##f
     }
