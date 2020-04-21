@@ -18,8 +18,21 @@ theme-running-notes-rh = \relative c {
   \repeat unfold 2 {a ais b c cis d e d cis bes g cis c a fis c'}
 }
 theme-running-notes-lh = \relative c {
-  \repeat unfold 6 {a8-. r c-. r b-. r bes-. r}
-  \repeat unfold 2 { d8-. d-. f-. f-. e-. e-. ees-. ees-.}
+  % don't know why the print version will break the midi
+  % (creating extra pause afterwords)
+  \tag #'midi {
+    \repeat unfold 6 {a8-. r c-. r b-. r bes-. r}
+    \repeat unfold 2 { d8-. d-. f-. f-. e-. e-. ees-. ees-.}
+  }
+  \tag #'print {
+    << {
+      \repeat unfold 6 {a,8 r c r b r bes r}
+      \repeat unfold 2 { d8 d f f e e ees ees}
+    } {
+      \repeat unfold 24 { \offsetA s8-. s }
+      \repeat unfold 16 { \offsetA s8-. }
+    } >>
+  }
 }
 
 theme-arpeggios-rh = \relative c' {

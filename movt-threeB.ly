@@ -181,15 +181,15 @@ main-secondo-lh = \relative c, {
   \alternative {
     {
       c,8-. c'-. a,-. a'-.
-      <e, e'>\accentA <fis fis'>\accentA <gis gis'>4\accentA--
+      <e, e'>\accentA-. <fis fis'>\accentA-. <gis gis'>4\accentA--
     }
     {
       c8-. c'-. c,-. c'-.
-      <d, d'>\accentA <e e'>\accentA <d d'>4\accentA--
+      <d, d'>\accentA-. <e e'>\accentA-. <d d'>4\accentA--
     }
     {
       c8-. c'-. a,-. a'-.
-      <e, e'>\accentA <fis fis'>\accentA <gis gis'>4\accentA--
+      <e, e'>\accentA-. <fis fis'>\accentA-. <gis gis'>4\accentA--
     }
   }
 
