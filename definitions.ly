@@ -61,6 +61,7 @@ metronomePaddingA = \once \override Score.MetronomeMark.padding = #11.5
 metronomePaddingB = \once \override Score.MetronomeMark.padding = #4
 metronomePaddingC = \once \override Score.MetronomeMark.padding = #6
 metronomePaddingD = \once \override Score.MetronomeMark.padding = #2
+pedalOffsetA = \once \override Score.SustainPedalLineSpanner.padding = #1.65
 subPAccelAndCrescSpanner = {
   \override TextSpanner #'(bound-details left text) = \markup \whiteout { \concat { \italic \larger "sub. " \dynamic "p" \italic \larger " accel. e cresc." } }
   \override TextSpanner #'(bound-details left-broken text) = ##f

@@ -250,7 +250,7 @@ movt-one-dynamics-pedal = {
   }
   \tag #'print {
     s8\son s8\soff s4\son
-    s8\soff\son s8\soff s4\son
+    s8\soff\son s8\soff \pedalOffsetA s4\son
     s2\soff s8\son s4.\soff
   }
 
@@ -279,7 +279,7 @@ movt-one-dynamics-pedal = {
   }
   \tag #'print {
     s8\son s8\soff s4\son
-    s8\soff\son s8\soff s4\son
+    s8\soff\son s8\soff \pedalOffsetA s4\son
     s2\soff s8\son s4.\soff
   }
 
