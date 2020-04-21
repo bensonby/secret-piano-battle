@@ -234,7 +234,7 @@ movt-threeB-primo-dynamics = {
   \dynamicShiftC s1\mf s1 s1 s1
   s1\f s1 s1 s1
 
-  s4 s2.\p s1-\cresc s1\f s1
+  \dynamicShiftH s1\fp s1-\cresc s1\f s1
   \textScriptShiftC
   s1-\cresc s1 \dynamicShiftC s1\ff s1
 }

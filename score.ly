@@ -309,7 +309,17 @@
           (padding . 3))
       } <<
         \new Staff = "up" { \keepWithTag #'print \movt-threeB-primo-rh }
-        \new Dynamics = "primo-dynamics" \movt-threeB-primo-dynamics
+        \new Dynamics = "primo-dynamics" \with {
+          \override VerticalAxisGroup.staff-affinity = #UP
+          \override VerticalAxisGroup.nonstaff-relatedstaff-spacing = #'(
+            (basic-distance . 0.7)
+            (padding . 1.5)
+          )
+          \override VerticalAxisGroup.nonstaff-unrelatedstaff-spacing = #'(
+            (basic-distance . 0.7)
+            (padding . 1.5)
+          )
+        } \movt-threeB-primo-dynamics
         \new Staff = "down" { \keepWithTag #'print \movt-threeB-primo-lh }
       >>
       \new PianoStaff \with {
