@@ -17,7 +17,7 @@ sim = \markup \italic \larger "sim."
 cresc = \markup \italic \larger "cresc."
 blackKeyGlissando = \markup \italic \larger "black-key gliss."
 fpCresc = \markup \concat { \dynamic "fp" \italic \larger "  cresc." }
-beginSlowlyThenAccel = \markup \whiteout { \concat { \dynamic "sfp" \italic \larger "  begin slowly and ease into tempo" } }
+beginSlowlyThenAccel = \markup \whiteout { \concat { \dynamic "sfp" \italic "  begin slowly, then ease into tempo" } }
 ottava-one-short = \set Staff.ottavation = #"8"
 ottavaShorterEndA = \once \override Score.OttavaBracket.shorten-pair = #'(0 . 0)
 attaca = {
@@ -55,12 +55,13 @@ textScriptShiftA = \once \override TextScript.extra-offset = #'(0 . 1.4)
 textScriptShiftB = \once \override TextScript.extra-offset = #'(0 . 0.5)
 textScriptShiftC = \once \override TextScript.extra-offset = #'(0 . -0.5)
 textScriptShiftD = \once \override TextScript.extra-offset = #'(0 . 0.0)
+textScriptShiftE = \once \override TextScript.extra-offset = #'(0 . 0.3)
 metronomePaddingA = \once \override Score.MetronomeMark.padding = #11.5
 metronomePaddingB = \once \override Score.MetronomeMark.padding = #4
 metronomePaddingC = \once \override Score.MetronomeMark.padding = #6
 metronomePaddingD = \once \override Score.MetronomeMark.padding = #2
 subPAccelAndCrescSpanner = {
-  \override TextSpanner #'(bound-details left text) = \markup \whiteout { \concat { \italic "sub. " \dynamic "p" \italic \larger "  accel. e cresc." } }
+  \override TextSpanner #'(bound-details left text) = \markup \whiteout { \concat { \italic \larger "sub. " \dynamic "p" \italic \larger " accel. e cresc." } }
   \override TextSpanner #'(bound-details left-broken text) = ##f
   \override TextSpanner #'(bound-details left stencil-align-dir-y) = #CENTER
   \override TextSpanner.dash-fraction = #0.15

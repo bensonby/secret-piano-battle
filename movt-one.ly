@@ -138,7 +138,7 @@ theme-B-rh = \relative c' {
     \repeat unfold 6 { bes, bes' }
     <<
       { \repeat unfold 6 { b, b' } }
-      { \textScriptShiftB s16^\rall s16*10 \paddingA s16\fermata }
+      { \textScriptShiftE s16^\rall s16*10 \paddingA s16\fermata }
       { \tag #'midi {
         s16\tempo 8 = 126
         s16*8 s16\tempo 8 = 90

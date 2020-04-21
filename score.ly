@@ -14,7 +14,7 @@
     top-markup-spacing.basic-distance = #3 %-dist. from bottom of top margin to the first markup/title
     markup-system-spacing.basic-distance = #5 %-dist. from header/title to first system
     top-system-spacing.basic-distance = #12 %-dist. from top margin to system in pages with no titles
-    last-bottom-spacing.basic-distance = #8 %-pads music from copyright block
+    last-bottom-spacing.basic-distance = #12 %-pads music from copyright block
 
     print-all-headers = ##t
     footnote-separator-markup = ##f
