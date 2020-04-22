@@ -2,6 +2,8 @@
 \include "articulate.ly"
 #(set-global-staff-size 17.5)
 
+currentTag = #"print"
+
 \include "definitions.ly"
 \include "makeOctaves.ly"
 \include "movt-one.ly"
@@ -164,7 +166,7 @@
       \new PianoStaff <<
         \new Staff = "up" \with {
         } {
-          \keepWithTag #'print \movt-one-rh
+          \keepWithTag \currentTag \movt-one-rh
         }
         \new Dynamics = "dynamics" \with {
           \override VerticalAxisGroup.staff-affinity = #UP
@@ -177,8 +179,8 @@
         } { \movt-one-dynamics }
         \new Staff = "down" {
           <<
-            { \keepWithTag #'print \movt-one-lh }
-            { \keepWithTag #'print \movt-one-dynamics-pedal }
+            { \keepWithTag \currentTag \movt-one-lh }
+            { \keepWithTag \currentTag \movt-one-dynamics-pedal }
           >>
         }
       >>
@@ -200,7 +202,7 @@
           (padding . 5)
         )
       } <<
-        \new Staff = "rh" { \keepWithTag #'print \movt-two-rh }
+        \new Staff = "rh" { \keepWithTag \currentTag \movt-two-rh }
         \new Dynamics = "dynamics" \with {
           \override VerticalAxisGroup.staff-affinity = #UP
           \override VerticalAxisGroup.nonstaff-relatedstaff-spacing = #'(
@@ -212,8 +214,8 @@
         } { \movt-two-dynamics }
         \new Staff = "lh" {
           <<
-            { \keepWithTag #'print \movt-two-lh }
-            { \keepWithTag #'print \movt-two-dynamics-pedal }
+            { \keepWithTag \currentTag \movt-two-lh }
+            { \keepWithTag \currentTag \movt-two-dynamics-pedal }
           >>
         }
       >>
@@ -232,7 +234,7 @@
       \new PianoStaff \with {
         instrumentName = #"Piano II"
       } <<
-        \new Staff = "up" { \keepWithTag #'print \movt-three-secondo-rh }
+        \new Staff = "up" { \keepWithTag \currentTag \movt-three-secondo-rh }
         \new Dynamics = "secondo-dynamics" \with {
           \override VerticalAxisGroup.staff-affinity = #UP
           \override VerticalAxisGroup.nonstaff-relatedstaff-spacing = #'(
@@ -245,7 +247,7 @@
           { \movt-three-secondo-single-staff-dynamics }
           { \movt-three-secondo-dynamics }
         >> }
-        \new Staff = "down" { \keepWithTag #'print \movt-three-secondo-lh }
+        \new Staff = "down" { \keepWithTag \currentTag \movt-three-secondo-lh }
       >>
     >>
     \layout {
@@ -265,10 +267,10 @@
       \new PianoStaff \with {
         instrumentName = #"Piano I"
       } <<
-        \new Staff = "primo-rh" { \keepWithTag #'print \movt-three-primo-rh }
+        \new Staff = "primo-rh" { \keepWithTag \currentTag \movt-three-primo-rh }
         \new Dynamics = "primo-dynamics" \movt-three-primo-dynamics
         \new Staff = "primo-lh" \with {
-        } { \keepWithTag #'print \movt-three-primo-lh }
+        } { \keepWithTag \currentTag \movt-three-primo-lh }
         \new Dynamics = "primo-single-staff-dynamics" \with {
           \override VerticalAxisGroup.staff-affinity = #UP
           \override VerticalAxisGroup.nonstaff-relatedstaff-spacing = #'(
@@ -308,7 +310,7 @@
           (basic-distance . 10)
           (padding . 3))
       } <<
-        \new Staff = "up" { \keepWithTag #'print \movt-threeB-primo-rh }
+        \new Staff = "up" { \keepWithTag \currentTag \movt-threeB-primo-rh }
         \new Dynamics = "primo-dynamics" \with {
           \override VerticalAxisGroup.staff-affinity = #UP
           \override VerticalAxisGroup.nonstaff-relatedstaff-spacing = #'(
@@ -320,7 +322,7 @@
             (padding . 1.5)
           )
         } \movt-threeB-primo-dynamics
-        \new Staff = "down" { \keepWithTag #'print \movt-threeB-primo-lh }
+        \new Staff = "down" { \keepWithTag \currentTag \movt-threeB-primo-lh }
       >>
       \new PianoStaff \with {
         instrumentName = #"Piano II"
@@ -328,9 +330,9 @@
           (basic-distance . 7)
           (padding . 2))
       } <<
-        \new Staff = "up" { \keepWithTag #'print \movt-threeB-secondo-rh }
+        \new Staff = "up" { \keepWithTag \currentTag \movt-threeB-secondo-rh }
         \new Dynamics = "secondo-dynamics" \movt-threeB-secondo-dynamics
-        \new Staff = "down" { \keepWithTag #'print \movt-threeB-secondo-lh }
+        \new Staff = "down" { \keepWithTag \currentTag \movt-threeB-secondo-lh }
       >>
     >>
     \layout { }
