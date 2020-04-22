@@ -305,10 +305,10 @@ currentTag = #"print"
         instrumentName = #"Piano I"
         \override StaffGrouper.staff-staff-spacing = #'(
           (basic-distance . 7)
-          (padding . 2))
+          (padding . 1.5))
         \override StaffGrouper.staffgroup-staff-spacing = #'(
           (basic-distance . 10)
-          (padding . 3))
+          (padding . 2.5))
       } <<
         \new Staff = "up" { \keepWithTag \currentTag \movt-threeB-primo-rh }
         \new Dynamics = "primo-dynamics" \with {

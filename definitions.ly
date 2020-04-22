@@ -55,6 +55,7 @@ hairpinA = \once \override Hairpin.Y-offset = #-2
 hairpinB = \once \override Hairpin.Y-offset = #-1.4
 paddingA = \once \override Script.padding = #0.6
 paddingB = \once \override Script.padding = #0.4
+paddingC = \once \override Script.padding = #0.3
 offsetA = {
   \once \override Script.X-offset = #0.2
   \once \override Script.padding = #0.4

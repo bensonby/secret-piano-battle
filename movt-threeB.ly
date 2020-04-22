@@ -48,7 +48,7 @@ intro-primo-lh = \relative c, {
 intro-secondo-rh = \relative c {
   \autochange g' \relative c'' {
     <<
-      { <e gis e'>16-- s \makeOctaves 1 { f s e s dis s } }
+      { \paddingC <e gis e'>16-- s \makeOctaves 1 { f s e s dis s } }
       { \makeOctaves -1 { s e, s f s e s dis } }
     >>
   }
@@ -56,7 +56,7 @@ intro-secondo-rh = \relative c {
   r2
   \autochange f' \relative c'' {
     <<
-      { <d? gis d'?>16-- s \makeOctaves 1 { e s d s cis s } }
+      { \paddingC <d? gis d'?>16-- s \makeOctaves 1 { e s d s cis s } }
       { \makeOctaves -1 { s d,? s e s d s cis } }
     >>
   }
@@ -64,17 +64,17 @@ intro-secondo-rh = \relative c {
   r2
   \autochange e' \relative c'' {
     <<
-      { <c? e a c?>16-- s \makeOctaves 1 { d s c s b s a s c s b s a s } }
+      { \paddingC <c? e a c?>16-- s \makeOctaves 1 { d s c s b s a s c s b s a s } }
       { \makeOctaves -1 { s c,? s d s c s b s a s c s b s a } }
     >>
   }
   \csr
-  <gis'' b e gis>8-- \makeOctaves 1 { f e dis e d c b }
+  \paddingC <gis'' b e gis>8-- \makeOctaves 1 { f e dis e d c b }
 }
 
 intro-secondo-lh = \relative c {
   s2 r2 s2 r2 s1
-  << \makeOctaves -1 { e8 f e f e d c b } { s8-- } >>
+  << \makeOctaves -1 { e8 f e f e d c b } { \paddingC s8-- } >>
 }
 
 main-primo-rh = \relative c''' {
@@ -141,7 +141,7 @@ main-secondo-rh = \relative c'' {
         a-. c-. b-. bes-.
         a-. e'-. d-. f-.
         e-. \stemNeutral c8-. a-. gis-. a-.
-        \tag #'print { b4--\glissando }
+        \tag #'print { \paddingC b4--\glissando }
       }
       \tag #'midi { \tuplet 17/16 {
         b64 c d e f g a b c d e f g a b c d
@@ -160,16 +160,16 @@ main-secondo-rh = \relative c'' {
     }
   } >>
 
-  <e c' e>4-- <f f'>8-. <e e'>-. <dis dis'>4--
-  <e e'>4-. <c c'>8-. <a a'>-. <gis gis'>-. <a a'>-. <b b'>4--
+  \paddingC <e c' e>4-- <f f'>8-. <e e'>-. \paddingC <dis dis'>4--
+  <e e'>4-. <c c'>8-. <a a'>-. <gis gis'>-. <a a'>-. \paddingC <b b'>4--
 
-  <a e' a>4-- r8 <f c' f>-. <e b' e>4-- r8 <gis e' gis>-.
-  <a e' a>4-- r8 <f c' f>-. <e b' e>4-- r8 <gis e' gis>-.
+  <a e' a>4-.-- r8 <f c' f>-. <e b' e>4-.-- r8 <gis e' gis>-.
+  <a e' a>4-.-- r8 <f c' f>-. <e b' e>4-.-- r8 <gis e' gis>-.
 
-  <c e a>4-- \clef bass <a, b d gis>--
-  <c e a>4-- \clef treble <a' b d gis>--
-  <c e a>4-- <a' b d gis>--
-  <c e a>4-- <a b d gis>--
+  \paddingC <c e a>4-- \clef bass <a, b d gis>--
+  <c e a>4-- \clef treble \paddingC <a' b d gis>--
+  \paddingC <c e a>4-- \paddingC <a' b d gis>--
+  \paddingC <c e a>4-- \paddingC <a b d gis>--
   <a c e a>4-. r <gis, b e gis>-. r <a c e a>-. r r2
 }
 
