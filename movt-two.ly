@@ -146,18 +146,18 @@ section-B-intro-lh = \relative c, {
     }
     {
       \tag #'midi {
-        \tempo 4 = 45 s8
-        \tempo 4 = 52 s8
+        \tempo 4 = 55 s8
         \tempo 4 = 60 s8
-        \tempo 4 = 70 s8
+        \tempo 4 = 65 s8
+        \tempo 4 = 72 s8
         \tempo 4 = 80 s8
-        \tempo 4 = 90 s8
-        \tempo 4 = 100 s8
-        \tempo 4 = 110 s8
-        \tempo 4 = 114 s8
+        \tempo 4 = 88 s8
+        \tempo 4 = 96 s8
+        \tempo 4 = 102 s8
+        \tempo 4 = 108 s8
+        \tempo 4 = 113 s8
         \tempo 4 = 118 s8
-        \tempo 4 = 121 s8
-        \tempo 4 = 124 s8
+        \tempo 4 = 123 s8
         \tempo 4 = 127 s8
         \tempo 4 = 130 s8
         \tempo 4 = 133 s8

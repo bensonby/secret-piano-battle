@@ -141,9 +141,16 @@ theme-B-rh = \relative c' {
       { \textScriptShiftE s16^\rall s16*10 \paddingA s16\fermata }
       { \tag #'midi {
         s16\tempo 8 = 126
-        s16*8 s16\tempo 8 = 90
-        s16\tempo 8 = 70
-        s16\tempo 8 = 20
+        s16\tempo 8 = 124
+        s16\tempo 8 = 121
+        s16\tempo 8 = 118
+        s16\tempo 8 = 114
+        s16\tempo 8 = 110
+        s16\tempo 8 = 105
+        s16\tempo 8 = 100
+        s16\tempo 8 = 80
+        s16\tempo 8 = 60
+        s16\tempo 8 = 30
       }}
     >>
   }
