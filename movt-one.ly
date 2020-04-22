@@ -224,14 +224,14 @@ movt-one-dynamics = {
   s2\f s2\p
 
   % theme B
-  s4 s4\< s4\! s4\> s2\!\mf
+  s4 \hairpinA s4\< s4\! \hairpinB s4\> \dynamicShiftG s2\!\mf
 
   % theme A
   s2\f s2\p s4 s4-\cresc s2
   s2\f \dynamicShiftC s2\mp
 
   % theme C
-  s2-\espressTxt s2 s2-\cresc
+  s2-\espressTxt s2 \textScriptShiftF s2-\cresc
   s2-\fBrillante
 }
 

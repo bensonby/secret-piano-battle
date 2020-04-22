@@ -51,6 +51,8 @@ dynamicShiftE = \once \override DynamicText.Y-offset = #-7
 dynamicShiftF = \once \override Dynamics.DynamicText.self-alignment-X = #-0.4 % for overlap on the left with barline
 dynamicShiftG = \once \override DynamicText.Y-offset = -2
 dynamicShiftH = \once \override DynamicText.extra-offset = #'(0.35 . 0.9)
+hairpinA = \once \override Hairpin.Y-offset = #-2
+hairpinB = \once \override Hairpin.Y-offset = #-1.4
 paddingA = \once \override Script.padding = #0.6
 paddingB = \once \override Script.padding = #0.4
 offsetA = {
@@ -62,6 +64,7 @@ textScriptShiftB = \once \override TextScript.extra-offset = #'(0 . 0.5)
 textScriptShiftC = \once \override TextScript.extra-offset = #'(0 . -0.5)
 textScriptShiftD = \once \override TextScript.extra-offset = #'(0 . 0.0)
 textScriptShiftE = \once \override TextScript.extra-offset = #'(0 . 0.3)
+textScriptShiftF = \once \override TextScript.extra-offset = #'(0 . -0.6)
 metronomePaddingA = \once \override Score.MetronomeMark.padding = #11.5
 metronomePaddingB = \once \override Score.MetronomeMark.padding = #4
 metronomePaddingC = \once \override Score.MetronomeMark.padding = #6
