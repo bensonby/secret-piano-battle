@@ -150,13 +150,13 @@ main-secondo-rh = \relative c'' {
       \ottava #1 \ottava-one-short e4-. \ottava #0
     }
   } \\ {
-    r8 <c,,, e>
+    r8 <c,,, e>-.
     \repeat unfold 3 {
-      r q r q r q
-      r8 q r q r q r q
-      r8 q r <a' c> r <bes d> r <d f>
-      r8 <a c> s4 s2
-      r8 \ottava #0 <a c>
+      \repeat unfold 3 { r8 \offsetA q-. }
+      \repeat unfold 4 { r8 \offsetA q-. }
+      r8 \offsetA q-. r \offsetA <a' c>-. r \offsetA <bes d>-. r \offsetA <d f>-.
+      r8 \offsetA <a c>-. s4 s2
+      r8 \ottava #0 \offsetA <a c>-.
     }
   } >>
 
