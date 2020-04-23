@@ -42,10 +42,10 @@ midiPan = #0.2 % affecting whole midi output, value from -1 to 1
         \new Staff = "up" {
           \set Staff.midiInstrument = #"acoustic grand"
           \set Staff.midiMinimumVolume = #0.2
-          \set Staff.midiMaximumVolume = #0.5
+          \set Staff.midiMaximumVolume = #0.8
           \set Staff.midiPanPosition = \midiPan
-          \new Voice <<
-            %\articulate <<
+          \set Staff.midiReverbLevel = #0.25
+          \new Voice \articulate <<
             <<
               \keepWithTag #'midi {
                 \movt-one-rh
@@ -90,9 +90,10 @@ midiPan = #0.2 % affecting whole midi output, value from -1 to 1
         \new Staff = "down" {
           \set Staff.midiInstrument = #"acoustic grand"
           \set Staff.midiMinimumVolume = #0.2
-          \set Staff.midiMaximumVolume = #0.5
+          \set Staff.midiMaximumVolume = #0.8
           \set Staff.midiPanPosition = \midiPan
-          \new Voice <<
+          \set Staff.midiReverbLevel = #0.25
+          \new Voice \articulate <<
             <<
               \keepWithTag #'midi {
                 \movt-one-lh
@@ -139,9 +140,10 @@ midiPan = #0.2 % affecting whole midi output, value from -1 to 1
         \new Staff = "up" {
           \set Staff.midiInstrument = #"acoustic grand"
           \set Staff.midiMinimumVolume = #0.2
-          \set Staff.midiMaximumVolume = #0.5
+          \set Staff.midiMaximumVolume = #0.8
           \set Staff.midiPanPosition = -\midiPan
-          \new Voice <<
+          \set Staff.midiReverbLevel = #0.25
+          \new Voice \articulate <<
             <<
               \keepWithTag #'midi {
                 \rest-duration-one
@@ -185,9 +187,10 @@ midiPan = #0.2 % affecting whole midi output, value from -1 to 1
         \new Staff = "down" {
           \set Staff.midiInstrument = #"acoustic grand"
           \set Staff.midiMinimumVolume = #0.2
-          \set Staff.midiMaximumVolume = #0.5
+          \set Staff.midiMaximumVolume = #0.8
           \set Staff.midiPanPosition = -\midiPan
-          \new Voice <<
+          \set Staff.midiReverbLevel = #0.25
+          \new Voice \articulate <<
             <<
               \keepWithTag #'midi {
                 \rest-duration-one
