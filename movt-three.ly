@@ -102,12 +102,14 @@ theme-arpeggios-lh = \relative c, {
   \time 5/4 \paddingB <d d'>2.~\accentA q8
   \tag #'(midi both-hands left-hand) { \tempo 4 = 130 }
   \paddingB <gis gis'>\accentA
+  \tag #'(midi both-hands left-hand) { \tempo 4 = 125 }
   \paddingB <a a'>\accentA
   \tag #'(midi both-hands left-hand) { \tempo 4 = 150 }
   \paddingB <d, d'>\accentA
   <c c'>2.~\accentA q8
   \tag #'(midi both-hands left-hand) { \tempo 4 = 130 }
   \paddingB <gis' gis'>\accentA
+  \tag #'(midi both-hands left-hand) { \tempo 4 = 125 }
   \paddingB <a a'>\accentA
   \tag #'(midi both-hands left-hand) { \tempo 4 = 150 }
   \paddingB <ais, ais'>\accentA
