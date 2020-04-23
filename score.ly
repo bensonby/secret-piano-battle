@@ -163,7 +163,9 @@ currentTag = #"print"
       arranger = ##f
     }
     \new StaffGroup <<
-      \new PianoStaff <<
+      \new PianoStaff \with {
+        instrumentName = #"Piano I/II"
+      } <<
         \new Staff = "up" \with {
         } {
           \keepWithTag \currentTag \movt-one-rh
@@ -197,6 +199,7 @@ currentTag = #"print"
     }
     \new StaffGroup <<
       \new PianoStaff \with {
+        instrumentName = #"Piano I/II"
         \override StaffGrouper.staff-staff-spacing = #'(
           (basic-distance . 10)
           (padding . 5)
