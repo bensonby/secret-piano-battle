@@ -282,19 +282,15 @@ midiPan = #0.2 % affecting whole midi output, value from -1 to 1
     \new StaffGroup <<
       \new PianoStaff \with {
         instrumentName = #"Piano I/II"
-        \override StaffGrouper.staff-staff-spacing = #'(
-          (basic-distance . 10)
-          (padding . 5)
-        )
       } <<
         \new Staff = "rh" { \keepWithTag \currentTag \movt-two-rh }
         \new Dynamics = "dynamics" \with {
           \override VerticalAxisGroup.staff-affinity = #UP
           \override VerticalAxisGroup.nonstaff-relatedstaff-spacing = #'(
-            (padding . 1.5)
+            (padding . 1)
           )
           \override VerticalAxisGroup.nonstaff-unrelatedstaff-spacing = #'(
-            (padding . 1.5)
+            (padding . 1)
           )
         } { \keepWithTag \currentTag \movt-two-dynamics }
         \new Staff = "lh" {
