@@ -8,8 +8,9 @@ extra-rest-before-three = {
 }
 
 rest-duration-three = {
+  \time 4/4
   s1*8
-  s2. s2 s2. s2 s1 s2. s2 s1
+  \time 5/4 s2. s2 s2. s2 \time 4/4 s1 \time 5/4 s2. s2 \time 4/4 s1
 }
 
 theme-running-notes-rh = \relative c {
@@ -196,6 +197,15 @@ movt-three-primo-single-staff-dynamics = {
     { \repeat unfold 8 { s4 s8.\< s16\! s8.\> s16\! s4 } }
     { s1\p s1*3 \dynamicShiftC s1\mp s1 s1\mf s1 }
   >>
+  \time 5/4
+  s2. s2
+  s2. s2
+  \time 4/4
+  s1
+  \time 5/4
+  s2. s2
+  \time 4/4
+  s1
 }
 
 movt-three-secondo-single-staff-dynamics = {
@@ -203,6 +213,15 @@ movt-three-secondo-single-staff-dynamics = {
     { \repeat unfold 8 { s4 s8.\< s16\! s8.\> s16\! s4 } }
     { s1\p s1*3 \dynamicShiftF s1\mp s1 s1\mf s1 }
   >>
+  \time 5/4
+  s2. s2
+  s2. s2
+  \time 4/4
+  s1
+  \time 5/4
+  s2. s2
+  \time 4/4
+  s1
 }
 
 movt-three-primo-dynamics = {

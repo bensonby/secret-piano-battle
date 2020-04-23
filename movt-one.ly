@@ -240,6 +240,7 @@ movt-one-dynamics = {
   % theme C
   s2-\espressTxt s2 \textScriptShiftF s2-\cresc
   s2-\fBrillante
+  s2*2
 }
 
 movt-one-dynamics-pedal = {
@@ -295,6 +296,7 @@ movt-one-dynamics-pedal = {
     \repeat unfold 5 { s8..\son s32\soff }
     s8\son s8\soff
     \repeat unfold 2 { s8\son s4.\soff }
+    s2
   }
   \tag #'print {
     s4\son
@@ -308,5 +310,6 @@ movt-one-dynamics-pedal = {
     s4.\soff
     s8\son
     s4.\soff
+    s2
   }
 }

@@ -219,6 +219,7 @@ movt-two-lh = \relative c {
 }
 
 movt-two-dynamics = {
+  \tag #'midi { r2 }
   s4\mf
   \repeat unfold 6 {
     s2\> s8. s16\!
@@ -236,6 +237,7 @@ movt-two-dynamics = {
   s8 \subPAccelAndCrescSpanner s4.-\startTextSpan s2
   \dynamicShiftE
   s2\stopTextSpan\f
+  s2*7
 }
 
 movt-two-dynamics-pedal = {
@@ -243,7 +245,9 @@ movt-two-dynamics-pedal = {
   \tag #'print {
     s4 % partial 4
     \textScriptShiftC
-    s2-\conPedal
+    s2.-\conPedal
+    s2.*14
+    s2*20
   }
   \tag #'midi {
     s2.
@@ -261,5 +265,6 @@ movt-two-dynamics-pedal = {
     \repeat unfold 6 {
       s8\son s4.\soff
     }
+    s2*2
   }
 }

@@ -44,63 +44,94 @@ midiPan = #0.2 % affecting whole midi output, value from -1 to 1
           \set Staff.midiMinimumVolume = #0.2
           \set Staff.midiMaximumVolume = #0.5
           \set Staff.midiPanPosition = \midiPan
-          \articulate <<
+          \new Voice <<
+            %\articulate <<
             <<
-              { \keepWithTag #'midi \movt-one-rh }
-              { \keepWithTag #'midi \movt-one-dynamics-pedal }
+              \keepWithTag #'midi {
+                \movt-one-rh
+                \movt-two-rh
+                \extra-rest-before-three
+                \rest-duration-three
+                \movt-three-primo-rh
+                \movt-threeB-primo-rh
+              }
+            >>
+            <<
+              \keepWithTag #'midi {
+                \movt-one-dynamics
+                \movt-two-dynamics
+                \extra-rest-before-three
+                \rest-duration-three
+                \movt-three-primo-dynamics
+                \movt-threeB-primo-dynamics
+              }
+            >>
+            <<
+              \keepWithTag #'midi {
+                \movt-one-dynamics-pedal
+                \movt-two-dynamics-pedal
+                \extra-rest-before-three
+                \rest-duration-three
+                \movt-three-dynamics-pedal
+                \keepWithTag #'primo \movt-threeB-dynamics-pedal
+              }
+            >>
+            <<
+              \keepWithTag #'midi {
+                \rest-duration-one
+                \rest-duration-two
+                \extra-rest-before-three
+                \rest-duration-three
+                \movt-three-primo-single-staff-dynamics
+              }
             >>
           >>
-          \articulate <<
-            { \keepWithTag #'midi \movt-two-rh }
-            { \keepWithTag #'midi \movt-two-dynamics-pedal }
-          >>
-          \extra-rest-before-three
-          \rest-duration-three
-          \articulate <<
-            { \keepWithTag #'midi \movt-three-primo-rh }
-            { \keepWithTag #'midi \movt-three-dynamics-pedal }
-          >>
-          \articulate <<
-            { \keepWithTag #'midi \movt-threeB-primo-rh }
-            { \keepWithTag #'primo \movt-threeB-dynamics-pedal }
-          >>
         }
-        \new Dynamics = "dynamics" <<
-          \keepWithTag #'midi
-          \movt-one-dynamics
-          \movt-two-dynamics
-          \extra-rest-before-three
-          <<
-            { \movt-three-primo-dynamics }
-            { \movt-three-primo-single-staff-dynamics }
-          >>
-        >>
         \new Staff = "down" {
           \set Staff.midiInstrument = #"acoustic grand"
           \set Staff.midiMinimumVolume = #0.2
           \set Staff.midiMaximumVolume = #0.5
           \set Staff.midiPanPosition = \midiPan
-          \articulate <<
+          \new Voice <<
             <<
-              { \keepWithTag #'midi \movt-one-lh }
-              { \keepWithTag #'midi \movt-one-dynamics-pedal }
+              \keepWithTag #'midi {
+                \movt-one-lh
+                \movt-two-lh
+                \extra-rest-before-three
+                \rest-duration-three
+                \movt-three-primo-lh
+                \movt-threeB-primo-lh
+              }
             >>
-          >>
-          \articulate <<
             <<
-              { \keepWithTag #'midi \movt-two-lh }
-              { \keepWithTag #'midi \movt-two-dynamics-pedal }
+              \keepWithTag #'midi {
+                \movt-one-dynamics
+                \movt-two-dynamics
+                \extra-rest-before-three
+                \rest-duration-three
+                \movt-three-primo-dynamics
+                \movt-threeB-primo-dynamics
+              }
             >>
-          >>
-          \extra-rest-before-three
-          \rest-duration-three
-          \articulate <<
-            { \keepWithTag #'midi \movt-three-primo-lh }
-            { \keepWithTag #'midi \movt-three-dynamics-pedal }
-          >>
-          \articulate <<
-            { \keepWithTag #'midi \movt-threeB-primo-lh }
-            { \keepWithTag #'primo \movt-threeB-dynamics-pedal }
+            <<
+              \keepWithTag #'midi {
+                \movt-one-dynamics-pedal
+                \movt-two-dynamics-pedal
+                \extra-rest-before-three
+                \rest-duration-three
+                \movt-three-dynamics-pedal
+                \keepWithTag #'primo \movt-threeB-dynamics-pedal
+              }
+            >>
+            <<
+              \keepWithTag #'midi {
+                \rest-duration-one
+                \rest-duration-two
+                \extra-rest-before-three
+                \rest-duration-three
+                \movt-three-primo-single-staff-dynamics
+              }
+            >>
           >>
         }
       >>
@@ -110,55 +141,98 @@ midiPan = #0.2 % affecting whole midi output, value from -1 to 1
           \set Staff.midiMinimumVolume = #0.2
           \set Staff.midiMaximumVolume = #0.5
           \set Staff.midiPanPosition = -\midiPan
-          \keepWithTag #'midi
-          \rest-duration-one
-          \rest-duration-two
-          \extra-rest-before-three
-          \articulate <<
-            { \keepWithTag #'midi \movt-three-secondo-rh }
-            { \keepWithTag #'midi \movt-three-dynamics-pedal }
-          >>
-          \rest-duration-three
-          \articulate <<
-            { \keepWithTag #'midi \movt-threeB-secondo-rh }
-            { \keepWithTag #'secondo \movt-threeB-dynamics-pedal }
+          \new Voice <<
+            <<
+              \keepWithTag #'midi {
+                \rest-duration-one
+                \rest-duration-two
+                \extra-rest-before-three
+                \movt-three-secondo-rh
+                \rest-duration-three
+                \movt-threeB-secondo-rh
+              }
+            >>
+            <<
+              \keepWithTag #'midi {
+                \rest-duration-one
+                \rest-duration-two
+                \extra-rest-before-three
+                \movt-three-dynamics-pedal
+                \rest-duration-three
+                \keepWithTag #'secondo \movt-threeB-dynamics-pedal
+              }
+            >>
+            <<
+              \keepWithTag #'midi {
+                \rest-duration-one
+                \rest-duration-two
+                \extra-rest-before-three
+                \movt-three-secondo-dynamics
+                \rest-duration-three
+                \movt-threeB-secondo-dynamics
+              }
+            >>
+            <<
+              \keepWithTag #'midi {
+                \rest-duration-one
+                \rest-duration-two
+                \extra-rest-before-three
+                \movt-three-secondo-single-staff-dynamics
+              }
+            >>
           >>
         }
-        \new Dynamics = "dynamics" <<
-          \keepWithTag #'midi
-          \rest-duration-one
-          \rest-duration-two
-          \extra-rest-before-three
-          << 
-            { \movt-three-secondo-dynamics }
-            { \movt-three-secondo-single-staff-dynamics }
-          >>
-          \rest-duration-three
-          \movt-threeB-secondo-dynamics
-        >>
         \new Staff = "down" {
           \set Staff.midiInstrument = #"acoustic grand"
           \set Staff.midiMinimumVolume = #0.2
           \set Staff.midiMaximumVolume = #0.5
           \set Staff.midiPanPosition = -\midiPan
-          \keepWithTag #'midi
-          \rest-duration-one
-          \rest-duration-two
-          \extra-rest-before-three
-          \articulate <<
-            { \keepWithTag #'midi \movt-three-secondo-lh }
-            { \keepWithTag #'midi \movt-three-dynamics-pedal }
-          >>
-          \rest-duration-three
-          \articulate <<
-            { \keepWithTag #'midi \movt-threeB-secondo-lh }
-            { \keepWithTag #'secondo \movt-threeB-dynamics-pedal }
+          \new Voice <<
+            <<
+              \keepWithTag #'midi {
+                \rest-duration-one
+                \rest-duration-two
+                \extra-rest-before-three
+                \movt-three-secondo-lh
+                \rest-duration-three
+                \movt-threeB-secondo-lh
+              }
+            >>
+            <<
+              \keepWithTag #'midi {
+                \rest-duration-one
+                \rest-duration-two
+                \extra-rest-before-three
+                \movt-three-dynamics-pedal
+                \rest-duration-three
+                \keepWithTag #'secondo \movt-threeB-dynamics-pedal
+              }
+            >>
+            <<
+              \keepWithTag #'midi {
+                \rest-duration-one
+                \rest-duration-two
+                \extra-rest-before-three
+                \movt-three-secondo-dynamics
+                \rest-duration-three
+                \movt-threeB-secondo-dynamics
+              }
+            >>
+            <<
+              \keepWithTag #'midi {
+                \rest-duration-one
+                \rest-duration-two
+                \extra-rest-before-three
+                \movt-three-secondo-single-staff-dynamics
+                \rest-duration-three
+              }
+            >>
           >>
         }
       >>
     >>
-    \midi {
-    }
+    % \layout {} % uncomment to see the output of midi as score
+    \midi { }
   }
 
   \score {
@@ -219,7 +293,7 @@ midiPan = #0.2 % affecting whole midi output, value from -1 to 1
           \override VerticalAxisGroup.nonstaff-unrelatedstaff-spacing = #'(
             (padding . 1.5)
           )
-        } { \movt-two-dynamics }
+        } { \keepWithTag \currentTag \movt-two-dynamics }
         \new Staff = "lh" {
           <<
             { \keepWithTag \currentTag \movt-two-lh }
