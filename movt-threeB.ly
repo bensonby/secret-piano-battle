@@ -64,7 +64,7 @@ intro-secondo-rh = \relative c {
   r2
   \autochange e' \relative c'' {
     <<
-      { \paddingC <c? e a c?>16-- s \makeOctaves 1 { d s c s b s a s c s b s a s } }
+      { <c? e a c?>16 s \makeOctaves 1 { d s c s b s a s c s b s a s } }
       { \makeOctaves -1 { s c,? s d s c s b s a s c s b s a } }
     >>
   }
