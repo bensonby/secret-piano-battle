@@ -40,7 +40,7 @@ instructionII = {
   \once \override Score.RehearsalMark.font-size = #0.3
   \once \override Score.RehearsalMark.X-offset = #0
   \mark \markup \box \pad-around #1 {
-    \smaller "First played by Piano II; then by Piano I from bar 16 (no high C#) till the end, followed by bar 1 till bar 16's first note."
+    \smaller "First played by Piano II; then by Piano I from bar 16 (no high C#) till the end, followed by bar 1 till first note of bar 16."
   }
 }
 dynamicShiftA = \once \override DynamicText.X-offset = #-3
