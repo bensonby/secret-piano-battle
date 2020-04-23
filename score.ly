@@ -3,6 +3,7 @@
 #(set-global-staff-size 17.5)
 
 currentTag = #"print"
+midiPan = #0.2 % affecting whole midi output, value from -1 to 1
 
 \include "definitions.ly"
 \include "makeOctaves.ly"
@@ -42,6 +43,7 @@ currentTag = #"print"
           \set Staff.midiInstrument = #"acoustic grand"
           \set Staff.midiMinimumVolume = #0.2
           \set Staff.midiMaximumVolume = #0.5
+          \set Staff.midiPanPosition = \midiPan
           \articulate <<
             <<
               { \keepWithTag #'midi \movt-one-rh }
@@ -77,6 +79,7 @@ currentTag = #"print"
           \set Staff.midiInstrument = #"acoustic grand"
           \set Staff.midiMinimumVolume = #0.2
           \set Staff.midiMaximumVolume = #0.5
+          \set Staff.midiPanPosition = \midiPan
           \articulate <<
             <<
               { \keepWithTag #'midi \movt-one-lh }
@@ -106,6 +109,7 @@ currentTag = #"print"
           \set Staff.midiInstrument = #"acoustic grand"
           \set Staff.midiMinimumVolume = #0.2
           \set Staff.midiMaximumVolume = #0.5
+          \set Staff.midiPanPosition = -\midiPan
           \keepWithTag #'midi
           \rest-duration-one
           \rest-duration-two
@@ -136,6 +140,7 @@ currentTag = #"print"
           \set Staff.midiInstrument = #"acoustic grand"
           \set Staff.midiMinimumVolume = #0.2
           \set Staff.midiMaximumVolume = #0.5
+          \set Staff.midiPanPosition = -\midiPan
           \keepWithTag #'midi
           \rest-duration-one
           \rest-duration-two
