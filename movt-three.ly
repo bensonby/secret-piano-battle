@@ -69,7 +69,7 @@ theme-arpeggios-rh = \relative c' {
   \tag #'midi { \tempo 4 = 150 }
 
   \time 5/4 r4
-  \tag #'(print midi both-hands) {
+  \tag #'(print both-hands) {
     << {
       <e' gis e'>16\([ s
       \makeOctaves 1 { f] s e[ s f] s e[ s f] s e[ s f] s }
@@ -83,17 +83,40 @@ theme-arpeggios-rh = \relative c' {
     \ottava #1 \ottava-one-short
     e''' \ottava #0 r2
   }
-  \tag #'(print midi left-hand) {
+  \tag #'(midi both-hands) {
+    << {
+      <e,, gis e'>16\([ s
+      \makeOctaves 1 { f]\f s e[\f s f]\f s e[\f s f]\f s e[\f s f]\f s }
+      \time 4/4
+      <e e'>4\)\accentB\f
+    } \\ {
+      \repeat unfold 4 { s16 <e, gis b d>[\mp s q]\mp }
+      q4\accentB\f
+    } >>
+
+    \ottava #1 \ottava-one-short
+    e''' \ottava #0 r2
+  }
+  \tag #'(print left-hand) {
     <e,,, e'>16\( <gis b>
     <f f'> <gis b>
-    <e e'>16 <gis b>
-    <f f'> <gis b>
-    <e e'>16 <gis b>
-    <f f'> <gis b>
-    <e e'>16 <gis b>
-    <f f'> <gis b>
+    \repeat unfold 3 {
+      <e e'>16 <gis b>
+      <f f'> <gis b>
+    }
     \time 4/4
     <e gis b e>4\)
+    e''4\sf-. r2
+  }
+  \tag #'(midi left-hand) {
+    <e,, e'>16\(\f <gis b>\mp
+    <f f'>\f <gis b>\mp
+    \repeat unfold 3 {
+      <e e'>16\f <gis b>\mp
+      <f f'>\f <gis b>\mp
+    }
+    \time 4/4
+    <e gis b e>4\)\f
     e''4\sf-. r2
   }
 }
