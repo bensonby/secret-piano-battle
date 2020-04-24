@@ -5,6 +5,12 @@
 currentTag = #"print"
 midiPan = #0.2 % affecting whole midi output, value from -1 to 1
 
+% https://www.youtube.com/watch?v=YxY1aJsfa1M&t=5m
+% Youtube Soundtrack (different from actual movie scene)
+
+% https://www.youtube.com/watch?v=NNUzJ2rhw2k
+% Actual movie scene
+
 \include "definitions.ly"
 \include "makeOctaves.ly"
 \include "movt-one.ly"
@@ -31,7 +37,11 @@ midiPan = #0.2 % affecting whole midi output, value from -1 to 1
 
 \book {
   \header {
-    title = "Piano Battle Scene (from \"Secret\")"
+    % https://music.apple.com/hk/album/%E4%B8%8D%E8%83%BD%E8%AA%AA%E7%9A%84-%E7%A7%98%E5%AF%86-%E9%9B%BB%E5%BD%B1%E5%8E%9F%E8%81%B2%E5%B8%B6/601289432
+    title = "Piano Duel Medley (from \"Secret\")"
+    % https://baike.baidu.com/item/%E4%B8%8D%E8%83%BD%E8%AF%B4%E7%9A%84%E7%A7%98%E5%AF%86%E7%94%B5%E5%BD%B1%E5%8E%9F%E5%A3%B0%E5%B8%A6
+    % https://zh.wikipedia.org/wiki/%E4%B8%8D%E8%83%BD%E8%AA%AA%E7%9A%84%C2%B7%E7%A7%98%E5%AF%86#%E9%9B%BB%E5%BD%B1%E5%8E%9F%E8%81%B2%E5%B8%B6
+    composer = "Composed by Jay Chou"
     arranger = "Transcribed by Benson Yeung"
     % copyright = "https://music.bensonby.me"
     % tagline = "https://music.bensonby.me"
@@ -242,6 +252,7 @@ midiPan = #0.2 % affecting whole midi output, value from -1 to 1
     \header {
       title = "I"
       instrument = ##f
+      composer = ##f
       arranger = ##f
     }
     \new StaffGroup <<
@@ -277,6 +288,7 @@ midiPan = #0.2 % affecting whole midi output, value from -1 to 1
     \header {
       title = "II"
       instrument = ##f
+      composer = ##f
       arranger = ##f
     }
     \new StaffGroup <<
@@ -309,6 +321,7 @@ midiPan = #0.2 % affecting whole midi output, value from -1 to 1
     \header {
       title = "III"
       instrument = ##f
+      composer = ##f
       arranger = ##f
     }
     \new StaffGroup <<
@@ -342,6 +355,7 @@ midiPan = #0.2 % affecting whole midi output, value from -1 to 1
     \header {
       title = ##f
       instrument = ##f
+      composer = ##f
       arranger = ##f
     }
     \new StaffGroup <<
@@ -379,6 +393,7 @@ midiPan = #0.2 % affecting whole midi output, value from -1 to 1
     \header {
       title = ##f
       instrument = ##f
+      composer = ##f
       arranger = ##f
     }
     \new StaffGroup <<
