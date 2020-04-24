@@ -428,7 +428,10 @@ midiPan = #0.2 % affecting whole midi output, value from -1 to 1
       } <<
         \new Staff = "up" { \keepWithTag \currentTag \movt-threeB-secondo-rh }
         \new Dynamics = "secondo-dynamics" \movt-threeB-secondo-dynamics
-        \new Staff = "down" { \keepWithTag \currentTag \movt-threeB-secondo-lh }
+        \new Staff = "down" <<
+          { \keepWithTag \currentTag \movt-threeB-secondo-lh }
+          { \keepWithTag \currentTag \movt-threeB-dynamics-pedal }
+        >>
       >>
     >>
     \layout { }

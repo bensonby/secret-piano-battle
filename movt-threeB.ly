@@ -1,15 +1,20 @@
-intro-primo-rh = \relative c' {
+intro-primo-rh = \relative c {
   \metronomePaddingD
   \tempo "Agitato"
+  \clef bass
   r2
   % autochange with specified point not supported in 2.18.2
-  \autochange b \relative c' {
-    <e gis e'>16-- e,
+  \autochange b, \relative c,, {
+    \acciaccatura <e e'>16
+    <e'' gis e'>16-- e,
     <f' f'> f,
     <e' e'> e,
     <dis' dis'> dis,
-    r2
-    <d'? gis d'?>16-- d,?
+  }
+  \cpr r2
+  \autochange b, \relative c, {
+    \acciaccatura <d, d'?>16
+    <d''? gis d'?>16-- d,
     <e' e'> e,
     <d' d'> d,
     <cis' cis'> cis,
@@ -26,7 +31,7 @@ intro-primo-rh = \relative c' {
   \cpr
   \tag #'print {
     << {
-      c4\glissando \clef treble \ottava #1 \ottava-one-short \stemDown e'''8 \ottava #0
+      c'4\glissando \clef treble \ottava #1 \ottava-one-short \stemDown e'''8 \ottava #0
     } \\ {
       s4 \cpl \stemUp a,,16 gis
       \cpr \stemDown a b
@@ -41,7 +46,7 @@ intro-primo-rh = \relative c' {
 
 intro-primo-lh = \relative c, {
   r2 s2 r2 s2
-  <c c'?>8 \makeOctaves 1 { d c b a c b a }
+  c8 d c b a c b a
   s2 s4 <c c'>8 r
 }
 
@@ -133,34 +138,23 @@ main-primo-lh = \relative c'' {
 }
 
 main-secondo-rh = \relative c'' {
-  << {
-    <a a'>4-.
-    \repeat unfold 3 {
-      \makeOctaves 1 {
-        c4-. b-. bes-.
-        a-. c-. b-. bes-.
-        a-. e'-. d-. f-.
-        e-. \stemNeutral c8-. a-. gis-. a-.
-        \tag #'print { \paddingC b4--\glissando }
-      }
-      \tag #'midi { \tuplet 17/16 {
-        b64 c d e f g a b c d e f g a b c d
-      }}
-      \stemUp
-      \ottava #1 \ottava-one-short e4-. \ottava #0
+  <a a'>4-.
+  \repeat unfold 3 {
+    \makeOctaves 1 {
+      c4-. b-. bes-.
+      a-. c-. b-. bes-.
+      a-. e'-. d-. f-.
+      e-. \stemNeutral c8-. a-. gis-. a-.
+      \tag #'print { \paddingC b4--\glissando }
     }
-  } \\ {
-    r8 <c,,, e>-.
-    \repeat unfold 3 {
-      \repeat unfold 3 { r8 \offsetA q-. }
-      \repeat unfold 4 { r8 \offsetA q-. }
-      r8 \offsetA q-. r \offsetA <a' c>-. r \offsetA <bes d>-. r \offsetA <d f>-.
-      r8 \offsetA <a c>-. s4 s2
-      r8 \ottava #0 \offsetA <a c>-.
-    }
-  } >>
+    \tag #'midi { \tuplet 17/16 {
+      b64 c d e f g a b c d e f g a b c d
+    }}
+    \stemUp
+    \ottava #1 \ottava-one-short e8-. \ottava #0 r8
+  }
 
-  \paddingC <e c' e>4-- <f f'>8-. <e e'>-. \paddingC <dis dis'>4--
+  \paddingC <e,,, c' e>4-- <f f'>8-. <e e'>-. \paddingC <dis dis'>4--
   <e e'>4-. <c c'>8-. <a a'>-. <gis gis'>-. <a a'>-. \paddingC <b b'>4--
 
   <a e' a>4-.-- r8 <f c' f>-. <e b' e>4-.-- r8 <gis e' gis>-.
@@ -168,42 +162,50 @@ main-secondo-rh = \relative c'' {
 
   \paddingC <c e a>4-- \clef bass <a, b d gis>--
   <c e a>4-- \clef treble \paddingC <a' b d gis>--
-  \paddingC <c e a>4-- \paddingC <a' b d gis>--
-  \paddingC <c e a>4-- \paddingC <a b d gis>--
-  <a c e a>4-. r <gis, b e gis>-. r <a c e a>-. r r2
+  \paddingC <c e a>4-- \paddingC <gis' d'>--
+  \paddingC <c e a>4-- \paddingC <gis e'>8-. d'-.
+  <e, a c>4-. r <gis, b e gis>-. r <a c e a>-. r r2
 }
 
 main-secondo-lh = \relative c, {
   \repeat unfold 3 {
-    \repeat unfold 10 {a8-. a'-.}
-    \repeat unfold 2 {bes,8-. bes'-.}
+    <<
+      {
+        <a a,>8-. s a-. s a-. s a-. s
+        q-. s a-. s a-. s a-. s
+        q-. s a-. s <bes bes,>-. s bes-. s
+      }
+      {
+        s8 <c' e>-. s q-. s <d f>-. s q-. 
+        s8 <c e>-. s q-. s q-. s q-.
+        s q-. s q-. s <d f>-. s q-.
+      }
+    >>
   }
   \alternative {
     {
-      c,8-. c'-. a,-. a'-.
-      <e, e'>\accentA-. <fis fis'>\accentA-. <gis gis'>4\accentA--
+      <c, c,>8-. <c' e>-. a,-. q-.
+      <e e'>\accentA-. <fis fis'>\accentA-. <gis gis'>4\accentA--
     }
     {
-      c8-. c'-. c,-. c'-.
-      <d, d'>\accentA-. <e e'>\accentA-. <d d'>4\accentA--
+      <c c,>8-. <c' e>-. a,-. q-.
+      <d d'>\accentA-. <e e'>\accentA-. <d d'>4\accentA--
     }
     {
-      c8-. c'-. a,-. a'-.
-      <e, e'>\accentA-. <fis fis'>\accentA-. <gis gis'>4\accentA--
+      <c c,>8-. <c' e>-. a,-. q-.
+      <e e'>\accentA-. <fis fis'>\accentA-. <gis gis'>4\accentA--
     }
   }
 
-  <a a'>8-. <c' e>-. <c, c'>-. <c' e>-. <f, b f'>8\accentA <e b' e>\accentA <dis b' dis>4--\accentA
-  <a a'>8-. <c' e>-. <a, a'>-. <c' e>-. <e,, e'>8-.\accentA <fis fis'>-.\accentA <gis gis'>4--\accentA
+  <a a,>8-. <c' e>-. <c, c'>-. <c' e>-. <f, b f'>8\accentA <e b' e>\accentA <dis b' dis>4--\accentA
+  <a a,>8-. <c' e>-. <a, a'>-. <c' e>-. <e,, e'>8-.\accentA <fis fis'>-.\accentA <gis gis'>4--\accentA
 
-  <a e' a>4---. r8 <f c' f>-. <e b' e>4---. r8 <gis e' gis>-.
-  <a e' a>4---. r8 <f c' f>-. <e b' e>4---. r8 <gis e' gis>-.
+  <a e a,>8---. <a' e'> d, <f, c' f>-. <e b' e>---. <b'' e> d, <gis, e' gis>-.
+  <a e' a>8---. <a' e'> d, <f, c' f>-. <e b' e>---. <b'' e> d, <gis, e' gis>-.
 
-  <a e' a>4-- <e b' e>--
-  <a e' a>4-- <e' b' e>--
-  <a e' a>4-- <e' b' e>--
-  <a e' a>8--[ e-.] e'-. \csr d'-.
-  \csl <a,, e' a>4-. r <e a e'>-. r <a, e' a>-. r r2
+  a8-. <e' a>-. e,-. <b' e>-. a-. <e' a>-. e-. <b' e>-.
+  a8-. <e' a>-. <e b'>-. <a e'>-. a-. q-. <e a e'>-. e-.
+  <a, e' a>4-.-> r <e a e'>-.-> r \ottava #-1 <a,, e' a>-.-> \ottava #0 r r2
 
   \bar "|."
 }
@@ -249,28 +251,43 @@ movt-threeB-secondo-dynamics = {
 }
 
 movt-threeB-dynamics-pedal = {
-  % intro
-  \repeat unfold 8 {
-    s4...\son s32\soff
-  }
-  \repeat unfold 56 {
-    s8..\son s32\soff
+  \set Staff.pedalSustainStyle = #'bracket
+  \tag #'(midi primo secondo) {
+    % intro
+    \repeat unfold 8 {
+      s4...\son s32\soff
+    }
+    \repeat unfold 56 {
+      s8..\son s32\soff
+    }
   }
 
-  \tag #'primo {
+  \tag #'(midi primo) {
     \repeat unfold 8 {
       s8..\son s32\soff
     }
   }
-  \tag #'secondo {
+  \tag #'(midi secondo) {
     % hack to prevent pedal hanging
     s16\son s8.\soff s2. s1
   }
 
-  \repeat unfold 8 {
-    s8..\son s32\soff
+  \tag #'(midi primo secondo) {
+    \repeat unfold 8 {
+      s8..\son s32\soff
+    }
   }
 
-  % hack to prevent pedal still hanging at the end
-  s16\son s8.\soff s2. s1
+  \tag #'(midi primo secondo) {
+    % hack to prevent pedal still hanging at the end
+    s16\son s8.\soff s2. s1
+  }
+
+  \tag #'(print secondo) {
+    s1*4
+    s1*14
+    s1*2
+    s1\son s1
+    s1\soff s1
+  }
 }
