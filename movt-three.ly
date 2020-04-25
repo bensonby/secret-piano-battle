@@ -136,7 +136,7 @@ theme-arpeggios-rh = \relative c' {
 theme-arpeggios-lh = \relative c, {
   \override Score.FootnoteItem.annotation-line = ##f
   \time 5/4
-  \tag #'(print both-hands) {
+  \tag #'(print midi both-hands) {
     \paddingB
     
     <d \footnote "*)" #'(0.5 . -4) \markup \pad-around #1.5 {
