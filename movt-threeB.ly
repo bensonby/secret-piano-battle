@@ -237,8 +237,9 @@ movt-threeB-primo-dynamics = {
   s1\f s1 s1 s1
 
   \dynamicShiftH s1\fp s1-\cresc s1\f s1
-  \textScriptShiftC
-  s1-\cresc s1 \dynamicShiftC s1\ff s1
+  \tag #'print { \textScriptShiftC s1-\cresc }
+  \tag #'midi { s1\pp\< }
+  s1 \dynamicShiftC s1\ff s1
 }
 movt-threeB-secondo-dynamics = {
   \dynamicShiftB s1\f s1 s1 s1
@@ -246,8 +247,9 @@ movt-threeB-secondo-dynamics = {
   s1 s1 s1 s1
   s1 s1 s1 s1
 
-  \dynamicShiftC s1\mf s1 s1 s1
-  s1-\cresc s1 \dynamicShiftC s1\ff s1
+  \dynamicShiftC s1\mf s1 s1\f s1
+  \tag #'print { s1-\cresc } \tag #'midi { s1\pp\< }
+  s1 \dynamicShiftC s1\ff s1
 }
 
 movt-threeB-dynamics-primo-pedal = {

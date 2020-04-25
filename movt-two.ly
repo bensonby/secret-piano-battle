@@ -222,19 +222,35 @@ movt-two-dynamics = {
   \tag #'midi { r2 }
   s4\mf
   \repeat unfold 6 {
-    s2\> s8. s16\!
+    \tag #'print { s2\> s8. s16\! }
+    \tag #'midi { s2\mf\> s8. s16\!\mp }
   }
   s4 s2\<
-  s2 s8. s16\!
+  s2 s8. \tag #'print { s16\! } \tag #'midi { s16\!\mf }
   s2.\mf s2.
   s2.\p s2.
-  s2.\< s2 s8 s8\!
+  s2.\< s2 s8 \tag #'print { s8\! } \tag #'midi { s8\!\f }
   s2.\f
-  \textScriptShiftA
-  s2-\beginSlowlyThenAccel s2 s2 s2
+  \tag #'print {
+    \textScriptShiftA
+    s2-\beginSlowlyThenAccel s2 s2 s2
+  }
+  \tag #'midi {
+    s8\f
+    s4.\p
+    s2\<
+    s2
+    s4. s8\mf
+  }
   \dynamicShiftD
   s2\mf s2*5
-  s8 \subPAccelAndCrescSpanner s4.-\startTextSpan s2
+  \tag #'print {
+    s8 \subPAccelAndCrescSpanner
+    s4.-\startTextSpan s2
+  }
+  \tag #'midi {
+    s8 s4.\p\< s2
+  }
   \dynamicShiftE
   s2\stopTextSpan\f
   s2*7

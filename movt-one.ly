@@ -224,14 +224,17 @@ movt-one-lh = \relative c {
 
 movt-one-dynamics = {
   % intro
-  s2-\ffBrillante s2
+  \tag #'print { s2-\ffBrillante }
+  \tag #'midi { s2\ff }
+  s2
 
   % theme A
-  s2-\fLegatoELeggiero \dynamicShiftG s2\p s4 s4-\cresc s2
+  \tag #'print { s2-\fLegatoELeggiero } \tag #'midi { s2\f }
+  \dynamicShiftG s2\p s4 s4-\cresc s2
   s2\f s2\p
 
   % theme B
-  s4 \hairpinA s4\< s4\! \hairpinB s4\> \dynamicShiftG s2\!\mf
+  s4 \hairpinA s4\< \tag #'print { s4\! } \tag #'midi { s4\!\mf } \hairpinB s4\> \dynamicShiftG s2\!\mf
 
   % theme A
   s2\f s2\p s4 s4-\cresc s2
@@ -239,7 +242,7 @@ movt-one-dynamics = {
 
   % theme C
   s2-\espressTxt s2 \textScriptShiftF s2-\cresc
-  s2-\fBrillante
+  \tag #'print { s2-\fBrillante } \tag #'midi { s2\f }
   s2*2
 }
 

@@ -271,7 +271,7 @@ midiPan = #0.2 % affecting whole midi output, value from -1 to 1
           \override VerticalAxisGroup.nonstaff-unrelatedstaff-spacing = #'(
             (padding . 0.8)
           )
-        } { \movt-one-dynamics }
+        } { \keepWithTag \currentTag \movt-one-dynamics }
         \new Staff = "down" {
           <<
             { \keepWithTag \currentTag \movt-one-lh }
@@ -338,8 +338,8 @@ midiPan = #0.2 % affecting whole midi output, value from -1 to 1
             (padding . 1.0)
           )
         } { <<
-          { \movt-three-secondo-single-staff-dynamics }
-          { \movt-three-secondo-dynamics }
+          { \keepWithTag \currentTag \movt-three-secondo-single-staff-dynamics }
+          { \keepWithTag \currentTag \movt-three-secondo-dynamics }
         >> }
         \new Staff = "down" { \keepWithTag \currentTag \movt-three-secondo-lh }
       >>
@@ -363,7 +363,7 @@ midiPan = #0.2 % affecting whole midi output, value from -1 to 1
         instrumentName = #"Piano I"
       } <<
         \new Staff = "primo-rh" { \keepWithTag \currentTag \movt-three-primo-rh }
-        \new Dynamics = "primo-dynamics" \movt-three-primo-dynamics
+        \new Dynamics = "primo-dynamics" \keepWithTag \currentTag \movt-three-primo-dynamics
         \new Staff = "primo-lh" \with {
         } { \keepWithTag \currentTag \movt-three-primo-lh }
         \new Dynamics = "primo-single-staff-dynamics" \with {
@@ -371,7 +371,7 @@ midiPan = #0.2 % affecting whole midi output, value from -1 to 1
           \override VerticalAxisGroup.nonstaff-relatedstaff-spacing = #'(
             (padding . 1)
           )
-        } { \movt-three-primo-single-staff-dynamics }
+        } { \keepWithTag \currentTag \movt-three-primo-single-staff-dynamics }
       >>
     >>
     \layout {
@@ -417,7 +417,7 @@ midiPan = #0.2 % affecting whole midi output, value from -1 to 1
             (basic-distance . 0.7)
             (padding . 1.5)
           )
-        } \movt-threeB-primo-dynamics
+        } \keepWithTag \currentTag \movt-threeB-primo-dynamics
         \new Staff = "down" { \keepWithTag \currentTag \movt-threeB-primo-lh }
       >>
       \new PianoStaff \with {
@@ -427,7 +427,7 @@ midiPan = #0.2 % affecting whole midi output, value from -1 to 1
           (padding . 2))
       } <<
         \new Staff = "up" { \keepWithTag \currentTag \movt-threeB-secondo-rh }
-        \new Dynamics = "secondo-dynamics" \movt-threeB-secondo-dynamics
+        \new Dynamics = "secondo-dynamics" \keepWithTag \currentTag \movt-threeB-secondo-dynamics
         \new Staff = "down" <<
           { \keepWithTag \currentTag \movt-threeB-secondo-lh }
           { \keepWithTag \currentTag \movt-threeB-dynamics-secondo-pedal }

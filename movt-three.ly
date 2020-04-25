@@ -38,18 +38,18 @@ theme-running-notes-lh = \relative c {
 
 theme-arpeggios-rh = \relative c' {
   \clef treble
-  \tag #'midi { \tempo 4 = 100 }
+  \tag #'(midi both-hands left-hand) { \tempo 4 = 100 }
   r16
-  \tag #'midi { \tempo 4 = 150 }
+  \tag #'(midi both-hands left-hand) { \tempo 4 = 150 }
   \shpSlurC
   <d f>\( <f a> <a d>
   <d f> <f a> <a d> <d f>
   <f a> <d f> <a d> <f a>
   <d f>4\) r
 
-  \tag #'midi { \tempo 4 = 100 }
+  \tag #'(midi both-hands left-hand) { \tempo 4 = 100 }
   r16
-  \tag #'midi { \tempo 4 = 150 }
+  \tag #'(midi both-hands left-hand) { \tempo 4 = 150 }
   \shpSlurC
   <c, e>\( <e a> <a c>
   <c e> <e a> <a c> <c e>
@@ -58,16 +58,27 @@ theme-arpeggios-rh = \relative c' {
 
   \dynamicNeutral
   \time 4/4
-  \tag #'midi { \tempo 4 = 100 }
+  \tag #'(midi both-hands left-hand) { \tempo 4 = 100 }
   r16
-  \tag #'midi { \tempo 4 = 150 }
-  << {
-    fis,,( a b fis' ais, b fis'
-    b, dis fis a fis' ais, b fis')
-  } \\ {
-    s16 s8 <a,, c>8. <a c>16~ q4 <a' c>8. q16
-  } >>
-  \tag #'midi { \tempo 4 = 150 }
+  \tag #'(midi both-hands left-hand) { \tempo 4 = 150 }
+  \tag #'(print both-hands left-hand) {
+    << {
+      fis,,( a b fis' ais, b fis'
+      b, dis fis a fis' ais, b fis')
+    } \\ {
+      s16 s8 <a,, c>8. <a c>16~ q4 <a' c>8. q16
+    } >>
+  }
+  \tag #'(midi both-hands left-hand) {
+    % force it to one voice for midi dynamics to apply
+    << {
+      fis,( a b fis' ais, b fis'
+      b, dis fis a fis' ais, b fis')
+    } {
+      s16 s8 <a,, c>8. <a c>16~ q4 <a' c>8. q16
+    } >>
+  }
+  \tag #'(midi both-hands left-hand) { \tempo 4 = 150 }
 
   \time 5/4 r4
   \tag #'(print both-hands) {
@@ -86,7 +97,7 @@ theme-arpeggios-rh = \relative c' {
   }
   \tag #'(midi both-hands) {
     << {
-      <e,, gis e'>16\([ s
+      <e,, gis e'>16\([\f s
       \makeOctaves 1 { f]\f s e[\f s f]\f s e[\f s f]\f s e[\f s f]\f s }
       \time 4/4
       <e e'>4\)\accentB\f
@@ -177,12 +188,22 @@ movt-three-primo-lh = \relative c' {
   \clef bass
   \time 4/4
   \key a \minor
-  << 
-    { \theme-running-notes-rh }
-    { s1^\leftHandOnly } \\ {
-      \theme-running-notes-lh
-    }
-  >>
+  \tag #'print {
+    << 
+      { \theme-running-notes-rh }
+      { s1^\leftHandOnly } \\ {
+        \theme-running-notes-lh
+      }
+    >>
+  }
+  \tag #'midi {
+    % force it to one voice for midi dynamics to apply
+    << 
+      { \theme-running-notes-rh }
+      { s1^\leftHandOnly }
+      { \theme-running-notes-lh }
+    >>
+  }
 
   <<
     { \keepWithTag #'left-hand \theme-arpeggios-lh }
@@ -193,10 +214,17 @@ movt-three-primo-lh = \relative c' {
 }
 
 movt-three-primo-single-staff-dynamics = {
-  << 
-    { \repeat unfold 8 { s4 s8.\< s16\! s8.\> s16\! s4 } }
-    { s1\p s1*3 \dynamicShiftC s1\mp s1 s1\mf s1 }
-  >>
+  \tag #'print {
+    << 
+      { \repeat unfold 8 { s4 s8.\< s16\! s8.\> s16\! s4 } }
+      { s1\p s1*3 \dynamicShiftC s1\mp s1 s1\mf s1 }
+    >>
+  }
+  \tag #'midi {
+    \repeat unfold 4 { s4\pp s8.\< s16\!\mf s8.\> s16\!\pp s4 }
+    \repeat unfold 2 { s4\pp s8.\< s16\!\f s8.\> s16\!\pp s4 }
+    \repeat unfold 2 { s4\mp s8.\< s16\!\ff s8.\> s16\!\mf s4 }
+  }
   \time 5/4
   s2. s2
   s2. s2
@@ -209,10 +237,17 @@ movt-three-primo-single-staff-dynamics = {
 }
 
 movt-three-secondo-single-staff-dynamics = {
-  << 
-    { \repeat unfold 8 { s4 s8.\< s16\! s8.\> s16\! s4 } }
-    { s1\p s1*3 \dynamicShiftF s1\mp s1 s1\mf s1 }
-  >>
+  \tag #'print {
+    << 
+      { \repeat unfold 8 { s4 s8.\< s16\! s8.\> s16\! s4 } }
+      { s1\p s1*3 \dynamicShiftF s1\mp s1 s1\mf s1 }
+    >>
+  }
+  \tag #'midi {
+    \repeat unfold 4 { s4\pp s8.\< s16\!\mf s8.\> s16\!\pp s4 }
+    \repeat unfold 2 { s4\pp s8.\< s16\!\f s8.\> s16\!\pp s4 }
+    \repeat unfold 2 { s4\mp s8.\< s16\!\ff s8.\> s16\!\mf s4 }
+  }
   \time 5/4
   s2. s2
   s2. s2
@@ -226,18 +261,32 @@ movt-three-secondo-single-staff-dynamics = {
 
 movt-three-primo-dynamics = {
   s1*8
-  s16\f s8.\< s8. s16\! s4\> s2\!
-  s16 s8.\< s8. s16\! s4\> s2\!
-  s4-\fpCresc s2.
+  \tag #'print {
+    s16\f s8.\< s8. s16\! s4\> s2\!
+    s16 s8.\< s8. s16\! s4\> s2\!
+    s4-\fpCresc s2.
+  }
+  \tag #'midi {
+    s16\f s8.\ppppp\< s8. s16\!\f s4\> s8\!\pp s4.\f
+    s16\f s8.\ppppp\< s8. s16\!\f s4\> s8\!\pp s4.\f
+    s16\f s8.\ppppp\< s4 s4 s8. s16\f
+  }
   s1\f s4
   s4 s4 s2
 }
 
 movt-three-secondo-dynamics = {
   s1*8
-  s16\f s8.\< s8. s16\! s4\> s2\!
-  s16 s8.\< s8. s16\! s4\> s2\!
-  s4-\fpCresc s2.
+  \tag #'print {
+    s16\f s8.\< s8. s16\! s4\> s2\!
+    s16 s8.\< s8. s16\! s4\> s2\!
+    s4-\fpCresc s2.
+  }
+  \tag #'midi {
+    s16\f s8.\ppppp\< s8. s16\!\f s4\> s8\!\pp s4.\f
+    s16\f s8.\ppppp\< s8. s16\!\f s4\> s8\!\pp s4.\f
+    s16\f s8.\ppppp\< s4 s4 s8. s16\f
+  }
   s1\f s4
   s4 s4\sfz s2
 }
@@ -261,11 +310,20 @@ movt-three-secondo-lh = \relative c {
   \clef bass
   \time 4/4
   \key a \minor
-  << 
-    { \theme-running-notes-rh }
-    \\
-    { \theme-running-notes-lh }
-  >>
+  \tag #'print {
+    << 
+      { \theme-running-notes-rh }
+      \\
+      { \theme-running-notes-lh }
+    >>
+  }
+  \tag #'midi {
+    % force it to one voice for midi dynamics to apply
+    << 
+      { \theme-running-notes-rh }
+      { \theme-running-notes-lh }
+    >>
+  }
 
   <<
     { \keepWithTag #'both-hands \theme-arpeggios-lh }
