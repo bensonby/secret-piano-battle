@@ -74,6 +74,7 @@ textScriptShiftC = \once \override TextScript.extra-offset = #'(0 . -0.5)
 textScriptShiftD = \once \override TextScript.extra-offset = #'(0 . 0.0)
 textScriptShiftE = \once \override TextScript.extra-offset = #'(0 . 0.3)
 textScriptShiftF = \once \override TextScript.extra-offset = #'(0 . -0.6)
+fingeringA = \once \override Fingering.extra-offset = #'(0 . -0.2)
 metronomePaddingA = \once \override Score.MetronomeMark.padding = #11.5
 metronomePaddingB = \once \override Score.MetronomeMark.padding = #4
 metronomePaddingC = \once \override Score.MetronomeMark.padding = #6

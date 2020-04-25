@@ -161,8 +161,8 @@ main-secondo-rh = \relative c'' {
   \paddingC <e,,, c' e>4-- <f f'>8-. <e e'>-. \paddingC <dis dis'>4--
   <e e'>4-. <c c'>8-. <a a'>-. <gis gis'>-. <a a'>-. \paddingC <b b'>4--
 
-  <a e' a>4-.-- r8 <f c' f>-. <e b' e>4-.-- r8 <gis e' gis>-.
-  <a e' a>4-.-- r8 <f c' f>-. <e b' e>4-.-- r8 <gis e' gis>-.
+  <a e' a>4-.-- r8 <f c' f>-.( <e b' e>4-.--) r8 <gis e' gis>-.(
+  <a e' a>4-.--) r8 <f c' f>-.( <e b' e>4-.--) r8 <gis e' gis>-.
 
   \paddingC <c e a>4-- \clef bass <a, b d gis>--
   <c e a>4-- \clef treble \paddingC <a' b d gis>--
@@ -204,10 +204,13 @@ main-secondo-lh = \relative c, {
   <a a,>8-. <c' e>-. <c, c'>-. <c' e>-. <f, b f'>8\accentA <e b' e>\accentA <dis b' dis>4--\accentA
   <a a,>8-. <c' e>-. <a, a'>-. <c' e>-. <e,, e'>8-.\accentA <fis fis'>-.\accentA <gis gis'>4--\accentA
 
-  <a e a,>8---. <a' e'> d, <f, c' f>-. <e b' e>---. <b'' e> d, <gis, e' gis>-.
-  <a e' a>8---. <a' e'> d, <f, c' f>-. <e b' e>---. <b'' e> d, <gis, e' gis>-.
+  \set fingeringOrientations = #'(left)
+  <a e a,>8---. \fingeringA <a' e'\finger \rhMark>-. d,-. <f, c' f>-.(
+  <e b' e>---.) \fingeringA <b'' e\finger \rhMark>-. d,-. <gis, e' gis>-.(
+  <a e' a>8---.) \fingeringA <a' e'\finger \rhMark>-. d,-. <f, c' f>-.(
+  <e b' e>---.) \fingeringA <b'' e\finger \rhMark>-. d,-. <gis, e' gis>-.(
 
-  a8-. <e' a>-. e,-. <b' e>-. a-. <e' a>-. e-. <b' e>-.
+  <a a'>8-.) <e' a>-. e,-. <b' e>-. a-. <e' a>-. e-. <b' e>-.
   a8-. <e' a>-. <e b'>-. <a e'>-. a-. q-. <e a e'>-. e-.
   <a, e' a>4-.-> r <e a e'>-.-> r \ottava #-1 <a,, e' a>-.-> \ottava #0 r r2
 
