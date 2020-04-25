@@ -98,7 +98,7 @@ theme-arpeggios-rh = \relative c' {
   \tag #'(midi both-hands) {
     << {
       <e,, gis e'>16\([\f s
-      \makeOctaves 1 { f]\f s e[\f s f]\f s e[\f s f]\f s e[\f s f]\f s }
+      \makeOctaves 1 { f]\f s e[\f s f]\f s e[\f s f]\f s e[\f s f]\f \tempo 4 = 100 s }
       \time 4/4
       <e e'>4\)\accentB\f
     } \\ {
