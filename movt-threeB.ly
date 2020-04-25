@@ -149,13 +149,12 @@ main-secondo-rh = \relative c'' {
       c4-. b-. bes-.
       a-. c-. b-. bes-.
       a-. e'-. d-. f-.
-      e-. \stemNeutral c8-. a-. gis-. a-.
+      e-. c8-. a-. gis-. a-.
       \tag #'print { \paddingC b4--\glissando }
     }
     \tag #'midi { \tuplet 17/16 {
       b64 c d e f g a b c d e f g a b c d
     }}
-    \stemUp
     \ottava #1 \ottava-one-short e8-. \ottava #0 r8
   }
 
