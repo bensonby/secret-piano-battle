@@ -5,11 +5,11 @@ duration 13.6
 file 'p1-3.png'
 duration 14.399999999999999
 file 'p2-1.png'
-duration 5.899999999999999
+duration 12.899999999999999
 file 'p2-2.png'
-duration 15.700000000000003
+duration 14.100000000000001
 file 'p2-3.png'
-duration 12.099999999999994
+duration 6.699999999999996
 file 'p3-1.png'
 duration 13.100000000000009
 file 'p3-2.png'

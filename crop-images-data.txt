@@ -1,19 +1,25 @@
 2480 #width
-score-0.png 138 1263 p1-1.png
-score-0.png 1264 2286 p1-2.png
-score-0.png 2286 3339 p1-3.png
-score-1.png 140 968 p2-1.png
-score-1.png 968 2096 p2-2.png
-score-1.png 2192 3300 p2-3.png
-score-2.png 135 1641 p3-1.png
-score-2.png 1641 2676 p3-2.png
-score-2.png 2679 3483 p3-3.png
-score-3.png 186 1473 p4-1.png
-score-3.png 1647 2421 p4-2.png
-score-3.png 2493 3375 p4-3.png
+score-0.png 114 1266 p1-1.png
+score-0.png 1266 2280 p1-2.png
+score-0.png 2280 3339 p1-3.png
+score-1.png 126 1455 p2-1.png
+score-1.png 1455 2739 p2-2.png
+score-1.png 2739 3339 p2-3.png
+score-2.png 130 1602 p3-1.png
+append p3-2.png 2
+score-2.png 1602 2696 p3-2a.png
+score-2.png 3286 3384 p3-2b.png
+append p3-3.png 2
+score-2.png 2710 3286 p3-3a.png
+score-3.png 158 450 p3-3b.png
+append p4-1.png 2
+score-3.png 454 1473 p4-1a.png
+score-3.png 3302 3388 p4-1b.png
+score-3.png 1568 2404 p4-2.png
+score-3.png 2398 3304 p4-3.png
 score-4.png 204 1194 p5-1.png
 score-4.png 1311 2208 p5-2.png
-score-4.png 2325 3300 p5-3.png
+score-4.png 2289 3384 p5-3.png
 score-5.png 204 1161 p6-1.png
-score-5.png 1218 2253 p6-2.png
-score-5.png 2292 3309 p6-3.png
+score-5.png 1173 2232 p6-2.png
+score-5.png 2253 3309 p6-3.png

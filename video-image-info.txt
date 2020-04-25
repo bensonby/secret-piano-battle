@@ -2,8 +2,8 @@ p1-1.png 0
 p1-2.png 8.4
 p1-3.png 22
 p2-1.png 36.4
-p2-2.png 42.3
-p2-3.png 58
+p2-2.png 49.3
+p2-3.png 63.4
 p3-1.png 70.1
 p3-2.png 83.2
 p3-3.png 92.6

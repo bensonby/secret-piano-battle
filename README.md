@@ -33,7 +33,6 @@ convert -density 300 -alpha remove score.pdf score.png
 
 ```
 python3 crop-images-py
-# And then manually modify p3-4 and p4-1 to look better
 ```
 
 ## C. Creating final video
