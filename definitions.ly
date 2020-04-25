@@ -51,6 +51,7 @@ instructionII = {
     \smaller "First played by Piano II; then by Piano I from bar 16 (no high C#) till the end, followed by bar 1 till first note of bar 16."
   }
 }
+soundtrackText = \markup \whiteout { "soundtrack version in 4/4 which cannot be imitated by Piano I with only left hand" }
 dynamicShiftA = \once \override DynamicText.X-offset = #-3
 dynamicShiftB = \once \override DynamicText.X-offset = #-2
 dynamicShiftC = \once \override Dynamics.DynamicText.self-alignment-X = #-0.2 % for overlap on the left with barline
@@ -68,6 +69,7 @@ offsetA = {
   \once \override Script.X-offset = #0.2
   \once \override Script.padding = #0.4
 }
+textScriptA = \once \override TextScript.font-size = #4
 textScriptShiftA = \once \override TextScript.extra-offset = #'(0 . 1.4)
 textScriptShiftB = \once \override TextScript.extra-offset = #'(0 . 0.5)
 textScriptShiftC = \once \override TextScript.extra-offset = #'(0 . -0.5)

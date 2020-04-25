@@ -328,15 +328,19 @@ midiPan = #0.2 % affecting whole midi output, value from -1 to 1
       \new PianoStaff \with {
         instrumentName = #"Piano II"
         shortInstrumentName = #"II"
+        \override StaffGrouper.staffgroup-staff-spacing = #'(
+          (basic-distance . 6)
+          (padding . 2)
+        )
       } <<
         \new Staff = "up" { \keepWithTag \currentTag \movt-three-secondo-rh }
         \new Dynamics = "secondo-dynamics" \with {
           \override VerticalAxisGroup.staff-affinity = #UP
           \override VerticalAxisGroup.nonstaff-relatedstaff-spacing = #'(
-            (padding . 1.0)
+            (padding . 1.5)
           )
           \override VerticalAxisGroup.nonstaff-unrelatedstaff-spacing = #'(
-            (padding . 1.0)
+            (padding . 1.5)
           )
         } { <<
           { \keepWithTag \currentTag \movt-three-secondo-single-staff-dynamics }
@@ -349,6 +353,10 @@ midiPan = #0.2 % affecting whole midi output, value from -1 to 1
       \context {
         \PianoStaff
         \accepts Dynamics
+      }
+      \context {
+        \Score
+        \override NonMusicalPaperColumn.page-break-permission = ##f
       }
     }
   }

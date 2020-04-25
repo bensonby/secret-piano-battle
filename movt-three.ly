@@ -13,6 +13,61 @@ rest-duration-three = {
   \time 5/4 s2. s2 s2. s2 \time 4/4 s1 \time 5/4 s2. s2 \time 4/4 s1
 }
 
+ossiaStaffA = \new PianoStaff \with {
+  alignAboveContext = "main"
+} <<
+  \new Staff = "ossia-rh" \with {
+    \magnifyStaff #2/3
+    \RemoveAllEmptyStaves
+  } {
+    \clef treble
+    % \time 4/4
+    \set Staff.timeSignatureFraction = 4/4
+    \scaleDurations 5/4 {
+      \paddingA \textScriptA
+      r16^\soundtrackText
+      \shpSlurC
+      <d, f>\([ <f a> <a d>]
+      <d f>[ <f a> <a d> <d f>]
+      <f a>[ <d f> <a d> <f a>]
+      <d f>4\)
+
+      r16
+      \shpSlurC
+      <c, e>\([ <e a> <a c>]
+      <c e>[ <e a> <a c> <c e>]
+      <e a>[ <c e> <a c> <e a>]
+      <c e>4\)
+    }
+  }
+  \new Dynamics \with {
+    fontSize = #-2
+  } {
+    \scaleDurations 5/4 {
+      s16\f s8.\< s8. s16\! s4\> s4\!
+      s16 s8.\< s8. s16\! s4\> s4\!
+    }
+  }
+  \new Staff = "ossia-lh" \with {
+    \magnifyStaff #2/3
+    \RemoveAllEmptyStaves
+  } {
+    \clef bass
+    % \time 4/4
+    \set Staff.timeSignatureFraction = 4/4
+    \scaleDurations 5/4 {
+      \paddingB <d,,, d'>2~\accentA q8
+      \paddingB <gis gis'>\accentA
+      \paddingB <a a'>[\accentA
+      \paddingB <d, d'>]\accentA
+      <c c'>2~\accentA q8
+      \paddingB <gis' gis'>\accentA
+      \paddingB <a a'>[\accentA
+      \paddingB <ais, ais'>]\accentA
+    }
+  }
+>>
+
 theme-running-notes-rh = \relative c {
   << { \repeat unfold 31 {e16 f} } { s16\( s16*14 s16\) s16^\sim } >> e dis
   \repeat unfold 2 {e f fis g gis a b a gis f d gis g e cis g'}
@@ -38,23 +93,28 @@ theme-running-notes-lh = \relative c {
 
 theme-arpeggios-rh = \relative c' {
   \clef treble
-  \tag #'(midi both-hands left-hand) { \tempo 4 = 100 }
-  r16
-  \tag #'(midi both-hands left-hand) { \tempo 4 = 150 }
-  \shpSlurC
-  <d f>\( <f a> <a d>
-  <d f> <f a> <a d> <d f>
-  <f a> <d f> <a d> <f a>
-  <d f>4\) r
+  <<
+    {
+      \tag #'(midi both-hands left-hand) { \tempo 4 = 100 }
+      r16
+      \tag #'(midi both-hands left-hand) { \tempo 4 = 150 }
+      \shpSlurC
+      <d f>\( <f a> <a d>
+      <d f> <f a> <a d> <d f>
+      <f a> <d f> <a d> <f a>
+      <d f>4\) r
 
-  \tag #'(midi both-hands left-hand) { \tempo 4 = 100 }
-  r16
-  \tag #'(midi both-hands left-hand) { \tempo 4 = 150 }
-  \shpSlurC
-  <c, e>\( <e a> <a c>
-  <c e> <e a> <a c> <c e>
-  <e a> <c e> <a c> <e a>
-  <c e>4\) r
+      \tag #'(midi both-hands left-hand) { \tempo 4 = 100 }
+      r16
+      \tag #'(midi both-hands left-hand) { \tempo 4 = 150 }
+      \shpSlurC
+      <c, e>\( <e a> <a c>
+      <c e> <e a> <a c> <c e>
+      <e a> <c e> <a c> <e a>
+      <c e>4\) r
+    }
+    \tag #'(print both-hands) { \ossiaStaffA }
+  >>
 
   \dynamicNeutral
   \time 4/4
@@ -63,7 +123,8 @@ theme-arpeggios-rh = \relative c' {
   \tag #'(midi both-hands left-hand) { \tempo 4 = 150 }
   \tag #'(print both-hands left-hand) {
     << {
-      fis,,( a b fis' ais, b fis'
+      % relative pitch is affected by the ossia staff
+      fis''( a b fis' ais, b fis'
       b, dis fis a fis' ais, b fis')
     } \\ {
       s16 s8 <a,, c>8. <a c>16~ q4 <a' c>8. q16
@@ -331,6 +392,7 @@ movt-three-secondo-lh = \relative c {
   >>
   \attacaA
   \bar "||"
+  \pageBreak
 }
 
 movt-three-dynamics-pedal = {
