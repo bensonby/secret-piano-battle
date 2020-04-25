@@ -1,4 +1,5 @@
 prev_start_time = 0
+last_image = ""
 with open('video-image-info.txt') as open_file_object:
     for (index, line) in enumerate(open_file_object):
         (image, start_time) = line.split(" ")
@@ -9,4 +10,8 @@ with open('video-image-info.txt') as open_file_object:
             print("file '{}'".format(image))
         else:
             print("duration {}".format(duration))
-            print("file '{}'".format(image))
+            if image != '-':
+                print("file '{}'".format(image))
+                last_image = image
+            else:
+                print("file '{}'".format(last_image))

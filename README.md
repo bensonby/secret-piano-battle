@@ -39,5 +39,5 @@ python3 crop-images-py
 
 ```
 python3 video-image-info-for-ffmpeg.py > ffmpeg-image-info.txt
-ffmpeg -i v001.wav -f concat -i ffmpeg-image-info.txt piano-duel-v001.mp4
+ffmpeg -i v001.wav -f concat -i ffmpeg-image-info.txt -ss 0 -t 154 piano-duel-v001.mp4 # ending time necessary otherwise it will be trimmed
 ```

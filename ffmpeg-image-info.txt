@@ -33,3 +33,5 @@ duration 4.799999999999983
 file 'p6-2.png'
 duration 4.700000000000017
 file 'p6-3.png'
+duration 7.099999999999994
+file 'p6-3.png'
