@@ -134,7 +134,19 @@ theme-arpeggios-rh = \relative c' {
 }
 
 theme-arpeggios-lh = \relative c, {
-  \time 5/4 \paddingB <d d'>2.~\accentA q8
+  \override Score.FootnoteItem.annotation-line = ##f
+  \time 5/4
+  \tag #'(print both-hands) {
+    \paddingB
+    
+    <d \footnote "*)" #'(0.5 . -4) \markup \pad-around #1.5 {
+      "*) In the OST, these two bars are in 4/4, w/o the 3rd beat in LH & 5th beat in RH, thus unplayable by Pno I with LH only."
+    } d'>2.~\accentA <d d'>8 % cannot use q because using q would repeat the footnote
+  }
+  \tag #'(print midi left-hand) {
+    \paddingB
+    <d d'>2.~\accentA q8
+  }
   \tag #'(midi both-hands left-hand) { \tempo 4 = 130 }
   \paddingB <gis gis'>\accentA
   \tag #'(midi both-hands left-hand) { \tempo 4 = 125 }
@@ -165,7 +177,9 @@ theme-arpeggios-lh = \relative c, {
     e,-. r2
   }
   \tag #'(print midi left-hand) {
-    <e' e'>2.~\accentA q2~
+    <e' \footnote "*)" #'(0.5 . -5) \markup \pad-around #1 \concat {
+      "*) In the OST, Pno II starts the " \italic { agitato } " section immediately after this chord skipping the remaining notes in these 2 bars."
+    } e'>2.~\accentA <e e'>2~ % cannot use q because using q would repeat the footnote
     \time 4/4
     \tag #'(midi left-hand) { \tempo 4 = 180 }
     q2

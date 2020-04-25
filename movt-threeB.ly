@@ -91,7 +91,12 @@ main-primo-rh = \relative c''' {
   }
   \alternative {
     { a16 gis a b }
-    { a16 gis a b }
+    {
+      \override Score.FootnoteItem.annotation-line = ##f
+      \footnote "*}" #'(0 . 1.5) \markup \pad-around #1.5 {
+        "*) The OST does not have these 4 bars (bar 39-42)."
+      }
+      a16 gis a b }
     {}
   }
   a8 s c,16 b c a c b d f dis c e c
