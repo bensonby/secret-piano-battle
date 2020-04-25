@@ -20,12 +20,20 @@ fpCresc = \markup \concat { \dynamic "fp" \italic \larger "  cresc." }
 beginSlowlyThenAccel = \markup \whiteout { \concat { \dynamic "sfp" \italic "  begin slowly, then ease into tempo" } }
 ottava-one-short = \set Staff.ottavation = #"8"
 ottavaShorterEndA = \once \override Score.OttavaBracket.shorten-pair = #'(0 . 0)
-attaca = {
+attacaA = {
   \once \override Score.RehearsalMark.break-visibility = #end-of-line-visible
   \once \override Score.RehearsalMark.self-alignment-X = #RIGHT
   \once \override Score.RehearsalMark.side-axis = #1 % below
   \once \override Score.RehearsalMark.direction = #-1 % below
-  \mark \markup \italic \smaller "attacca"
+  \once \override Score.RehearsalMark.padding = #7
+  \mark \markup \italic \smaller "(attacca)"
+}
+attacaB = {
+  \once \override Score.RehearsalMark.break-visibility = #end-of-line-visible
+  \once \override Score.RehearsalMark.self-alignment-X = #RIGHT
+  \once \override Score.RehearsalMark.side-axis = #1 % below
+  \once \override Score.RehearsalMark.direction = #-1 % below
+  \mark \markup \italic \smaller "(attacca)"
 }
 instructionI = {
   \once \override Score.RehearsalMark.self-alignment-X = #LEFT

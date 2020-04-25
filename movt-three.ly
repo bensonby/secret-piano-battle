@@ -209,7 +209,7 @@ movt-three-primo-lh = \relative c' {
     { \keepWithTag #'left-hand \theme-arpeggios-lh }
     { s1^\stillLeftHandOnly }
   >>
-  \attaca
+  \attacaB
   \bar "||"
 }
 
@@ -329,7 +329,7 @@ movt-three-secondo-lh = \relative c {
     { \keepWithTag #'both-hands \theme-arpeggios-lh }
     { s1 }
   >>
-  \attaca
+  \attacaA
   \bar "||"
 }
 

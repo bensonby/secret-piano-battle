@@ -327,6 +327,7 @@ midiPan = #0.2 % affecting whole midi output, value from -1 to 1
     \new StaffGroup <<
       \new PianoStaff \with {
         instrumentName = #"Piano II"
+        shortInstrumentName = #"II"
       } <<
         \new Staff = "up" { \keepWithTag \currentTag \movt-three-secondo-rh }
         \new Dynamics = "secondo-dynamics" \with {
@@ -361,8 +362,14 @@ midiPan = #0.2 % affecting whole midi output, value from -1 to 1
     \new StaffGroup <<
       \new PianoStaff \with {
         instrumentName = #"Piano I"
+        shortInstrumentName = #"I"
       } <<
-        \new Staff = "primo-rh" { \keepWithTag \currentTag \movt-three-primo-rh }
+        \new Staff = "primo-rh" {
+          \set Score.barNumberVisibility = #all-bar-numbers-visible
+          \set Score.currentBarNumber = #14 % continuing from previous
+          \bar ""
+          \keepWithTag \currentTag \movt-three-primo-rh
+        }
         \new Dynamics = "primo-dynamics" \keepWithTag \currentTag \movt-three-primo-dynamics
         \new Staff = "primo-lh" \with {
         } { \keepWithTag \currentTag \movt-three-primo-lh }
@@ -398,7 +405,8 @@ midiPan = #0.2 % affecting whole midi output, value from -1 to 1
     }
     \new StaffGroup <<
       \new PianoStaff \with {
-        instrumentName = #"Piano I"
+        instrumentName = #"I"
+        shortInstrumentName = #"I"
         \override StaffGrouper.staff-staff-spacing = #'(
           (basic-distance . 7)
           (padding . 1.5))
@@ -406,7 +414,12 @@ midiPan = #0.2 % affecting whole midi output, value from -1 to 1
           (basic-distance . 10)
           (padding . 2.5))
       } <<
-        \new Staff = "up" { \keepWithTag \currentTag \movt-threeB-primo-rh }
+        \new Staff = "up" {
+          \set Score.barNumberVisibility = #all-bar-numbers-visible
+          \set Score.currentBarNumber = #27 % continuing from previous
+          \bar ""
+          \keepWithTag \currentTag \movt-threeB-primo-rh
+        }
         \new Dynamics = "primo-dynamics" \with {
           \override VerticalAxisGroup.staff-affinity = #UP
           \override VerticalAxisGroup.nonstaff-relatedstaff-spacing = #'(
@@ -421,7 +434,8 @@ midiPan = #0.2 % affecting whole midi output, value from -1 to 1
         \new Staff = "down" { \keepWithTag \currentTag \movt-threeB-primo-lh }
       >>
       \new PianoStaff \with {
-        instrumentName = #"Piano II"
+        instrumentName = #"II"
+        shortInstrumentName = #"II"
         \override StaffGrouper.staff-staff-spacing = #'(
           (basic-distance . 7)
           (padding . 2))
@@ -434,6 +448,8 @@ midiPan = #0.2 % affecting whole midi output, value from -1 to 1
         >>
       >>
     >>
-    \layout { }
+    \layout {
+      indent = 0
+    }
   }
 }
