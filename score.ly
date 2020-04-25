@@ -83,7 +83,7 @@ midiPan = #0.2 % affecting whole midi output, value from -1 to 1
                 \extra-rest-before-three
                 \rest-duration-three
                 \movt-three-dynamics-pedal
-                \keepWithTag #'primo \movt-threeB-dynamics-pedal
+                \movt-threeB-dynamics-primo-pedal
               }
             >>
             <<
@@ -131,7 +131,7 @@ midiPan = #0.2 % affecting whole midi output, value from -1 to 1
                 \extra-rest-before-three
                 \rest-duration-three
                 \movt-three-dynamics-pedal
-                \keepWithTag #'primo \movt-threeB-dynamics-pedal
+                \movt-threeB-dynamics-primo-pedal
               }
             >>
             <<
@@ -171,7 +171,7 @@ midiPan = #0.2 % affecting whole midi output, value from -1 to 1
                 \extra-rest-before-three
                 \movt-three-dynamics-pedal
                 \rest-duration-three
-                \keepWithTag #'secondo \movt-threeB-dynamics-pedal
+                \movt-threeB-dynamics-secondo-pedal
               }
             >>
             <<
@@ -218,7 +218,7 @@ midiPan = #0.2 % affecting whole midi output, value from -1 to 1
                 \extra-rest-before-three
                 \movt-three-dynamics-pedal
                 \rest-duration-three
-                \keepWithTag #'secondo \movt-threeB-dynamics-pedal
+                \movt-threeB-dynamics-secondo-pedal
               }
             >>
             <<
@@ -430,7 +430,7 @@ midiPan = #0.2 % affecting whole midi output, value from -1 to 1
         \new Dynamics = "secondo-dynamics" \movt-threeB-secondo-dynamics
         \new Staff = "down" <<
           { \keepWithTag \currentTag \movt-threeB-secondo-lh }
-          { \keepWithTag \currentTag \movt-threeB-dynamics-pedal }
+          { \keepWithTag \currentTag \movt-threeB-dynamics-secondo-pedal }
         >>
       >>
     >>

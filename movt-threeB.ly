@@ -250,9 +250,9 @@ movt-threeB-secondo-dynamics = {
   s1-\cresc s1 \dynamicShiftC s1\ff s1
 }
 
-movt-threeB-dynamics-pedal = {
+movt-threeB-dynamics-primo-pedal = {
   \set Staff.pedalSustainStyle = #'bracket
-  \tag #'(midi primo secondo) {
+  \tag #'midi {
     % intro
     \repeat unfold 8 {
       s4...\son s32\soff
@@ -260,30 +260,52 @@ movt-threeB-dynamics-pedal = {
     \repeat unfold 56 {
       s8..\son s32\soff
     }
-  }
 
-  \tag #'(midi primo) {
     \repeat unfold 8 {
       s8..\son s32\soff
     }
-  }
-  \tag #'(midi secondo) {
-    % hack to prevent pedal hanging
+
+    \repeat unfold 8 {
+      s8..\son s32\soff
+    }
+
+    % hack to prevent pedal still hanging at the end
     s16\son s8.\soff s2. s1
   }
+}
 
-  \tag #'(midi primo secondo) {
-    \repeat unfold 8 {
-      s8..\son s32\soff
+movt-threeB-dynamics-secondo-pedal = {
+  \set Staff.pedalSustainStyle = #'bracket
+  \tag #'midi {
+    % intro
+    \repeat unfold 2 {
+      s2\son s2\soff
     }
-  }
+    \repeat unfold 4 {
+      s4...\son s32\soff
+    }
+    \repeat unfold 3 {
+      s8\son s4.\soff s2
+      s8\son s4.\soff s2
+      s8\son s4.\soff s8\son s4.\soff
+      s8\son s4.\soff s4 s8...\son s64\soff
+    }
 
-  \tag #'(midi primo secondo) {
+    % hack to prevent pedal hanging
+    s16\son s8.\soff s2. s1
+
+    \repeat unfold 4 {
+      s8\son s4.\soff
+    }
+
+    s1\son
+    s2.... s32\soff
+
     % hack to prevent pedal still hanging at the end
     s16\son s8.\soff s2. s1
   }
 
-  \tag #'(print secondo) {
+  \tag #'print {
     s1*4
     s1*14
     s1*2
