@@ -300,18 +300,9 @@ movt-threeB-dynamics-secondo-pedal = {
       s8\son s4.\soff
     }
 
-    s1\son
-    s2.... s32\soff
+    s1 s1
 
     % hack to prevent pedal still hanging at the end
     s16\son s8.\soff s2. s1
-  }
-
-  \tag #'print {
-    s1*4
-    s1*14
-    s1*2
-    s1\son s1
-    s1\soff s1
   }
 }
