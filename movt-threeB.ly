@@ -256,7 +256,10 @@ movt-threeB-dynamics-primo-pedal = {
   \set Staff.pedalSustainStyle = #'bracket
   \tag #'midi {
     % intro
-    \repeat unfold 8 {
+    \repeat unfold 2 {
+      s16 s16\son s8\soff s4 s4\son s8 s16\soff s32\son s32\soff
+    }
+    \repeat unfold 4 {
       s4...\son s32\soff
     }
     \repeat unfold 56 {
@@ -281,7 +284,7 @@ movt-threeB-dynamics-secondo-pedal = {
   \tag #'midi {
     % intro
     \repeat unfold 2 {
-      s2\son s2\soff
+      s2\son s8\soff s4.
     }
     \repeat unfold 4 {
       s4...\son s32\soff
