@@ -32,12 +32,25 @@ convert -density 300 -alpha remove score.pdf score.png
 ### Extract sections from png
 
 ```
-python3 crop-images-py
+python3 crop-images.py crop-images-data.txt # for youtube video
+```
+
+or
+
+```
+python3 crop-images.py crop-images-data-igtv.txt # for ig video
 ```
 
 ## C. Creating final video
 
 ```
-python3 video-image-info-for-ffmpeg.py > ffmpeg-image-info.txt
+python3 video-image-info-for-ffmpeg.py video-image-info.txt > ffmpeg-image-info.txt
 ffmpeg -i v001.wav -f concat -i ffmpeg-image-info.txt -ss 0 -t 154 piano-duel-v001.mp4 # ending time necessary otherwise it will be trimmed
+```
+
+Create video with proper format/codec (valid for IGTV):
+
+```
+python3 video-image-info-for-ffmpeg.py video-image-info-igtv.txt > ffmpeg-image-info-igtv.txt
+ffmpeg -i v001.wav -f concat -i ffmpeg-image-info-igtv.txt -ss 0 -t 154 -loop 1 -c:a aac -b:a 256k -ar 44100 -c:v libx264 -pix_fmt yuv420p -preset faster -tune stillimage -shortest piano-duel-igtv-v001.mp4
 ```

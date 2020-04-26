@@ -1,4 +1,4 @@
-2480 #width
+2480 1920 1080
 score-0.png 114 1266 p1-1.png
 score-0.png 1266 2280 p1-2.png
 score-0.png 2280 3339 p1-3.png

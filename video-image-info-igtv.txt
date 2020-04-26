@@ -1,0 +1,7 @@
+igtv-p1.png 0
+igtv-p2.png 36
+igtv-p3.png 69.8
+igtv-p4.png 102.2
+igtv-p5.png 124.3
+igtv-p6.png 137.3
+- 154

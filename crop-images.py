@@ -1,13 +1,16 @@
+import argparse
 import os
 
-output_width = 1920
-output_height = 1080
+parser = argparse.ArgumentParser()
+parser.add_argument('filename', metavar='N', type=str)
+args = parser.parse_args()
+
 append_mode = False
 
-with open('crop-images-data.txt') as open_file_object:
+with open(args.filename) as open_file_object:
     for index, line in enumerate(open_file_object):
         if index == 0:
-            width = int(line.split(" ")[0])
+            (width, output_width, output_height) = [int(x) for x in line.split(" ")]
         else:
             elements = line.strip().split(" ")
             if elements[0] =="append":
@@ -26,6 +29,7 @@ with open('crop-images-data.txt') as open_file_object:
                     int(y_start),
                     output_file
                 )
+                print(command)
                 os.system(command)
                 filenames.append(output_file)
                 if len(filenames) == num_files_to_merge:
@@ -40,7 +44,9 @@ with open('crop-images-data.txt') as open_file_object:
                         output_height,
                         final_filename,
                     )
+                    print(command1)
                     os.system(command1)
+                    print(command2)
                     os.system(command2)
                     os.system("rm tmp.png")
 
@@ -62,4 +68,5 @@ with open('crop-images-data.txt') as open_file_object:
                     output_height,
                     output_file
                 )
+                print(command)
                 os.system(command)

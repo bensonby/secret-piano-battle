@@ -1,0 +1,7 @@
+2480 1080 1600
+score-0.png 0 3508 igtv-p1.png
+score-1.png 0 3508 igtv-p2.png
+score-2.png 0 3508 igtv-p3.png
+score-3.png 0 3508 igtv-p4.png
+score-4.png 0 3508 igtv-p5.png
+score-5.png 0 3508 igtv-p6.png

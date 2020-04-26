@@ -1,6 +1,12 @@
+import argparse
+
+parser = argparse.ArgumentParser()
+parser.add_argument('filename', metavar='N', type=str)
+args = parser.parse_args()
+
 prev_start_time = 0
 last_image = ""
-with open('video-image-info.txt') as open_file_object:
+with open(args.filename) as open_file_object:
     for (index, line) in enumerate(open_file_object):
         (image, start_time) = line.split(" ")
         start_time = float(start_time)

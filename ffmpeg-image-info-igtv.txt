@@ -1,0 +1,13 @@
+file 'igtv-p1.png'
+duration 36.0
+file 'igtv-p2.png'
+duration 33.8
+file 'igtv-p3.png'
+duration 32.400000000000006
+file 'igtv-p4.png'
+duration 22.099999999999994
+file 'igtv-p5.png'
+duration 13.000000000000014
+file 'igtv-p6.png'
+duration 16.69999999999999
+file 'igtv-p6.png'
